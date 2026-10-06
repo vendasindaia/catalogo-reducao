@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catálogo do Indaiá</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#12100e;--card:#1c1a17;--ink:#f2efe9;--mute:#a49f96;--line:#33302b;--head:#252320;
+  --ouro:#c9a227;--cad:#e0a458;--pai:#7fa9f0;--mid:#b795f0;--fic:#5ec7b8;
+  --red:#f28b82;--red-bg:#3a1f1d;--grn:#8fd19e;--grn-bg:#1c2f22;--amb:#f0c060;--amb-bg:#332a14;
+}
+:root[data-theme="claro"]{
+  --bg:#faf8f4;--card:#fff;--ink:#1d1b18;--mute:#6b6760;--line:#e2ded6;--head:#f0ece4;
+  --ouro:#8a6d14;--cad:#a35f12;--pai:#1d4ed8;--mid:#6d28d9;--fic:#0f766e;
+  --red:#b3261e;--red-bg:#fbeceb;--grn:#2e6b3a;--grn-bg:#e9f4ec;--amb:#8a5a00;--amb-bg:#fdf3e1;
+}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 "Segoe UI",system-ui,sans-serif}
+
+.palco{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:56px 24px 88px}
+.slide{display:none;width:100%;max-width:1000px}
+.slide.ativo{display:block;animation:entra .22s ease}
+@keyframes entra{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+body.lista .palco{display:block;padding-top:24px}
+body.lista .slide{display:block;max-width:1000px;margin:0 auto 64px;padding-bottom:40px;border-bottom:1px solid var(--line)}
+
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ouro);margin-bottom:10px}
+h1{font-size:44px;line-height:1.1;letter-spacing:-.02em;margin-bottom:14px}
+h2{font-size:30px;line-height:1.15;letter-spacing:-.01em;margin-bottom:8px}
+h3{font-size:15px;margin-bottom:4px}
+.sub{color:var(--mute);font-size:17px;margin-bottom:26px;max-width:70ch}
+p{max-width:75ch}
+ul{margin:10px 0 0 20px}li{margin:6px 0}
+b{font-weight:650}
+.mute{color:var(--mute)}
+
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.card h3{font-size:14px;letter-spacing:.02em}
+.card p{font-size:13.5px;color:var(--mute);margin-top:4px}
+.card .n{font-size:30px;font-weight:700;line-height:1.1;letter-spacing:-.02em}
+.c-cad{border-color:var(--cad)}.c-cad h3{color:var(--cad)}
+.c-pai{border-color:var(--pai)}.c-pai h3{color:var(--pai)}
+.c-mid{border-color:var(--mid)}.c-mid h3{color:var(--mid)}
+.c-fic{border-color:var(--fic)}.c-fic h3{color:var(--fic)}
+.kpi .n{color:var(--ouro)}
+.kpi.ruim .n{color:var(--red)}
+.kpi.bom .n{color:var(--grn)}
+
+table{border-collapse:collapse;width:100%;margin-top:18px;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{text-align:left;padding:8px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--head);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--mute);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.antes-depois{display:grid;gap:14px;grid-template-columns:1fr 1fr;margin-top:20px}
+@media (max-width:760px){.antes-depois{grid-template-columns:1fr}}
+.bloco{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.bloco.ruim{border-left:3px solid var(--red)}
+.bloco.bom{border-left:3px solid var(--grn)}
+.bloco h3{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
+.bloco ul{margin-left:18px;font-size:14px}
+.selo{display:inline-block;font-size:11px;font-weight:700;padding:1px 7px;border-radius:6px}
+.s-novo{color:var(--red);background:var(--red-bg)}
+.s-ok{color:var(--grn);background:var(--grn-bg)}
+.s-amb{color:var(--amb);background:var(--amb-bg)}
+
+.fluxo{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch;margin-top:20px}
+.passo{flex:1 1 170px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.passo .p{font-size:11px;color:var(--ouro);font-weight:700;letter-spacing:.1em}
+.passo h3{font-size:14px;margin:4px 0}
+.passo p{font-size:12.5px;color:var(--mute)}
+
+.nota{margin-top:20px;padding:12px 16px;border-left:3px solid var(--ouro);background:var(--card);border-radius:0 10px 10px 0;font-size:14px}
+
+/* diagrama de ligação */
+.liga{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:center;margin-top:22px}
+.liga .no{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;min-height:120px}
+.liga .no h3{font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+.liga .no p{font-size:12.5px;color:var(--mute);margin-top:4px}
+.liga .seta{color:var(--ouro);font-size:26px;text-align:center}
+.liga .no.cad{border-color:var(--cad)}.liga .no.cad h3{color:var(--cad)}
+.liga .no.fic{border-color:var(--fic)}.liga .no.fic h3{color:var(--fic)}
+.liga .no.mid{border-color:var(--mid)}.liga .no.mid h3{color:var(--mid)}
+.liga .no.pai{border-color:var(--pai)}.liga .no.pai h3{color:var(--pai)}
+@media (max-width:760px){.liga{grid-template-columns:1fr}.liga .seta{transform:rotate(90deg)}}
+
+.barra{position:fixed;left:0;right:0;bottom:0;display:flex;align-items:center;gap:10px;justify-content:center;padding:10px;background:linear-gradient(to top,var(--bg) 60%,transparent);font-size:13px}
+.barra button{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:5px 12px;cursor:pointer}
+.barra button:hover{border-color:var(--ouro)}
+.conta{color:var(--mute);font-variant-numeric:tabular-nums;min-width:56px;text-align:center}
+body.lista .barra .nav{display:none}
+@media print{.barra{display:none}.slide{display:block!important;page-break-after:always}}
+</style>
+</head>
+<body>
+<div class="palco" id="palco">
+
+<!-- 1 -->
+<section class="slide ativo">
+  <div class="tag">Indaiá · 7 de outubro de 2026</div>
+  <h1>O Catálogo do Indaiá</h1>
+  <p class="sub">O Painel de Links virou a vitrine do que a gente vende. O cadastro do produto, o Banco de Mídias e o painel passam a ser três portas da mesma ficha.</p>
+  <div class="cards">
+    <div class="card kpi"><div class="n">677</div><p>produtos ativos no cadastro</p></div>
+    <div class="card kpi ruim"><div class="n">191</div><p>saem da oferta nesta revisão</p></div>
+    <div class="card kpi bom"><div class="n">208</div><p>produtos que o Catálogo mostra hoje, com regra e material</p></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="slide">
+  <div class="tag">De onde partimos</div>
+  <h2>O que a venda sofria</h2>
+  <p class="sub">Lemos as 354 divergências registradas entre 05/09 e 05/10. Não são sobre preço: são sobre o cliente entender outra coisa.</p>
+  <table>
+    <tr><th>O cliente entendeu que…</th><th class="num">Casos</th><th>O que faltava</th></tr>
+    <tr><td>a cerimônia estava inclusa no espaço</td><td class="num">49</td><td>produto de cerimônia (todos desativados desde 23/07)</td></tr>
+    <tr><td>as flores vinham com o pacote de decoração</td><td class="num">33</td><td>o nome dizia "Decoração"; a regra não estava escrita</td></tr>
+    <tr><td>a taxa de equipe era outra</td><td class="num">32</td><td>15% fixo para tudo; coquetel precisa de 30%</td></tr>
+    <tr><td>a pista de LED era maior</td><td class="num">27</td><td>o tamanho não estava no nome</td></tr>
+    <tr><td>o open bar tinha outra cerveja</td><td class="num">17</td><td>"Open bar 2" não diz a marca</td></tr>
+  </table>
+  <div class="nota">Um terço das divergências se resolve com <b>nome certo, regra escrita e material na mão do vendedor</b>. O resto é contrato e disciplina de venda.</div>
+</section>
+
+<!-- 3 -->
+<section class="slide">
+  <div class="tag">O painel de links</div>
+  <h2>De 18 categorias para 7 famílias</h2>
+  <p class="sub">O segmento deixou de ser categoria e virou filtro. Acabou o "Coquetel" ao lado de "Coquetel — 15 Anos".</p>
+  <div class="antes-depois">
+    <div class="bloco ruim"><h3>Antes</h3><ul>
+      <li>18 categorias misturando produto, planilha e senha</li>
+      <li>"Pacotes — Casamento" e "Pacotes — 15 Anos": o segmento duplicava a lista</li>
+      <li>81 links, zero ligação com o cadastro de produto</li>
+      <li>310 produtos ativos sem nenhum material</li>
+    </ul></div>
+    <div class="bloco bom"><h3>Agora</h3><ul>
+      <li>Menu lateral com duas entradas: <b>Catálogo</b> (produto) e <b>Administrativo</b> (apoio, planilha, senha)</li>
+      <li>7 famílias: Gastronomia · Bebidas · Mobílias · Floral · Audiovisual & DJ · Assessoria & Cerimonial · Espaços, Hospedagem & Kids</li>
+      <li>Filtro por <b>cidade</b> e <b>tipo de evento</b> (Casamento · 15 Anos · Corporativo · Formatura · Outros), lendo os campos que o orçamento já usa</li>
+      <li>Cada material vira uma <b>ficha</b> ligada aos produtos do CRM</li>
+    </ul></div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="slide">
+  <div class="tag">Uma leitura só</div>
+  <h2>Pacote · Adicional · Avulso, em toda família</h2>
+  <p class="sub">O vendedor aprende uma regra e ela vale para tudo.</p>
+  <div class="cards">
+    <div class="card c-cad"><h3>Pacote</h3><p>resolve sozinho: o menu, o open bar, o pacote de mobílias, a cerimônia.</p></div>
+    <div class="card c-pai"><h3>Adicional</h3><p>entra junto com um pacote: lanche da madrugada, arranjo, cenário, mobílias Elegance.</p></div>
+    <div class="card c-fic"><h3>Avulso</h3><p>item solto, um card por produto, organizado em subgrupos: Mesas e cadeiras · Lounge · Decoração de mesas · Iluminação · Cerimônia · Cenários · Tapetes e apoio.</p></div>
+  </div>
+  <div class="nota">Variação de tom, acabamento ou tamanho vira <b>um card só</b>: Árvore Francesa (branca · rosa), Sofá (bege · terracota), Mesa de Doces (espelhada · demolição), Painel de LED (4x2 · 6x3). Igual ao Buffet, que mostra os menus dentro.</div>
+</section>
+
+<!-- 5 -->
+<section class="slide">
+  <div class="tag">A ficha</div>
+  <h2>O que o vendedor vê ao abrir um produto</h2>
+  <div class="fluxo">
+    <div class="passo"><div class="p">1</div><h3>Material para enviar</h3><p>o link da página ou PDF, por segmento. Clicável, com contador de acesso.</p></div>
+    <div class="passo"><div class="p">2</div><h3>Fotos para enviar</h3><p>as fotos do produto, com link público para copiar e mandar como manda um PDF.</p></div>
+    <div class="passo"><div class="p">3</div><h3>Regra de venda</h3><p>7 campos: o que é · inclui · não inclui · onde e quando vale · taxas e equipe · exige · atenção.</p></div>
+    <div class="passo"><div class="p">4</div><h3>Itens que entram no orçamento</h3><p>os produtos do CRM na escada de preço, com margem mínima (só Pós e admin) e vínculos.</p></div>
+    <div class="passo"><div class="p">5</div><h3>Cláusulas</h3><p>o que o contrato dispara quando esse produto entra.</p></div>
+  </div>
+  <div class="nota">Só o superadmin edita a regra depois de publicada. Produto retirado da oferta não aparece — o admin consegue espiar o que saiu.</div>
+</section>
+
+<!-- 6 -->
+<section class="slide">
+  <div class="tag">A redução</div>
+  <h2>191 produtos saem da oferta</h2>
+  <p class="sub">Critério: vende pouco e pesa pouco na família, duplicata de cadastro, variação que vira regra de preço, ou o que não é produto de venda.</p>
+  <table>
+    <tr><th>Família</th><th class="num">Saem</th><th>Exemplos</th></tr>
+    <tr><td>Mobílias</td><td class="num">51</td><td>Mesa Quadrada 1 e 2, Kit Imperial, Mini lounge, Cadeira Tiffany, Pergolado</td></tr>
+    <tr><td>Alimentação</td><td class="num">41</td><td>Menu Vegetariano, Empratado, Brunch, Coffee Networking por pax, Grill</td></tr>
+    <tr><td>Bebidas</td><td class="num">36</td><td>Open bar de drinks, Cascata de Negroni, Boat Bar, variações do Open de Caipirinha</td></tr>
+    <tr><td>Floral</td><td class="num">33</td><td>Decoração Floral genérica, cilindros de vela, arranjos naturais, vasos</td></tr>
+    <tr><td>Audiovisual e LED</td><td class="num">28</td><td>os 4 cadastros de DJ fora dos 3 pacotes, 6 túneis de LED, Estrutura Audiovisual</td></tr>
+  </table>
+  <div class="cards">
+    <div class="card kpi ruim"><div class="n">108</div><p>saem agora: sem evento futuro</p></div>
+    <div class="card kpi"><div class="n">83</div><p>saem depois do último evento já contratado</p></div>
+    <div class="card kpi"><div class="n">0</div><p>desativados no sistema até aqui: contrato assinado não muda</p></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="slide">
+  <div class="tag">Nomenclatura</div>
+  <h2>O nome diz o que entrega</h2>
+  <p class="sub">Um padrão para 61 itens avulsos já aprovado; 85 nomes do catálogo mudam.</p>
+  <div class="antes-depois">
+    <div class="bloco ruim"><h3>Hoje</h3><ul>
+      <li>Pacote Decoração Boho · Só Itens (flores não inclusas)</li>
+      <li>Lustre Paris ( ME / SE ) e Lustre Paris (JO)</li>
+      <li>Kit Suporte de Doces (10und)</li>
+      <li>Cad. Madeira e Cadeira de Madeira</li>
+      <li>Tunel de Led (Mezanino e Esp. Joinville)</li>
+    </ul></div>
+    <div class="bloco bom"><h3>Padrão</h3><ul>
+      <li><b>Pacote de Mobílias Boho</b> — "Mobílias" avisa que a flor não vem</li>
+      <li><b>Lustre Paris</b> — o espaço vai para o campo de espaços, que o filtro lê</li>
+      <li><b>Suporte de Doces</b> — a quantidade vai para o campo</li>
+      <li><b>Cadeiras Jantar</b> — madeira · medalhão como variações</li>
+      <li>separador " · ", sem abreviar, até 45 caracteres</li>
+    </ul></div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="slide">
+  <div class="tag">Como as três ferramentas se conversam</div>
+  <h2>Uma ficha, três portas</h2>
+  <div class="liga">
+    <div class="no cad"><h3>Cadastro de produto</h3><p>nome, preço, espaços onde vale, tipos de evento, taxa de equipe, reajuste, margem por setor. <b>Só superadmin cadastra.</b></p></div>
+    <div class="seta">→</div>
+    <div class="no fic"><h3>Catálogo</h3><p>a ficha: junta o produto, a regra escrita, o material e a foto. É o que o vendedor abre e manda para o cliente.</p></div>
+    <div class="seta">←</div>
+    <div class="no mid"><h3>Banco de Mídias</h3><p>a foto: galeria do produto ou a foto curada "Itens Decorativos — peça". 26 peças já têm.</p></div>
+  </div>
+  <div class="cards" style="margin-top:14px">
+    <div class="card c-pai"><h3>Painel de Links</h3><p>o material (página, PDF, vídeo) continua morando aqui. A ficha só aponta para ele.</p></div>
+    <div class="card"><h3>Quem lê o painel hoje</h3><p>a Área do Cliente (9 categorias, 61 links) e o dossiê da reunião final. Nada de orçamento, contrato ou preço.</p></div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section class="slide">
+  <div class="tag">Produto novo</div>
+  <h2>Só nasce pronto para vender</h2>
+  <p class="sub">Vendedor não pede cadastro. Superadmin cadastra, e o produto só sai do rascunho quando os 9 itens estão fechados.</p>
+  <div class="fluxo">
+    <div class="passo"><div class="p">1–3</div><h3>Identidade</h3><p>nome no padrão, família, formato (pacote · adicional · avulso), segmentos</p></div>
+    <div class="passo"><div class="p">4</div><h3>Regra escrita</h3><p>pelo menos "o que é" e "o que não inclui"</p></div>
+    <div class="passo"><div class="p">5–6</div><h3>Material e foto</h3><p>link publicado e etiqueta no Banco de Mídias</p></div>
+    <div class="passo"><div class="p">7</div><h3>Comercial</h3><p>preço, cobra por pessoa ou evento, bloco de margem, onde vale, quem vende</p></div>
+    <div class="passo"><div class="p">8</div><h3>Taxa e reajuste</h3><p>taxa de equipe: não cobra · régua da casa · percentual próprio; reajuste anual sim ou não</p></div>
+    <div class="passo"><div class="p">9</div><h3>Cláusula</h3><p>nenhuma, existente ou nova</p></div>
+  </div>
+  <div class="nota">Venda pontual fora do catálogo é <b>item sob medida</b> no orçamento. Repetiu três vezes, o sistema avisa que virou produto.</div>
+</section>
+
+<!-- 10 -->
+<section class="slide">
+  <div class="tag">Taxa de equipe e margem</div>
+  <h2>Três camadas, uma régua</h2>
+  <p class="sub">Hoje a taxa de equipe é 15% para tudo, gravada no serviço. O coquetel precisa de 30% e não há onde dizer isso.</p>
+  <table>
+    <tr><th>Camada</th><th>Quem define</th><th>Taxa de equipe</th><th>Margem mínima</th></tr>
+    <tr><td>Régua da casa</td><td>superadmin</td><td>15%</td><td>Sociais base · Ação Gerente e Corporativo −5% · Pós −10%</td></tr>
+    <tr><td>Exceção por bloco</td><td>superadmin</td><td>Coquetel 30%</td><td>mobília no Pós 40% · taxa e rolha 0</td></tr>
+    <tr><td>Exceção do produto</td><td>superadmin</td><td>campo no cadastro</td><td>campo no cadastro</td></tr>
+  </table>
+  <div class="nota">Campo vazio herda a camada de cima. Isso é cadastro + orçamento + aditivo: vai em fases, depois do painel, sem mexer em contrato assinado.</div>
+</section>
+
+<!-- 11 -->
+<section class="slide">
+  <div class="tag">Fotos</div>
+  <h2>Três fontes, nessa ordem</h2>
+  <div class="fluxo">
+    <div class="passo"><div class="p">1</div><h3>Foto do material</h3><p>a capa da página ou do PDF publicado</p></div>
+    <div class="passo"><div class="p">2</div><h3>Galeria do produto</h3><p>a aba Fotos do cadastro — a mesma que a loja e a Área do Cliente usam</p></div>
+    <div class="passo"><div class="p">3</div><h3>Banco de Mídias</h3><p>as fotos curadas "Itens Decorativos — peça": 150 fotos, 26 peças</p></div>
+  </div>
+  <div class="cards">
+    <div class="card kpi bom"><div class="n">138</div><p>dos 196 produtos do catálogo já tinham foto na galeria</p></div>
+    <div class="card kpi"><div class="n">26</div><p>peças de mobília e LED cobertas pelo Banco de Mídias</p></div>
+    <div class="card kpi ruim"><div class="n">~40</div><p>ainda sem foto: a lista do fotógrafo está pronta</p></div>
+  </div>
+  <div class="nota">Card sem foto mostra <b>sugestões do Banco de Mídias</b> pela busca da própria tela — não é a foto oficial, é para escolher e subir no cadastro.</div>
+</section>
+
+<!-- 12 -->
+<section class="slide">
+  <div class="tag">O achado mais caro</div>
+  <h2>Cerimônia: ninguém cobra desde abril</h2>
+  <p class="sub">Em 23/07/2026, 14 produtos de cerimônia foram desativados. O substituto ("Área externa") nunca entrou em contrato.</p>
+  <div class="cards">
+    <div class="card kpi ruim"><div class="n">R$ 1,06 mi</div><p>de histórico de cerimônia externa e casamento na praia</p></div>
+    <div class="card kpi ruim"><div class="n">256</div><p>contratos novos desde 23/07 — nenhum cobra cerimônia</p></div>
+    <div class="card kpi"><div class="n">9</div><p>pacotes propostos, um por local, com o dia da semana na regra de preço</p></div>
+  </div>
+  <p style="margin-top:16px"><b>Itapema</b> Praia · Cascata · Figueira · Salão Principal &nbsp;·&nbsp; <b>Florianópolis</b> Flutuante &nbsp;·&nbsp; <b>Blumenau</b> Capela · Castelo &nbsp;·&nbsp; <b>Joinville</b> Garden &nbsp;·&nbsp; <b>Nova Veneza</b> Lago / Gramado</p>
+  <div class="nota">Decisão da reunião: a cerimônia está <b>inclusa na locação</b> ou <b>paramos de cobrar</b>? Os dados não distinguem. Se não está inclusa, são seis meses sem faturar o item e 152 eventos futuros contratados.</div>
+</section>
+
+<!-- 13 -->
+<section class="slide">
+  <div class="tag">Decisões abertas</div>
+  <h2>O que a reunião precisa fechar</h2>
+  <table>
+    <tr><th>Assunto</th><th>A decisão</th></tr>
+    <tr><td>Cerimônia</td><td>inclusa na locação ou volta como produto? Nova Veneza: um pacote ou Lago e Gramado?</td></tr>
+    <tr><td>DJ</td><td>fica só o Pacote audiovisual - DJ. Mantém R$ 10.000 ou sobe? Preenche o preço por dia da semana?</td></tr>
+    <tr><td>Taxa de equipe</td><td>quais produtos fogem dos 15%, e o aditivo do Pós em contrato migrado passa a cobrar?</td></tr>
+    <tr><td>Área do Cliente</td><td>visibilidade por link (hoje é por categoria), para só publicar o que estiver 100%</td></tr>
+    <tr><td>Fotos</td><td>quem fotografa o que falta, e até quando</td></tr>
+    <tr><td>Renomeação</td><td>aplicar os 85 nomes novos no CRM junto com a migração dos campos (espaço, quantidade, cor)</td></tr>
+  </table>
+</section>
+
+<!-- 14 -->
+<section class="slide">
+  <div class="tag">Próximos passos</div>
+  <h2>Em ordem, sem misturar</h2>
+  <div class="fluxo">
+    <div class="passo"><div class="p">AGORA</div><h3>Validação interna</h3><p>o Catálogo está no teste local. Só front, sem banco, sem risco para a Área do Cliente.</p></div>
+    <div class="passo"><div class="p">1</div><h3>Subir o painel</h3><p>branch pronta e validada: tipos, build, testes. Merge e deploy com o Arles.</p></div>
+    <div class="passo"><div class="p">2</div><h3>Fotos e materiais</h3><p>fotografar o que falta; publicar o material das cerimônias e dos pacotes de formatura.</p></div>
+    <div class="passo"><div class="p">3</div><h3>Desativar os 191</h3><p>em duas ondas, com script, depois de aprovada a lista.</p></div>
+    <div class="passo"><div class="p">4</div><h3>Cadastro de produto</h3><p>campos de taxa, reajuste, ficha e prontidão. Migration + código juntos.</p></div>
+    <div class="passo"><div class="p">5</div><h3>Taxa por produto</h3><p>orçamento, aditivo e contrato passam a respeitar o percentual.</p></div>
+  </div>
+  <div class="nota">Regra do projeto: <b>nada em produção sem pedido</b>, e o cadastro de produto não sobe junto com o painel.</div>
+</section>
+
+</div>
+
+<div class="barra">
+  <button class="nav" id="ant">&#8592;</button>
+  <span class="conta" id="conta">1 / 14</span>
+  <button class="nav" id="pro">&#8594;</button>
+  <button id="blista">Ver tudo</button>
+  <button id="btema">Tema</button>
+</div>
+
+<script>
+var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'))
+var conta = document.getElementById('conta')
+var i = 0
+function mostra(n) {
+  i = Math.max(0, Math.min(slides.length - 1, n))
+  slides.forEach(function (s, k) { s.classList.toggle('ativo', k === i) })
+  conta.textContent = (i + 1) + ' / ' + slides.length
+  window.scrollTo({ top: 0 })
+}
+document.getElementById('ant').addEventListener('click', function () { mostra(i - 1) })
+document.getElementById('pro').addEventListener('click', function () { mostra(i + 1) })
+document.addEventListener('keydown', function (e) {
+  if (document.body.classList.contains('lista')) return
+  if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); mostra(i + 1) }
+  if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); mostra(i - 1) }
+  if (e.key === 'Home') mostra(0)
+  if (e.key === 'End') mostra(slides.length - 1)
+})
+document.getElementById('blista').addEventListener('click', function () {
+  var lista = document.body.classList.toggle('lista')
+  this.textContent = lista ? 'Ver slide a slide' : 'Ver tudo'
+  if (!lista) mostra(i)
+})
+document.getElementById('btema').addEventListener('click', function () {
+  var r = document.documentElement
+  r.dataset.theme = r.dataset.theme === 'claro' ? '' : 'claro'
+})
+mostra(0)
+</script>
+</body>
+</html>

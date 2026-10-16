@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mobília do casamento · os três pacotes</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#faf8f5; --card:#fff; --fg:#20201e; --mute:#7d7a72; --linha:#e7e2d9;
+  --ouro:#a98141; --ouro-s:#f3ead9; --head:#efe9df; --sombra:0 1px 2px rgba(32,32,30,.06),0 8px 22px rgba(32,32,30,.05);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#17171a; --card:#1f1f23; --fg:#f0ede7; --mute:#9a958c; --linha:#33333a;
+  --ouro:#d8ad64; --ouro-s:#33291a; --head:#26262b; --sombra:0 1px 2px rgba(0,0,0,.4),0 10px 26px rgba(0,0,0,.33);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#17171a; --card:#1f1f23; --fg:#f0ede7; --mute:#9a958c; --linha:#33333a;
+  --ouro:#d8ad64; --ouro-s:#33291a; --head:#26262b; --sombra:0 1px 2px rgba(0,0,0,.4),0 10px 26px rgba(0,0,0,.33);
+  color-scheme:dark;
+}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 "Segoe UI",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+.pg{max-width:1180px;margin:0 auto;padding-block:30px 60px;padding-left:18px;padding-right:18px}
+h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spacing:-.2px;text-wrap:balance}
+.lead{color:var(--mute);margin:0 0 4px;max-width:66ch}
+.topo{border-bottom:1px solid var(--linha);padding-bottom:20px;margin-bottom:8px;display:flex;gap:18px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+.tema{background:var(--card);color:var(--mute);border:1px solid var(--linha);border-radius:999px;padding:7px 14px;font-size:12.5px;cursor:pointer;white-space:nowrap}
+.tema:hover{color:var(--fg);border-color:var(--ouro)}
+.idx{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 0}
+.idx a{text-decoration:none;color:var(--fg);background:var(--card);border:1px solid var(--linha);border-radius:999px;padding:7px 15px;font-size:13.5px;box-shadow:var(--sombra)}
+.idx a:hover{border-color:var(--ouro);color:var(--ouro)}
+.est{margin-top:54px;scroll-margin-top:14px}
+.est-h{display:flex;gap:20px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;border-bottom:2px solid var(--ouro);padding-bottom:12px}
+.est-h h2{font:600 25px/1.2 Georgia,serif;margin:0;display:flex;align-items:baseline;gap:11px;flex-wrap:wrap}
+.est-h h2 small{font:400 14px/1.4 "Segoe UI",system-ui,sans-serif;color:var(--mute)}
+.prs{display:flex;gap:9px;flex-wrap:wrap}
+.pr{background:var(--card);border:1px solid var(--linha);border-radius:10px;padding:8px 13px;min-width:116px;box-shadow:var(--sombra)}
+.pr b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--mute);font-weight:600}
+.pr span{display:block;font:600 17px/1.3 "Segoe UI",system-ui,sans-serif;font-variant-numeric:tabular-nums}
+.pr i{display:block;font-size:11.5px;font-style:normal;color:var(--mute)}
+.filtro{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:16px 0 4px}
+.fl{font-size:12.5px;color:var(--mute)}
+.nb{background:var(--card);border:1px solid var(--linha);color:var(--fg);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer}
+.nb:hover{border-color:var(--ouro)}
+.nb[aria-pressed="true"]{background:var(--ouro);border-color:var(--ouro);color:#fff;font-weight:600}
+.cont{margin-left:auto;font-size:12.5px;color:var(--mute)}
+.gp{margin-top:26px}
+.gp h3{font:600 12px/1 "Segoe UI",system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--ouro);margin:0 0 12px;padding-bottom:7px;border-bottom:1px solid var(--linha)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(188px,1fr));gap:14px}
+.cd{margin:0;background:var(--card);border:1px solid var(--linha);border-radius:12px;overflow:hidden;box-shadow:var(--sombra);transition:opacity .18s,transform .18s}
+.cd.apaga{opacity:.22}
+.cd-i{aspect-ratio:4/3;background:var(--head);display:grid;place-items:center;overflow:hidden}
+.cd-i img{width:100%;height:100%;max-width:100%;object-fit:cover;display:block;cursor:zoom-in}
+.cd-i img:hover{transform:scale(1.03);transition:transform .3s}
+.semfoto{font-size:12px;color:var(--mute);text-align:center;padding:10px;line-height:1.4}
+.cd.nf .cd-i{background:repeating-linear-gradient(135deg,var(--head),var(--head) 9px,transparent 9px,transparent 18px)}
+.cd figcaption{padding:9px 11px 11px;display:flex;flex-direction:column;gap:7px;min-width:0}
+.cd-n{font-size:13.5px;font-weight:600;line-height:1.3}
+.cd-s{display:flex;gap:5px;flex-wrap:wrap}
+.sl{display:inline-flex;align-items:center;gap:3px;border-radius:5px;font-size:11px;font-weight:700;padding:2px 6px;font-variant-numeric:tabular-nums}
+.sl.on{background:var(--ouro-s);color:var(--ouro);border:1px solid color-mix(in srgb,var(--ouro) 35%,transparent)}
+.sl.off{background:transparent;color:var(--mute);border:1px dashed var(--linha);opacity:.6}
+.sl i{font-style:normal;font-weight:600;opacity:.95}
+.sl i::before{content:"·";margin-right:3px;opacity:.5}
+.tbw{margin-top:40px}
+.tbw h3{font:600 12px/1 "Segoe UI",system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--ouro);margin:0 0 12px;padding-bottom:7px;border-bottom:1px solid var(--linha)}
+.tb{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--linha);border-radius:10px;overflow:hidden;font-size:13.5px}
+.tb col.c1{width:40%}
+.tb thead th{background:var(--head);text-align:left;padding:9px 12px;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute);border-bottom:1px solid var(--linha)}
+.tb thead th:not(:first-child){text-align:center}
+.tb tbody th{text-align:left;font-weight:500;padding:7px 12px;border-bottom:1px solid var(--linha)}
+.tb tbody td{text-align:center;padding:7px 10px;border-bottom:1px solid var(--linha);font-variant-numeric:tabular-nums}
+.tb tr.gr td{background:var(--ouro-s);color:var(--ouro);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.09em;padding:6px 12px;text-align:left}
+.tb .nao{color:var(--mute);opacity:.5}
+.tb .mud{background:var(--ouro-s);color:var(--ouro);border-radius:4px;padding:1px 5px;font-weight:600}
+.tb .def{font-size:11px;color:var(--mute)}
+.tb .mute{color:var(--mute);font-size:11.5px}
+.rod{margin-top:46px;border-top:1px solid var(--linha);padding-top:16px;color:var(--mute);font-size:12.5px}
+.lb{position:fixed;inset:0;z-index:40;display:none;place-items:center;background:rgba(0,0,0,.86);padding:24px}
+.lb.on{display:grid}
+.lb-c{max-width:min(900px,94vw);display:flex;flex-direction:column;gap:9px}
+.lb img{max-width:100%;max-height:80vh;border-radius:12px;object-fit:contain;background:#111}
+.lb-t{color:#fff;font-size:15px;font-weight:700;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin:0}
+.lb-t small{font-weight:400;font-size:12.5px;opacity:.68}
+.lb-x{position:fixed;top:14px;right:16px;background:rgba(255,255,255,.15);color:#fff;border:0;border-radius:999px;width:38px;height:38px;font-size:19px;cursor:pointer}
+@media (max-width:620px){
+  .pg{padding-block:22px 44px}
+  h1{font-size:24px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(142px,1fr));gap:10px}
+  .tbw{overflow-x:auto}
+  .tb{min-width:420px}
+  .prs{width:100%}
+  .pr{flex:1;min-width:92px}
+}
+</style></head>
+<body><div class="pg">
+<div class="topo">
+  <div>
+    <h1>Mobília do casamento</h1>
+    <p class="lead">As peças de cada estilo, com a foto de cada uma, e o que vem em cada nível. Clique na foto para ver grande.</p>
+    <p class="lead"><b>Só mobiliário:</b> o floral é contratado depois, à parte.</p>
+  </div>
+  <button class="tema" id="tema">Tema</button>
+</div>
+<nav class="idx"><a href="#beauty">Beauty</a><a href="#boho">Boho</a><a href="#cristal">Cristal</a></nav>
+<section class="est" id="beauty" data-est="beauty">
+<header class="est-h">
+  <h2>Beauty<small>espelho e dourado</small></h2>
+  <div class="prs"><div class="pr"><b>Nível 1</b><span>R$ 7.000</span><i>o padrão do contrato</i></div><div class="pr"><b>Nível 2</b><span>R$ 14.000</span><i>o do meio</i></div><div class="pr"><b>Nível 3</b><span>R$ 30.000</span><i>o completo</i></div></div>
+</header>
+<div class="filtro"><span class="fl">Ver só o que vem no</span><button class="nb" data-nivel="1" aria-pressed="false">Nível 1</button><button class="nb" data-nivel="2" aria-pressed="false">Nível 2</button><button class="nb" data-nivel="3" aria-pressed="false">Nível 3</button><button class="nb todos" data-nivel="0" aria-pressed="true">Tudo</button><span class="cont">27 peças</span></div>
+<div class="gp"><h3>Cerimônia</h3><div class="grid"><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1JH20MEUmeV-su-diTLDNF6zmB9S-nr2d-thumb.jpg" alt="Arco padrão" loading="lazy" data-nome="Arco padrão" data-fonte="ARCO DA CERIMÔNIA"></div>
+<figcaption><span class="cd-n">Arco padrão</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl off" title="não vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/produtos/thumb/prod-arco-em-espiral-cor-branca.webp" alt="Arco padrão ou espiral" loading="lazy" data-nome="Arco padrão ou espiral" data-fonte="Arco em Espiral - Cor Branca"></div>
+<figcaption><span class="cd-n">Arco padrão ou espiral</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>padrão ou espiral</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1CR_b1R6K4Z3MwRNsA6Ii3nt9souecBJW-thumb.jpg" alt="Aparador do celebrante" loading="lazy" data-nome="Aparador do celebrante" data-fonte="2024 PACOTE BEAUTY APARADOR DE CERIMONIA"></div>
+<figcaption><span class="cd-n">Aparador do celebrante</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1iyiBKdA2img8Ona7fM8rNQFdggCakNPx-thumb.jpg" alt="Trilho da cerimônia de tecido" loading="lazy" data-nome="Trilho da cerimônia de tecido" data-fonte="2024 PACOTE MINI TRILHO PARA A CERIMONIA ESTÚDIOREVERSA"></div>
+<figcaption><span class="cd-n">Trilho da cerimônia de tecido</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl off" title="não vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1YOOThPqryZWeH2ee9KG1XuwGm3RrLUAH-thumb.jpg" alt="Trilho da cerimônia de espelho, 10 m" loading="lazy" data-nome="Trilho da cerimônia de espelho, 10 m" data-fonte="2024 PACOTE BEAUTY TAPETE DE ESPELHO "></div>
+<figcaption><span class="cd-n">Trilho da cerimônia de espelho, 10 m</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1pwlH-a_AlfP8lxu_y144q1EHkCuSscb0-thumb.jpg" alt="Vaso de chão no trilho" loading="lazy" data-nome="Vaso de chão no trilho" data-fonte="2023 DECORAÇÃO VASOS FLOREIRAS"></div>
+<figcaption><span class="cd-n">Vaso de chão no trilho</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>6</i></span></span></figcaption>
+</figure></div></div><div class="gp"><h3>Mesa dos noivos</h3><div class="grid"><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1cIqLJBYVX6rzj1xqAhMZqr5VgDFaw1qE-thumb.jpg" alt="Mesa espelhada" loading="lazy" data-nome="Mesa espelhada" data-fonte="2024 PACOTE BEAUTY MESA ESPELHADA NOIVOS"></div>
+<figcaption><span class="cd-n">Mesa espelhada</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1lne4o58kfOvlBHpdWbXldfjzDmv2860w-thumb.jpg" alt="Cadeira medalhão" loading="lazy" data-nome="Cadeira medalhão" data-fonte="2024 PACOTE BEAUTY CADEIRAS MEDALHÃO PARA OS NOIVOS"></div>
+<figcaption><span class="cd-n">Cadeira medalhão</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1<i>2</i></span><span class="sl on" data-n="2" title="vem no nível 2">2<i>6</i></span><span class="sl on" data-n="3" title="vem no nível 3">3<i>6</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/10YmR5NuacuF3QgvRE_48iCH7xRqDvt42-thumb.jpg" alt="Taça de cristal" loading="lazy" data-nome="Taça de cristal" data-fonte="2020 DECORAÇÃO TAÇAS BICO DE JACA"></div>
+<figcaption><span class="cd-n">Taça de cristal</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1<i>2</i></span><span class="sl on" data-n="2" title="vem no nível 2">2<i>6</i></span><span class="sl on" data-n="3" title="vem no nível 3">3<i>6</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/chat/thumb/chat-2531.jpg" alt="Jardim suspenso sobre a mesa" loading="lazy" data-nome="Jardim suspenso sobre a mesa" data-fonte="Itens Decorativos — Arranjo Suspenso"></div>
+<figcaption><span class="cd-n">Jardim suspenso sobre a mesa</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>1 sem preço no cadastro</i></span></span></figcaption>
+</figure></div></div><div class="gp"><h3>Mesa de doces</h3><div class="grid"><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/12P8kJhgvtoF8PXJauaTxK-XV6N4f3UQH-thumb.jpg" alt="Mesa espelhada" loading="lazy" data-nome="Mesa espelhada" data-fonte="2024 PACOTE BEAUTY MESA ESPELHADA PARA DOCINHOS"></div>
+<figcaption><span class="cd-n">Mesa espelhada</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2<i>2</i></span><span class="sl on" data-n="3" title="vem no nível 3">3<i>2</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1OpE_StctuUZ7AcD_B5Ax4uFRowvmDR2M-thumb.jpg" alt="Tapete decorativo" loading="lazy" data-nome="Tapete decorativo" data-fonte="2024 PACOTE BEAUTY TAPETE DECORATIVO"></div>
+<figcaption><span class="cd-n">Tapete decorativo</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2<i>2</i></span><span class="sl on" data-n="3" title="vem no nível 3">3<i>2</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1kNfudyspLx_cjx9MPTCzhwHgjkOm7Zu--thumb.jpg" alt="Vaso Abóbora" loading="lazy" data-nome="Vaso Abóbora" data-fonte="2024 PACOTE BEAUTY VASO ABÓBORA MESA DE DOCINHOS"></div>
+<figcaption><span class="cd-n">Vaso Abóbora</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2<i>2</i></span><span class="sl on" data-n="3" title="vem no nível 3">3<i>2</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1XvngRxqIY7cSseh_ma9l_NNmQt8zAnka-thumb.jpg" alt="Vaso Firenze" loading="lazy" data-nome="Vaso Firenze" data-fonte="2024 PACOTE BEAUTY VASO FIRENZE MESA DE DOCINHOS"></div>
+<figcaption><span class="cd-n">Vaso Firenze</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>2</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1GPaqxD1I3GLrVxevbpETVQXP8IBR4Efl-thumb.jpg" alt="Suporte de doces" loading="lazy" data-nome="Suporte de doces" data-fonte="2024 PACOTE BEAUTY SUPORTE PARA DOCINHOS"></div>
+<figcaption><span class="cd-n">Suporte de doces</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2<i>10</i></span><span class="sl on" data-n="3" title="vem no nível 3">3<i>10</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/chat/thumb/chat-2559.jpg" alt="Moldura de LED" loading="lazy" data-nome="Moldura de LED" data-fonte="Itens Decorativos — Jardim de Led"></div>
+<figcaption><span class="cd-n">Moldura de LED</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure></div></div><div class="gp"><h3>Mesas dos convidados</h3><div class="grid"><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/produtos/thumb/prod-toalha-para-mesa-und.webp" alt="Toalha" loading="lazy" data-nome="Toalha" data-fonte="Toalha para Mesa (und)"></div>
+<figcaption><span class="cd-n">Toalha</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1qHHE2FgkyAYMlPiFDq754J8WWmla6JDe-thumb.jpg" alt="Sousplat" loading="lazy" data-nome="Sousplat" data-fonte="2024 PACOTE BEAUTY SOUSPLAT"></div>
+<figcaption><span class="cd-n">Sousplat</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1vXeHq4QAFO3hE6Ox9HY_w6OrmZq6etUK-thumb.jpg" alt="Guardanapo de tecido" loading="lazy" data-nome="Guardanapo de tecido" data-fonte="2024 PACOTE BEAUTY GUARDANAPOS DE TECIDO BRANCO"></div>
+<figcaption><span class="cd-n">Guardanapo de tecido</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1dWfiQ27Seno7PzbL2ZBUd4mWgdBePsAR-thumb.jpg" alt="Vaso por mesa 1 a cada 10 convidados 1 baixo" loading="lazy" data-nome="Vaso por mesa 1 a cada 10 convidados 1 baixo" data-fonte="2024 PACOTE BEAUTY FLOREIRAS BAIXAS DE MESA"></div>
+<figcaption><span class="cd-n">Vaso por mesa 1 a cada 10 convidados 1 baixo</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2<i>1 baixo</i></span><span class="sl off" title="não vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1NuyMZ0pKmRRK27H3e3ftbcSOd0lRkgGY-thumb.jpg" alt="Vaso por mesa 1 a cada 10 convidados 1, alto ou baixo" loading="lazy" data-nome="Vaso por mesa 1 a cada 10 convidados 1, alto ou baixo" data-fonte="2024 PACOTE BEAUTY VASO PEDESTAL"></div>
+<figcaption><span class="cd-n">Vaso por mesa 1 a cada 10 convidados 1, alto ou baixo</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>1, alto ou baixo</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1x8h6q8mdwdNTR491ORXsxfy3TucNh-N_-thumb.jpg" alt="Cadeira de madeira" loading="lazy" data-nome="Cadeira de madeira" data-fonte="2020 DECORAÇÃO CADEIRAS DE MADEIRA"></div>
+<figcaption><span class="cd-n">Cadeira de madeira</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure></div></div><div class="gp"><h3>Salão</h3><div class="grid"><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1MmDABFbv1Qhf_XL5PL0Cuh9z7eD9cHxC-thumb.jpg" alt="Letreiro LOVE aceso" loading="lazy" data-nome="Letreiro LOVE aceso" data-fonte="2024 PACOTE BEAUTY LOVE LUMINOSO"></div>
+<figcaption><span class="cd-n">Letreiro LOVE aceso</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1IYg-lrkyAYopXRQ81Jmgbng9LNR-QaSW-thumb.jpg" alt="Cortina de luz" loading="lazy" data-nome="Cortina de luz" data-fonte="2024 PACOTE BEAUTY CORTINA DE LED"></div>
+<figcaption><span class="cd-n">Cortina de luz</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1YWEkYJ1FPGTOsSCpSuItdHbFXUjFaCIl-thumb.jpg" alt="Vela decorativa" loading="lazy" data-nome="Vela decorativa" data-fonte="Velas decorativas (20 und) - 15 cm x 15cm x 15cm (AxLxP)"></div>
+<figcaption><span class="cd-n">Vela decorativa</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>20</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1KUxnFws3-URX1VJnNfDZgtwaFyhhsan4-thumb.jpg" alt="Velas Sparkle" loading="lazy" data-nome="Velas Sparkle" data-fonte="2022 DECORAÇÃO VELAS SPARKLES"></div>
+<figcaption><span class="cd-n">Velas Sparkle</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>20</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/chat/thumb/chat-2551.jpg" alt="Estante de velas de LED" loading="lazy" data-nome="Estante de velas de LED" data-fonte="Itens Decorativos — Estante de Velas"></div>
+<figcaption><span class="cd-n">Estante de velas de LED</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure></div></div>
+<div class="tbw"><h3>O que vem em cada nível</h3><table class="tb"><colgroup><col class="c1"><col><col><col></colgroup>
+<thead><tr><th>O que vem</th><th>Nível 1</th><th>Nível 2</th><th>Nível 3</th></tr></thead><tbody><tr class="gr"><td colspan="4">Cerimônia</td></tr><tr><th>Arco</th><td><span class="nao">—</span></td><td>padrão</td><td>padrão <span class="mud">ou espiral</span></td></tr><tr><th>Aparador do celebrante</th><td>branco</td><td>branco</td><td>branco</td></tr><tr><th>Trilho da cerimônia</th><td>de tecido</td><td><span class="mud">de espelho, 10 m</span></td><td>de espelho, 10 m</td></tr><tr><th>Vaso de chão no trilho</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td><span class="mud">6</span></td></tr><tr class="gr"><td colspan="4">Mesa dos noivos</td></tr><tr><th>Mesa espelhada</th><td>1</td><td>1</td><td>1</td></tr><tr><th>Cadeira medalhão</th><td>2</td><td><span class="mud">6</span></td><td>6</td></tr><tr><th>Taça de cristal</th><td><span class="mud">2</span></td><td><span class="mud">6</span></td><td><span class="mud">6</span></td></tr><tr><th>Jardim suspenso sobre a mesa</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td><span class="mud">1</span> <span class="def">sem preço no cadastro</span></td></tr><tr class="gr"><td colspan="4">Mesa de doces</td></tr><tr><th>Mesa espelhada</th><td>1</td><td><span class="mud">2</span></td><td>2</td></tr><tr><th>Tapete decorativo</th><td><span class="nao">—</span></td><td><span class="mud">2</span></td><td>2</td></tr><tr><th>Vaso Abóbora</th><td><span class="nao">—</span></td><td>2</td><td>2</td></tr><tr><th>Vaso Firenze</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td><span class="mud">2</span></td></tr><tr><th>Suporte de doces</th><td><span class="nao">—</span></td><td><span class="mud">10</span></td><td>10</td></tr><tr><th>Moldura de LED</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td>1</td></tr><tr class="gr"><td colspan="4">Mesas dos convidados</td></tr><tr><th>Toalha</th><td>✓</td><td>✓</td><td>✓</td></tr><tr><th>Sousplat</th><td><span class="mud">✓</span></td><td>✓</td><td>✓</td></tr><tr><th>Guardanapo de tecido</th><td><span class="mud">✓</span></td><td>✓</td><td>✓</td></tr><tr><th>Vaso por mesa <span class="mute">1 a cada 10 convidados</span></th><td><span class="nao">—</span></td><td><span class="mud">1 baixo</span></td><td><span class="mud">1, alto ou baixo</span></td></tr><tr><th>Cadeira de madeira</th><td><span class="mud">até 60 conv.</span></td><td><span class="mud">até 60 conv.</span></td><td><span class="mud">até 60 conv.</span></td></tr><tr class="gr"><td colspan="4">Salão</td></tr><tr><th>Letreiro LOVE aceso</th><td><span class="nao">—</span></td><td><span class="mud">1</span></td><td>1</td></tr><tr><th>Cortina de luz</th><td><span class="nao">—</span></td><td><span class="mud">1</span></td><td>1</td></tr><tr><th>Vela decorativa</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td>20</td></tr><tr><th>Velas Sparkle</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td><span class="mud">20</span></td></tr><tr><th>Estante de velas de LED</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td><span class="mud">1</span></td></tr><tr class="gr"><td colspan="4">Projeto</td></tr><tr><th>Projeto 3D do evento</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td><span class="mud">✓</span></td></tr></tbody></table></div>
+</section><section class="est" id="boho" data-est="boho">
+<header class="est-h">
+  <h2>Boho<small>madeira e luz quente</small></h2>
+  <div class="prs"><div class="pr"><b>Nível 1</b><span>R$ 7.000</span><i>o padrão do contrato</i></div><div class="pr"><b>Nível 2</b><span>R$ 14.000</span><i>o do meio</i></div><div class="pr"><b>Nível 3</b><span>R$ 30.000</span><i>o completo</i></div></div>
+</header>
+<div class="filtro"><span class="fl">Ver só o que vem no</span><button class="nb" data-nivel="1" aria-pressed="false">Nível 1</button><button class="nb" data-nivel="2" aria-pressed="false">Nível 2</button><button class="nb" data-nivel="3" aria-pressed="false">Nível 3</button><button class="nb todos" data-nivel="0" aria-pressed="true">Tudo</button><span class="cont">26 peças</span></div>
+<div class="gp"><h3>Cerimônia</h3><div class="grid"><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1OBpIoLBp67TatMOiPsiWYzBOpj3n7FOo-thumb.jpg" alt="Arco meia-lua" loading="lazy" data-nome="Arco meia-lua" data-fonte="2024 PACOTE BOHO DECORAÇÃO ARCO"></div>
+<figcaption><span class="cd-n">Arco meia-lua</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl off" title="não vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/produtos/thumb/prod-arco-em-espiral-cor-branca.webp" alt="Arco meia-lua ou espiral" loading="lazy" data-nome="Arco meia-lua ou espiral" data-fonte="Arco em Espiral - Cor Branca"></div>
+<figcaption><span class="cd-n">Arco meia-lua ou espiral</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>meia-lua ou espiral</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://boho-itens.eventosindaia.com.br/fotos/aparador-cerimonia.jpg" alt="Aparador do celebrante" loading="lazy" data-nome="Aparador do celebrante" data-fonte="Aparador de madeira no altar, com o tapete de espelho refletindo o corredor · foto do altar inteiro, não só do aparador"></div>
+<figcaption><span class="cd-n">Aparador do celebrante</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1iyiBKdA2img8Ona7fM8rNQFdggCakNPx-thumb.jpg" alt="Trilho da cerimônia de tecido" loading="lazy" data-nome="Trilho da cerimônia de tecido" data-fonte="2024 PACOTE MINI TRILHO PARA A CERIMONIA ESTÚDIOREVERSA"></div>
+<figcaption><span class="cd-n">Trilho da cerimônia de tecido</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl off" title="não vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1YOOThPqryZWeH2ee9KG1XuwGm3RrLUAH-thumb.jpg" alt="Trilho da cerimônia de espelho, 10 m" loading="lazy" data-nome="Trilho da cerimônia de espelho, 10 m" data-fonte="2024 PACOTE BEAUTY TAPETE DE ESPELHO "></div>
+<figcaption><span class="cd-n">Trilho da cerimônia de espelho, 10 m</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1pwlH-a_AlfP8lxu_y144q1EHkCuSscb0-thumb.jpg" alt="Vaso de chão no trilho" loading="lazy" data-nome="Vaso de chão no trilho" data-fonte="2023 DECORAÇÃO VASOS FLOREIRAS"></div>
+<figcaption><span class="cd-n">Vaso de chão no trilho</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>6</i></span></span></figcaption>
+</figure></div></div><div class="gp"><h3>Mesa dos noivos</h3><div class="grid"><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1jmv6elWMpUkZBinJKmjmhSJVPMrC0i9N-thumb.jpg" alt="Mesa de madeira" loading="lazy" data-nome="Mesa de madeira" data-fonte="2024 PACOTE MINI MESA DE DEMOLIÇÃO PARA OS NOIVOS"></div>
+<figcaption><span class="cd-n">Mesa de madeira</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1lne4o58kfOvlBHpdWbXldfjzDmv2860w-thumb.jpg" alt="Cadeira medalhão" loading="lazy" data-nome="Cadeira medalhão" data-fonte="2024 PACOTE BEAUTY CADEIRAS MEDALHÃO PARA OS NOIVOS"></div>
+<figcaption><span class="cd-n">Cadeira medalhão</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1<i>2</i></span><span class="sl on" data-n="2" title="vem no nível 2">2<i>6</i></span><span class="sl on" data-n="3" title="vem no nível 3">3<i>6</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/10YmR5NuacuF3QgvRE_48iCH7xRqDvt42-thumb.jpg" alt="Taça de cristal" loading="lazy" data-nome="Taça de cristal" data-fonte="2020 DECORAÇÃO TAÇAS BICO DE JACA"></div>
+<figcaption><span class="cd-n">Taça de cristal</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2<i>6</i></span><span class="sl on" data-n="3" title="vem no nível 3">3<i>6</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/chat/thumb/chat-2531.jpg" alt="Jardim suspenso sobre a mesa" loading="lazy" data-nome="Jardim suspenso sobre a mesa" data-fonte="Itens Decorativos — Arranjo Suspenso"></div>
+<figcaption><span class="cd-n">Jardim suspenso sobre a mesa</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>1 sem preço no cadastro</i></span></span></figcaption>
+</figure></div></div><div class="gp"><h3>Mesa de doces</h3><div class="grid"><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1pUoGWafT_OJEe-1_n0CRl6w6hJu1gpqB-thumb.jpg" alt="Mesa rústica" loading="lazy" data-nome="Mesa rústica" data-fonte="2024 PACOTE MINI MESA DE DEMOLIÇÃO DOCES"></div>
+<figcaption><span class="cd-n">Mesa rústica</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2<i>2</i></span><span class="sl on" data-n="3" title="vem no nível 3">3<i>2</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/produtos/thumb/prod-tapete-de-sisal.webp" alt="Tapete de sisal" loading="lazy" data-nome="Tapete de sisal" data-fonte="Tapete de Sisal"></div>
+<figcaption><span class="cd-n">Tapete de sisal</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2<i>2</i></span><span class="sl on" data-n="3" title="vem no nível 3">3<i>2</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://boho-itens.eventosindaia.com.br/fotos/suportes-baixos.jpg" alt="Vaso Gomado" loading="lazy" data-nome="Vaso Gomado" data-fonte="Suporte dourado baixo com arranjo de flores claras sobre a mesa · a foto publicada é com arranjo floral"></div>
+<figcaption><span class="cd-n">Vaso Gomado</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2<i>2</i></span><span class="sl on" data-n="3" title="vem no nível 3">3<i>2</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://boho-itens.eventosindaia.com.br/fotos/suportes-altos.jpg" alt="Vaso Atenas" loading="lazy" data-nome="Vaso Atenas" data-fonte="Suporte dourado alto sustentando arranjo de pampas e rosas no centro da mesa · a foto publicada é com arranjo floral"></div>
+<figcaption><span class="cd-n">Vaso Atenas</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>2</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1GPaqxD1I3GLrVxevbpETVQXP8IBR4Efl-thumb.jpg" alt="Suporte de doces" loading="lazy" data-nome="Suporte de doces" data-fonte="2024 PACOTE BEAUTY SUPORTE PARA DOCINHOS"></div>
+<figcaption><span class="cd-n">Suporte de doces</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2<i>10</i></span><span class="sl on" data-n="3" title="vem no nível 3">3<i>10</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/chat/thumb/chat-2559.jpg" alt="Moldura de LED" loading="lazy" data-nome="Moldura de LED" data-fonte="Itens Decorativos — Jardim de Led"></div>
+<figcaption><span class="cd-n">Moldura de LED</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure></div></div><div class="gp"><h3>Mesas dos convidados</h3><div class="grid"><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/produtos/thumb/prod-toalha-para-mesa-und.webp" alt="Toalha" loading="lazy" data-nome="Toalha" data-fonte="Toalha para Mesa (und)"></div>
+<figcaption><span class="cd-n">Toalha</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1qHHE2FgkyAYMlPiFDq754J8WWmla6JDe-thumb.jpg" alt="Sousplat" loading="lazy" data-nome="Sousplat" data-fonte="2024 PACOTE BEAUTY SOUSPLAT"></div>
+<figcaption><span class="cd-n">Sousplat</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1vXeHq4QAFO3hE6Ox9HY_w6OrmZq6etUK-thumb.jpg" alt="Guardanapo de tecido" loading="lazy" data-nome="Guardanapo de tecido" data-fonte="2024 PACOTE BEAUTY GUARDANAPOS DE TECIDO BRANCO"></div>
+<figcaption><span class="cd-n">Guardanapo de tecido</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/produtos/thumb/prod-pedestal-em-cuba.webp" alt="Pedestal por mesa 1 a cada 10 convidados" loading="lazy" data-nome="Pedestal por mesa 1 a cada 10 convidados" data-fonte="Pedestal em Cuba"></div>
+<figcaption><span class="cd-n">Pedestal por mesa 1 a cada 10 convidados</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2<i>1 baixo</i></span><span class="sl on" data-n="3" title="vem no nível 3">3<i>1, alto ou baixo</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1x8h6q8mdwdNTR491ORXsxfy3TucNh-N_-thumb.jpg" alt="Cadeira de madeira" loading="lazy" data-nome="Cadeira de madeira" data-fonte="2020 DECORAÇÃO CADEIRAS DE MADEIRA"></div>
+<figcaption><span class="cd-n">Cadeira de madeira</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure></div></div><div class="gp"><h3>Salão</h3><div class="grid"><figure class="cd">
+<div class="cd-i"><img src="https://boho-itens.eventosindaia.com.br/fotos/mesa-doces.jpg" alt="Pendente com lâmpadas" loading="lazy" data-nome="Pendente com lâmpadas" data-fonte="Estação de doces com mesas rústicas, suportes sextavados, cortina de LED e pendentes de lâmpadas · foto da mesa de doces com os pendentes acesos"></div>
+<figcaption><span class="cd-n">Pendente com lâmpadas</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2<i>2</i></span><span class="sl on" data-n="3" title="vem no nível 3">3<i>2</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1MmDABFbv1Qhf_XL5PL0Cuh9z7eD9cHxC-thumb.jpg" alt="Letreiro LOVE aceso" loading="lazy" data-nome="Letreiro LOVE aceso" data-fonte="2024 PACOTE BEAUTY LOVE LUMINOSO"></div>
+<figcaption><span class="cd-n">Letreiro LOVE aceso</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1IYg-lrkyAYopXRQ81Jmgbng9LNR-QaSW-thumb.jpg" alt="Cortina de luz" loading="lazy" data-nome="Cortina de luz" data-fonte="2024 PACOTE BEAUTY CORTINA DE LED"></div>
+<figcaption><span class="cd-n">Cortina de luz</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1KUxnFws3-URX1VJnNfDZgtwaFyhhsan4-thumb.jpg" alt="Velas Sparkle" loading="lazy" data-nome="Velas Sparkle" data-fonte="2022 DECORAÇÃO VELAS SPARKLES"></div>
+<figcaption><span class="cd-n">Velas Sparkle</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>20</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/chat/thumb/chat-2551.jpg" alt="Estante de velas de LED" loading="lazy" data-nome="Estante de velas de LED" data-fonte="Itens Decorativos — Estante de Velas"></div>
+<figcaption><span class="cd-n">Estante de velas de LED</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure></div></div>
+<div class="tbw"><h3>O que vem em cada nível</h3><table class="tb"><colgroup><col class="c1"><col><col><col></colgroup>
+<thead><tr><th>O que vem</th><th>Nível 1</th><th>Nível 2</th><th>Nível 3</th></tr></thead><tbody><tr class="gr"><td colspan="4">Cerimônia</td></tr><tr><th>Arco</th><td><span class="nao">—</span></td><td>meia-lua</td><td>meia-lua <span class="mud">ou espiral</span></td></tr><tr><th>Aparador do celebrante</th><td><span class="mud">madeira</span></td><td><span class="mud">madeira</span></td><td><span class="mud">madeira</span></td></tr><tr><th>Trilho da cerimônia</th><td>de tecido</td><td><span class="mud">de espelho, 10 m</span></td><td>de espelho, 10 m</td></tr><tr><th>Vaso de chão no trilho</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td><span class="mud">6</span></td></tr><tr class="gr"><td colspan="4">Mesa dos noivos</td></tr><tr><th>Mesa de madeira</th><td>1</td><td>1</td><td><span class="mud">1</span></td></tr><tr><th>Cadeira medalhão</th><td>2</td><td><span class="mud">6</span></td><td>6</td></tr><tr><th>Taça de cristal</th><td><span class="nao">—</span></td><td><span class="mud">6</span></td><td><span class="mud">6</span></td></tr><tr><th>Jardim suspenso sobre a mesa</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td><span class="mud">1</span> <span class="def">sem preço no cadastro</span></td></tr><tr class="gr"><td colspan="4">Mesa de doces</td></tr><tr><th>Mesa rústica</th><td><span class="mud">1</span></td><td>2</td><td>2</td></tr><tr><th>Tapete de sisal</th><td><span class="nao">—</span></td><td><span class="mud">2</span></td><td>2</td></tr><tr><th>Vaso Gomado</th><td><span class="nao">—</span></td><td>2</td><td>2</td></tr><tr><th>Vaso Atenas</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td><span class="mud">2</span></td></tr><tr><th>Suporte de doces</th><td><span class="nao">—</span></td><td><span class="mud">10</span></td><td>10</td></tr><tr><th>Moldura de LED</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td>1</td></tr><tr class="gr"><td colspan="4">Mesas dos convidados</td></tr><tr><th>Toalha</th><td>✓</td><td>✓</td><td>✓</td></tr><tr><th>Sousplat</th><td><span class="mud">✓</span></td><td>✓</td><td>✓</td></tr><tr><th>Guardanapo de tecido</th><td><span class="mud">✓</span></td><td>✓</td><td>✓</td></tr><tr><th>Pedestal por mesa <span class="mute">1 a cada 10 convidados</span></th><td><span class="nao">—</span></td><td>1 baixo</td><td><span class="mud">1, alto ou baixo</span></td></tr><tr><th>Cadeira de madeira</th><td><span class="mud">até 60 conv.</span></td><td><span class="mud">até 60 conv.</span></td><td><span class="mud">até 60 conv.</span></td></tr><tr class="gr"><td colspan="4">Salão</td></tr><tr><th>Pendente com lâmpadas</th><td><span class="nao">—</span></td><td><span class="mud">2</span></td><td>2</td></tr><tr><th>Letreiro LOVE aceso</th><td><span class="nao">—</span></td><td><span class="mud">1</span></td><td>1</td></tr><tr><th>Cortina de luz</th><td><span class="nao">—</span></td><td><span class="mud">1</span></td><td>1</td></tr><tr><th>Velas Sparkle</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td><span class="mud">20</span></td></tr><tr><th>Estante de velas de LED</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td><span class="mud">1</span></td></tr><tr class="gr"><td colspan="4">Projeto</td></tr><tr><th>Projeto 3D do evento</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td><span class="mud">✓</span></td></tr></tbody></table></div>
+</section><section class="est" id="cristal" data-est="cristal">
+<header class="est-h">
+  <h2>Cristal<small>vidro, espelho e branco</small></h2>
+  <div class="prs"><div class="pr"><b>Nível 2</b><span>R$ 14.000</span><i>o do meio</i></div><div class="pr"><b>Nível 3</b><span>R$ 30.000</span><i>o completo</i></div></div>
+</header>
+<div class="filtro"><span class="fl">Ver só o que vem no</span><button class="nb" data-nivel="2" aria-pressed="false">Nível 2</button><button class="nb" data-nivel="3" aria-pressed="false">Nível 3</button><button class="nb todos" data-nivel="0" aria-pressed="true">Tudo</button><span class="cont">27 peças</span></div>
+<div class="gp"><h3>Cerimônia</h3><div class="grid"><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/produtos/thumb/prod-arco-em-espiral-cor-branca.webp" alt="Arco espiral" loading="lazy" data-nome="Arco espiral" data-fonte="Arco em Espiral - Cor Branca"></div>
+<figcaption><span class="cd-n">Arco espiral</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1CR_b1R6K4Z3MwRNsA6Ii3nt9souecBJW-thumb.jpg" alt="Aparador do celebrante" loading="lazy" data-nome="Aparador do celebrante" data-fonte="2024 PACOTE BEAUTY APARADOR DE CERIMONIA"></div>
+<figcaption><span class="cd-n">Aparador do celebrante</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1iyiBKdA2img8Ona7fM8rNQFdggCakNPx-thumb.jpg" alt="Trilho da cerimônia de tecido" loading="lazy" data-nome="Trilho da cerimônia de tecido" data-fonte="2024 PACOTE MINI TRILHO PARA A CERIMONIA ESTÚDIOREVERSA"></div>
+<figcaption><span class="cd-n">Trilho da cerimônia de tecido</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl off" title="não vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1YOOThPqryZWeH2ee9KG1XuwGm3RrLUAH-thumb.jpg" alt="Trilho da cerimônia de espelho" loading="lazy" data-nome="Trilho da cerimônia de espelho" data-fonte="2024 PACOTE BEAUTY TAPETE DE ESPELHO "></div>
+<figcaption><span class="cd-n">Trilho da cerimônia de espelho</span><span class="cd-s"><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/chat/thumb/chat-2527.jpg" alt="Cilindro de vidro com vela no trilho" loading="lazy" data-nome="Cilindro de vidro com vela no trilho" data-fonte="Itens Decorativos — Cilindros de Vela"></div>
+<figcaption><span class="cd-n">Cilindro de vidro com vela no trilho</span><span class="cd-s"><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>✓ qtd. a definir</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/chat/thumb/chat-2527.jpg" alt="Vaso de vidro no trilho" loading="lazy" data-nome="Vaso de vidro no trilho" data-fonte="Itens Decorativos — Cilindros de Vela"></div>
+<figcaption><span class="cd-n">Vaso de vidro no trilho</span><span class="cd-s"><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>10</i></span></span></figcaption>
+</figure></div></div><div class="gp"><h3>Mesa dos noivos</h3><div class="grid"><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1cIqLJBYVX6rzj1xqAhMZqr5VgDFaw1qE-thumb.jpg" alt="Mesa espelhada" loading="lazy" data-nome="Mesa espelhada" data-fonte="2024 PACOTE BEAUTY MESA ESPELHADA NOIVOS"></div>
+<figcaption><span class="cd-n">Mesa espelhada</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/chat/thumb/chat-2527.jpg" alt="Cilindro com vela de LED" loading="lazy" data-nome="Cilindro com vela de LED" data-fonte="Itens Decorativos — Cilindros de Vela"></div>
+<figcaption><span class="cd-n">Cilindro com vela de LED</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2<i>a definir</i></span><span class="sl on" data-n="3" title="vem no nível 3">3<i>8</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1lne4o58kfOvlBHpdWbXldfjzDmv2860w-thumb.jpg" alt="Cadeira medalhão" loading="lazy" data-nome="Cadeira medalhão" data-fonte="2024 PACOTE BEAUTY CADEIRAS MEDALHÃO PARA OS NOIVOS"></div>
+<figcaption><span class="cd-n">Cadeira medalhão</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2<i>2</i></span><span class="sl on" data-n="3" title="vem no nível 3">3<i>6</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/10YmR5NuacuF3QgvRE_48iCH7xRqDvt42-thumb.jpg" alt="Taça de cristal" loading="lazy" data-nome="Taça de cristal" data-fonte="2020 DECORAÇÃO TAÇAS BICO DE JACA"></div>
+<figcaption><span class="cd-n">Taça de cristal</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2<i>2</i></span><span class="sl on" data-n="3" title="vem no nível 3">3<i>6</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/chat/thumb/chat-2531.jpg" alt="Jardim suspenso sobre a mesa" loading="lazy" data-nome="Jardim suspenso sobre a mesa" data-fonte="Itens Decorativos — Arranjo Suspenso"></div>
+<figcaption><span class="cd-n">Jardim suspenso sobre a mesa</span><span class="cd-s"><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>1 sem preço no cadastro</i></span></span></figcaption>
+</figure></div></div><div class="gp"><h3>Mesa de doces</h3><div class="grid"><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/12P8kJhgvtoF8PXJauaTxK-XV6N4f3UQH-thumb.jpg" alt="Mesa de vidro" loading="lazy" data-nome="Mesa de vidro" data-fonte="2024 PACOTE BEAUTY MESA ESPELHADA PARA DOCINHOS"></div>
+<figcaption><span class="cd-n">Mesa de vidro</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>2</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1OpE_StctuUZ7AcD_B5Ax4uFRowvmDR2M-thumb.jpg" alt="Tapete" loading="lazy" data-nome="Tapete" data-fonte="2024 PACOTE BEAUTY TAPETE DECORATIVO"></div>
+<figcaption><span class="cd-n">Tapete</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>2</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/chat/thumb/chat-2527.jpg" alt="Cilindro com vela de LED" loading="lazy" data-nome="Cilindro com vela de LED" data-fonte="Itens Decorativos — Cilindros de Vela"></div>
+<figcaption><span class="cd-n">Cilindro com vela de LED</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2<i>4</i></span><span class="sl on" data-n="3" title="vem no nível 3">3<i>30</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/chat/thumb/chat-2527.jpg" alt="Vaso de vidro" loading="lazy" data-nome="Vaso de vidro" data-fonte="Itens Decorativos — Cilindros de Vela"></div>
+<figcaption><span class="cd-n">Vaso de vidro</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2<i>2</i></span><span class="sl on" data-n="3" title="vem no nível 3">3<i>4</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1GPaqxD1I3GLrVxevbpETVQXP8IBR4Efl-thumb.jpg" alt="Suporte de vidro" loading="lazy" data-nome="Suporte de vidro" data-fonte="2024 PACOTE BEAUTY SUPORTE PARA DOCINHOS"></div>
+<figcaption><span class="cd-n">Suporte de vidro</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2<i>10</i></span><span class="sl on" data-n="3" title="vem no nível 3">3<i>10</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/chat/thumb/chat-2559.jpg" alt="Moldura de LED" loading="lazy" data-nome="Moldura de LED" data-fonte="Itens Decorativos — Jardim de Led"></div>
+<figcaption><span class="cd-n">Moldura de LED</span><span class="cd-s"><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure></div></div><div class="gp"><h3>Mesas dos convidados</h3><div class="grid"><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/produtos/thumb/prod-toalha-para-mesa-und.webp" alt="Toalha" loading="lazy" data-nome="Toalha" data-fonte="Toalha para Mesa (und)"></div>
+<figcaption><span class="cd-n">Toalha</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://classic-wedding-itens.eventosindaia.com.br/fotos/mesa-posta.jpg?v=5" alt="Prato branco até 200 lugares" loading="lazy" data-nome="Prato branco até 200 lugares" data-fonte="Lugar posto do convidado, com sousplat, prato, guardanapo e taças · lugar posto inteiro, não só o prato"></div>
+<figcaption><span class="cd-n">Prato branco até 200 lugares</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1vXeHq4QAFO3hE6Ox9HY_w6OrmZq6etUK-thumb.jpg" alt="Guardanapo de tecido" loading="lazy" data-nome="Guardanapo de tecido" data-fonte="2024 PACOTE BEAUTY GUARDANAPOS DE TECIDO BRANCO"></div>
+<figcaption><span class="cd-n">Guardanapo de tecido</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/chat/thumb/chat-2527.jpg" alt="Kit de cilindros com flor por mesa" loading="lazy" data-nome="Kit de cilindros com flor por mesa" data-fonte="Itens Decorativos — Cilindros de Vela"></div>
+<figcaption><span class="cd-n">Kit de cilindros com flor por mesa</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/chat/thumb/chat-2527.jpg" alt="Kit de cilindros só com vela por mesa" loading="lazy" data-nome="Kit de cilindros só com vela por mesa" data-fonte="Itens Decorativos — Cilindros de Vela"></div>
+<figcaption><span class="cd-n">Kit de cilindros só com vela por mesa</span><span class="cd-s"><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1x8h6q8mdwdNTR491ORXsxfy3TucNh-N_-thumb.jpg" alt="Cadeira de madeira" loading="lazy" data-nome="Cadeira de madeira" data-fonte="2020 DECORAÇÃO CADEIRAS DE MADEIRA"></div>
+<figcaption><span class="cd-n">Cadeira de madeira</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure></div></div><div class="gp"><h3>Salão</h3><div class="grid"><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/chat/thumb/chat-2527.jpg" alt="Vidro e velas de LED no salão" loading="lazy" data-nome="Vidro e velas de LED no salão" data-fonte="Itens Decorativos — Cilindros de Vela"></div>
+<figcaption><span class="cd-n">Vidro e velas de LED no salão</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1MmDABFbv1Qhf_XL5PL0Cuh9z7eD9cHxC-thumb.jpg" alt="Letreiro LOVE aceso" loading="lazy" data-nome="Letreiro LOVE aceso" data-fonte="2024 PACOTE BEAUTY LOVE LUMINOSO"></div>
+<figcaption><span class="cd-n">Letreiro LOVE aceso</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1KUxnFws3-URX1VJnNfDZgtwaFyhhsan4-thumb.jpg" alt="Velas Sparkle" loading="lazy" data-nome="Velas Sparkle" data-fonte="2022 DECORAÇÃO VELAS SPARKLES"></div>
+<figcaption><span class="cd-n">Velas Sparkle</span><span class="cd-s"><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>20</i></span></span></figcaption>
+</figure><figure class="cd">
+<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/chat/thumb/chat-2551.jpg" alt="Estante de velas de LED" loading="lazy" data-nome="Estante de velas de LED" data-fonte="Itens Decorativos — Estante de Velas"></div>
+<figcaption><span class="cd-n">Estante de velas de LED</span><span class="cd-s"><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+</figure></div></div>
+<div class="tbw"><h3>O que vem em cada nível</h3><table class="tb"><colgroup><col class="c1"><col><col></colgroup>
+<thead><tr><th>O que vem</th><th>Nível 2</th><th>Nível 3</th></tr></thead><tbody><tr class="gr"><td colspan="3">Cerimônia</td></tr><tr><th>Arco espiral</th><td>1</td><td>1</td></tr><tr><th>Aparador do celebrante</th><td>branco</td><td>branco</td></tr><tr><th>Trilho da cerimônia</th><td>de tecido</td><td>de espelho</td></tr><tr><th>Cilindro de vidro com vela no trilho</th><td><span class="nao">—</span></td><td>✓ <span class="def">qtd. a definir</span></td></tr><tr><th>Vaso de vidro no trilho</th><td><span class="nao">—</span></td><td><span class="mud">10</span></td></tr><tr class="gr"><td colspan="3">Mesa dos noivos</td></tr><tr><th>Mesa espelhada</th><td>1</td><td>1</td></tr><tr><th>Cilindro com vela de LED</th><td><span class="def">a definir</span></td><td>8</td></tr><tr><th>Cadeira medalhão</th><td>2</td><td>6</td></tr><tr><th>Taça de cristal</th><td>2</td><td><span class="mud">6</span></td></tr><tr><th>Jardim suspenso sobre a mesa</th><td><span class="nao">—</span></td><td><span class="mud">1</span> <span class="def">sem preço no cadastro</span></td></tr><tr class="gr"><td colspan="3">Mesa de doces</td></tr><tr><th>Mesa de vidro</th><td>1</td><td>2</td></tr><tr><th>Tapete</th><td>1</td><td>2</td></tr><tr><th>Cilindro com vela de LED</th><td><span class="mud">4</span></td><td>30</td></tr><tr><th>Vaso de vidro</th><td>2</td><td><span class="mud">4</span></td></tr><tr><th>Suporte de vidro</th><td><span class="mud">10</span></td><td>10</td></tr><tr><th>Moldura de LED</th><td><span class="nao">—</span></td><td>1</td></tr><tr class="gr"><td colspan="3">Mesas dos convidados</td></tr><tr><th>Toalha</th><td>✓</td><td>✓</td></tr><tr><th>Prato branco <span class="mute">até 200 lugares</span></th><td>✓</td><td>✓</td></tr><tr><th>Guardanapo de tecido</th><td><span class="mud">✓</span></td><td><span class="mud">✓</span></td></tr><tr><th>Kit de cilindros com flor por mesa</th><td>1</td><td>1</td></tr><tr><th>Kit de cilindros só com vela por mesa</th><td><span class="nao">—</span></td><td><span class="mud">1</span></td></tr><tr><th>Cadeira de madeira</th><td><span class="mud">até 60 conv.</span></td><td><span class="mud">até 60 conv.</span></td></tr><tr class="gr"><td colspan="3">Salão</td></tr><tr><th>Vidro e velas de LED no salão</th><td><span class="mud">✓</span></td><td>✓</td></tr><tr><th>Letreiro LOVE aceso</th><td><span class="mud">1</span></td><td>1</td></tr><tr><th>Velas Sparkle</th><td><span class="nao">—</span></td><td><span class="mud">20</span></td></tr><tr><th>Estante de velas de LED</th><td><span class="nao">—</span></td><td><span class="mud">1</span></td></tr><tr class="gr"><td colspan="3">Projeto</td></tr><tr><th>Projeto 3D do evento</th><td><span class="nao">—</span></td><td><span class="mud">✓</span></td></tr></tbody></table></div>
+</section>
+<p class="rod">Fotos do banco de mídias do Indaiá e dos materiais publicados dos pacotes. As peças marcadas no relatório de calibragem como foto a conferir seguem com a imagem do material do pacote, que mostra o conjunto e não a peça isolada. Quantidades para até 60 convidados.</p>
+</div>
+<div class="lb" id="lb" aria-hidden="true"><button class="lb-x" id="lb-x" aria-label="Fechar">×</button><div class="lb-c"><img id="lb-img" alt=""><p class="lb-t"><span id="lb-n"></span><small id="lb-f"></small></p></div></div>
+<script>
+(function () {
+  var r = document.documentElement
+  document.getElementById('tema').addEventListener('click', function () {
+    var escuro = getComputedStyle(r).getPropertyValue('--bg').trim().indexOf('#1') === 0
+    r.setAttribute('data-theme', escuro ? 'light' : 'dark')
+  })
+  // Filtro por nível: apaga o cartão que não vem naquele nível, sem tirar da página.
+  document.querySelectorAll('.est').forEach(function (sec) {
+    sec.querySelectorAll('.nb').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var n = b.dataset.nivel
+        sec.querySelectorAll('.nb').forEach(function (o) { o.setAttribute('aria-pressed', String(o === b)) })
+        sec.querySelectorAll('.cd').forEach(function (cd) {
+          var tem = n === '0' || !!cd.querySelector('.sl.on[data-n="' + n + '"]')
+          cd.classList.toggle('apaga', !tem)
+        })
+      })
+    })
+  })
+  var lb = document.getElementById('lb'), img = document.getElementById('lb-img')
+  var nom = document.getElementById('lb-n'), fon = document.getElementById('lb-f')
+  function abrir(el) {
+    img.src = el.src; img.alt = el.alt
+    nom.textContent = el.dataset.nome || ''
+    fon.textContent = el.dataset.fonte || ''
+    lb.classList.add('on'); lb.setAttribute('aria-hidden', 'false')
+  }
+  function fechar() { lb.classList.remove('on'); lb.setAttribute('aria-hidden', 'true'); img.src = '' }
+  document.addEventListener('click', function (e) {
+    var im = e.target.closest('.cd-i img')
+    if (im) { abrir(im); return }
+    if (e.target.closest('#lb')) fechar()
+  })
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fechar() })
+})()
+</script>
+</body></html>

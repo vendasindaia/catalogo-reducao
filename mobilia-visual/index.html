@@ -76,6 +76,39 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
 .tb .mud{background:var(--ouro-s);color:var(--ouro);border-radius:4px;padding:1px 5px;font-weight:600}
 .tb .def{font-size:11px;color:var(--mute)}
 .tb .mute{color:var(--mute);font-size:11.5px}
+.bal{margin-top:66px;scroll-margin-top:14px}
+.bal .est-h h2{display:block}
+.bal .est-h h2 small{display:block;margin-top:4px}
+.bl-e{margin-top:30px}
+.bl-e h4{font:600 17px/1.25 Georgia,serif;margin:0 0 13px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-bottom:9px;border-bottom:1px solid var(--linha)}
+.bl-e h4 small{font:400 12.5px/1.4 "Segoe UI",system-ui,sans-serif;color:var(--mute)}
+.bl-e.todos{background:var(--card);border:1px solid var(--linha);border-radius:12px;padding:16px 18px;box-shadow:var(--sombra)}
+.bl-e.todos h4{margin-bottom:11px}
+.bl-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.bl-c{background:var(--card);border:1px solid var(--linha);border-radius:12px;padding:14px 16px;box-shadow:var(--sombra);min-width:0}
+.bl-t{margin:0 0 10px;font-size:11.5px;text-transform:uppercase;letter-spacing:.09em;font-weight:700;display:flex;align-items:center;gap:7px}
+.bl-t b{font-size:13px;background:var(--head);border-radius:5px;padding:1px 7px;font-variant-numeric:tabular-nums}
+.bl-c.saiu .bl-t{color:#b4553f}
+.bl-c.entrou .bl-t{color:#4a7c52}
+:root[data-theme="dark"] .bl-c.saiu .bl-t,:root[data-theme="dark"] .bl-c.entrou .bl-t{color:inherit}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .bl-c.saiu .bl-t{color:#e09177}:root:not([data-theme="light"]) .bl-c.entrou .bl-t{color:#8fc39a}}
+:root[data-theme="dark"] .bl-c.saiu .bl-t{color:#e09177}
+:root[data-theme="dark"] .bl-c.entrou .bl-t{color:#8fc39a}
+.bl-l{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+.bl-l li{font-size:13.5px;line-height:1.45;padding-left:13px;position:relative;min-width:0}
+.bl-l li::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--ouro);opacity:.55}
+.bl-o{display:inline-block;margin-left:6px;font-size:11px;color:var(--ouro);background:var(--ouro-s);border-radius:4px;padding:1px 6px;vertical-align:1px;white-space:nowrap}
+.bl-q{display:block;font-size:12px;color:var(--mute);font-variant-numeric:tabular-nums}
+.bl-pq{display:block;font-size:12.5px;color:var(--mute);margin-top:2px}
+.hoje{margin-top:34px;background:var(--card);border:1px solid var(--linha);border-radius:12px;box-shadow:var(--sombra)}
+.hoje summary{cursor:pointer;padding:13px 16px;font-size:13.5px;font-weight:600}
+.hoje summary .mute{color:var(--mute);font-weight:400}
+.hoje[open] summary{border-bottom:1px solid var(--linha)}
+.hj-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:18px;padding:16px}
+.hj h5{margin:0 0 9px;font:600 12px/1 "Segoe UI",system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--ouro);display:flex;justify-content:space-between;gap:8px;padding-bottom:7px;border-bottom:1px solid var(--linha)}
+.hj h5 span{color:var(--mute);font-variant-numeric:tabular-nums}
+.hj ul{list-style:none;margin:0;padding:0;font-size:12.5px;line-height:1.5;color:var(--mute)}
+.hj li{padding:1px 0}
 .rod{margin-top:46px;border-top:1px solid var(--linha);padding-top:16px;color:var(--mute);font-size:12.5px}
 .lb{position:fixed;inset:0;z-index:40;display:none;place-items:center;background:rgba(0,0,0,.86);padding:24px}
 .lb.on{display:grid}
@@ -103,7 +136,7 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
   </div>
   <button class="tema" id="tema">Tema</button>
 </div>
-<nav class="idx"><a href="#beauty">Beauty</a><a href="#boho">Boho</a><a href="#cristal">Cristal</a></nav>
+<nav class="idx"><a href="#beauty">Beauty</a><a href="#boho">Boho</a><a href="#cristal">Cristal</a><a href="#balanco">O que mudou</a></nav>
 <section class="est" id="beauty" data-est="beauty">
 <header class="est-h">
   <h2>Beauty<small>espelho e dourado</small></h2>
@@ -371,6 +404,83 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
 </figure></div></div>
 <div class="tbw"><h3>O que vem em cada nível</h3><table class="tb"><colgroup><col class="c1"><col><col></colgroup>
 <thead><tr><th>O que vem</th><th>Nível 2</th><th>Nível 3</th></tr></thead><tbody><tr class="gr"><td colspan="3">Cerimônia</td></tr><tr><th>Arco espiral</th><td>1</td><td>1</td></tr><tr><th>Aparador do celebrante</th><td>branco</td><td>branco</td></tr><tr><th>Trilho da cerimônia</th><td>de tecido</td><td>de espelho</td></tr><tr><th>Cilindro de vidro com vela no trilho</th><td><span class="nao">—</span></td><td>✓ <span class="def">qtd. a definir</span></td></tr><tr><th>Vaso de vidro no trilho</th><td><span class="nao">—</span></td><td><span class="mud">10</span></td></tr><tr class="gr"><td colspan="3">Mesa dos noivos</td></tr><tr><th>Mesa espelhada</th><td>1</td><td>1</td></tr><tr><th>Cilindro com vela de LED</th><td><span class="def">a definir</span></td><td>8</td></tr><tr><th>Cadeira medalhão</th><td>2</td><td>6</td></tr><tr><th>Taça de cristal</th><td>2</td><td><span class="mud">6</span></td></tr><tr><th>Jardim suspenso sobre a mesa</th><td><span class="nao">—</span></td><td><span class="mud">1</span> <span class="def">sem preço no cadastro</span></td></tr><tr class="gr"><td colspan="3">Mesa de doces</td></tr><tr><th>Mesa de vidro</th><td>1</td><td>2</td></tr><tr><th>Tapete</th><td>1</td><td>2</td></tr><tr><th>Cilindro com vela de LED</th><td><span class="mud">4</span></td><td>30</td></tr><tr><th>Vaso de vidro</th><td>2</td><td><span class="mud">4</span></td></tr><tr><th>Suporte de vidro</th><td><span class="mud">10</span></td><td>10</td></tr><tr><th>Moldura de LED</th><td><span class="nao">—</span></td><td>1</td></tr><tr class="gr"><td colspan="3">Mesas dos convidados</td></tr><tr><th>Toalha</th><td>✓</td><td>✓</td></tr><tr><th>Prato branco <span class="mute">até 200 lugares</span></th><td>✓</td><td>✓</td></tr><tr><th>Guardanapo de tecido</th><td><span class="mud">✓</span></td><td><span class="mud">✓</span></td></tr><tr><th>Kit de cilindros com flor por mesa</th><td>1</td><td>1</td></tr><tr><th>Kit de cilindros só com vela por mesa</th><td><span class="nao">—</span></td><td><span class="mud">1</span></td></tr><tr><th>Cadeira de madeira</th><td><span class="mud">até 60 conv.</span></td><td><span class="mud">até 60 conv.</span></td></tr><tr class="gr"><td colspan="3">Salão</td></tr><tr><th>Vidro e velas de LED no salão</th><td><span class="mud">✓</span></td><td>✓</td></tr><tr><th>Letreiro LOVE aceso</th><td><span class="mud">1</span></td><td>1</td></tr><tr><th>Velas Sparkle</th><td><span class="nao">—</span></td><td><span class="mud">20</span></td></tr><tr><th>Estante de velas de LED</th><td><span class="nao">—</span></td><td><span class="mud">1</span></td></tr><tr class="gr"><td colspan="3">Projeto</td></tr><tr><th>Projeto 3D do evento</th><td><span class="nao">—</span></td><td><span class="mud">✓</span></td></tr></tbody></table></div>
+</section>
+<section class="bal" id="balanco">
+<header class="est-h"><h2>O que mudou contra os pacotes de hoje<small>25 peças saíram · 19 entraram</small></h2></header>
+<p class="lead" style="margin:14px 0 0">Comparação peça por peça com o que está no cadastro hoje. Cada nível novo herda um pacote de hoje: o <b>1</b> vem do Mini e do Classic, o <b>2</b> vem do Beauty e do Boho, e o <b>3</b> do Cristal vem do Cristal de hoje. Os níveis 3 do Beauty e do Boho são composição nova, então ali não há o que sair.</p>
+
+<div class="bl-e todos">
+  <h4>Saiu dos três estilos<small>decisão de 14 e 15/10, vale em todos os níveis</small></h4>
+  <ul class="bl-l"><li><b>Pontos de luz cênica colorida</b>
+<span class="bl-q">10 no Mini e no Classic, 30 no Beauty</span><span class="bl-pq">a luz colorida passou para o audiovisual e sai do pacote de mobília</span></li><li><b>Vasos de decoração de ambiente</b>
+<span class="bl-q">6 no Mini e no Classic, 8 no Beauty, 6 no Boho</span><span class="bl-pq">peça de encher canto: não aparece na foto e ninguém pede</span></li><li><b>Lounge: sofás e tapete</b>
+<span class="bl-q">2 sofás bege e 1 tapete no Cristal</span><span class="bl-pq">tirado dos três estilos em 15/10</span></li></ul>
+</div>
+
+<div class="bl-e">
+  <h4>Beauty<small>vem de Classic Wedding (R$ 7.000) no nível 1 e Beauty Wedding (R$ 14.000) no nível 2</small></h4>
+  <div class="bl-g">
+    <div class="bl-c saiu"><p class="bl-t">Saiu <b>6</b></p><ul class="bl-l"><li><b>Arco da cerimônia</b><span class="bl-o">do nível 1</span>
+<span class="bl-q">1 no Classic</span><span class="bl-pq">o arco passa a ser a primeira subida de nível: entra no 2</span></li><li><b>Vaso por mesa dos convidados</b><span class="bl-o">do nível 1</span>
+<span class="bl-q">10 floreiras baixas no Classic</span><span class="bl-pq">o nível 1 fica sem vaso na mesa; vem do 2 em diante</span></li><li><b>Pedestais com cuba para arranjos</b><span class="bl-o">do nível 2</span>
+<span class="bl-q">10 no Beauty, além das 10 floreiras</span><span class="bl-pq">eram dois conjuntos para a mesma mesa; ficou um só, 1 vaso a cada 10 convidados</span></li><li><b>Vaso Firenze na mesa de doces</b><span class="bl-o">do nível 2</span>
+<span class="bl-q">2 no Beauty</span><span class="bl-pq">passa a ser o diferencial do nível 3, junto com o Abóbora</span></li><li><b>Velas decorativas</b><span class="bl-o">do nível 2</span>
+<span class="bl-q">20 no Beauty</span><span class="bl-pq">vão só no nível 3, com as Velas Sparkle</span></li><li><b>Velas Sparkle</b><span class="bl-o">do nível 2</span>
+<span class="bl-q">20 no Beauty</span><span class="bl-pq">vão só no nível 3</span></li></ul></div>
+    <div class="bl-c entrou"><p class="bl-t">Entrou <b>6</b></p><ul class="bl-l"><li><b>Vaso de chão no trilho da cerimônia</b><span class="bl-o">no nível 3</span>
+<span class="bl-q">6</span><span class="bl-pq">o Cristal já fazia; agora o trilho do nível 3 dos três estilos é igual</span></li><li><b>Jardim suspenso sobre a mesa dos noivos</b><span class="bl-o">no nível 3</span>
+<span class="bl-q">1</span><span class="bl-pq">o diferencial da mesa dos noivos; não existe em nenhum pacote de hoje</span></li><li><b>Moldura de LED atrás da mesa de doces</b><span class="bl-o">no nível 3</span>
+<span class="bl-q">1</span><span class="bl-pq">o antigo Jardim de LED, que só o Cristal tinha, e agora sem floral</span></li><li><b>Estante de velas de LED</b><span class="bl-o">no nível 3</span>
+<span class="bl-q">1</span><span class="bl-pq">vinha só no Cristal; agora fecha o nível 3 dos três</span></li><li><b>Projeto 3D do evento</b><span class="bl-o">no nível 3</span>
+<span class="bl-q">✓</span><span class="bl-pq">o casal vê o salão montado antes de montar</span></li><li><b>Sousplat e guardanapo de tecido</b><span class="bl-o">no nível 1</span>
+<span class="bl-q">✓</span><span class="bl-pq">os três estilos passam a pôr a mesa em qualquer nível</span></li></ul></div>
+  </div>
+</div><div class="bl-e">
+  <h4>Boho<small>vem de Mini Wedding (R$ 7.000) no nível 1 e Boho (R$ 16.000) no nível 2</small></h4>
+  <div class="bl-g">
+    <div class="bl-c saiu"><p class="bl-t">Saiu <b>13</b></p><ul class="bl-l"><li><b>Arco da cerimônia</b><span class="bl-o">do nível 1</span>
+<span class="bl-q">1 no Mini</span><span class="bl-pq">mesma régua do Beauty: o arco entra no nível 2</span></li><li><b>Espelho decorativo imperial</b><span class="bl-o">do nível 1</span>
+<span class="bl-q">1 no Mini</span><span class="bl-pq">peça solta, sem lugar fixo na montagem</span></li><li><b>Candelabros de mesa</b><span class="bl-o">do nível 1</span>
+<span class="bl-q">10 no Mini, alternativos ao pedestal</span><span class="bl-pq">ficou só o pedestal, e a partir do nível 2</span></li><li><b>Tapete de sisal</b><span class="bl-o">do nível 1</span>
+<span class="bl-q">2 no Mini</span><span class="bl-pq">o nível 1 fica com 1 mesa de doces, sem tapete</span></li><li><b>Segunda mesa de doces</b><span class="bl-o">do nível 1</span>
+<span class="bl-q">eram 2 no Mini</span><span class="bl-pq">o nível 1 fica com 1 mesa rústica</span></li><li><b>Mesas treliça para doces</b><span class="bl-o">do nível 2</span>
+<span class="bl-q">4 no Boho</span><span class="bl-pq">a mesa de doces fica com as 2 rústicas e os suportes</span></li><li><b>Bandejas retangulares para doces</b><span class="bl-o">do nível 2</span>
+<span class="bl-q">4 no Boho</span><span class="bl-pq">os 10 suportes sextavados já fazem o serviço</span></li><li><b>Vaso Folhas</b><span class="bl-o">do nível 2</span>
+<span class="bl-q">1 no Boho</span><span class="bl-pq">peça única, fora do par Gomado / Atenas</span></li><li><b>Vaso Atenas</b><span class="bl-o">do nível 2</span>
+<span class="bl-q">1 no Boho</span><span class="bl-pq">vira o diferencial do nível 3, com 2 unidades</span></li><li><b>Pedestal alto para arranjos</b><span class="bl-o">do nível 2</span>
+<span class="bl-q">10 no Boho, além dos 10 baixos</span><span class="bl-pq">o nível 2 fica com o baixo; no 3 o casal escolhe alto ou baixo</span></li><li><b>Louça completa</b><span class="bl-o">do nível 2</span>
+<span class="bl-q">pratos de jantar e de sobremesa, talheres e taças Hannover</span><span class="bl-pq">louça é do buffet, não da mobília</span></li><li><b>Mesas redondas dos convidados</b><span class="bl-o">do nível 2</span>
+<span class="bl-q">no Boho</span><span class="bl-pq">a mesa é do espaço, não do pacote</span></li><li><b>Velas Sparkle</b><span class="bl-o">do nível 2</span>
+<span class="bl-q">20 no Boho</span><span class="bl-pq">vão só no nível 3</span></li></ul></div>
+    <div class="bl-c entrou"><p class="bl-t">Entrou <b>7</b></p><ul class="bl-l"><li><b>Vaso de chão no trilho da cerimônia</b><span class="bl-o">no nível 3</span>
+<span class="bl-q">6</span><span class="bl-pq">iguala o trilho do nível 3 ao do Cristal</span></li><li><b>Jardim suspenso sobre a mesa dos noivos</b><span class="bl-o">no nível 3</span>
+<span class="bl-q">1</span><span class="bl-pq">não existe em nenhum pacote de hoje</span></li><li><b>Moldura de LED atrás da mesa de doces</b><span class="bl-o">no nível 3</span>
+<span class="bl-q">1</span><span class="bl-pq">só o Cristal tinha, e com floral</span></li><li><b>Estante de velas de LED</b><span class="bl-o">no nível 3</span>
+<span class="bl-q">1</span><span class="bl-pq">vinha só no Cristal</span></li><li><b>Trilho de espelho</b><span class="bl-o">no nível 3</span>
+<span class="bl-q">10 m</span><span class="bl-pq">o Boho de hoje já tem; no nível 1 fica o de tecido</span></li><li><b>Projeto 3D do evento</b><span class="bl-o">no nível 3</span>
+<span class="bl-q">✓</span><span class="bl-pq">igual aos outros dois estilos</span></li><li><b>Sousplat e guardanapo de tecido</b><span class="bl-o">no nível 1</span>
+<span class="bl-q">✓</span><span class="bl-pq">mesa posta em qualquer nível</span></li></ul></div>
+  </div>
+</div><div class="bl-e">
+  <h4>Cristal<small>vem de o pacote Cristal de hoje (R$ 30.000 de tabela, vendido entre R$ 20.000 e R$ 25.000), que é o nível 3</small></h4>
+  <div class="bl-g">
+    <div class="bl-c saiu"><p class="bl-t">Saiu <b>3</b></p><ul class="bl-l"><li><b>Sofás bege e tapete do lounge</b><span class="bl-o">do nível 3</span>
+<span class="bl-q">2 sofás e 1 tapete</span><span class="bl-pq">o lounge saiu dos três estilos em 15/10</span></li><li><b>Velas decorativas da cerimônia</b><span class="bl-o">do nível 3</span>
+<span class="bl-q">20</span><span class="bl-pq">ficaram as 20 Velas Sparkle; as duas juntas repetiam o efeito</span></li><li><b>Kits de cilindro por mesa</b><span class="bl-o">do nível 3</span>
+<span class="bl-q">eram 20 kits, ficam 2 por mesa</span><span class="bl-pq">o pacote passa a caber em 60 convidados, 6 mesas</span></li></ul></div>
+    <div class="bl-c entrou"><p class="bl-t">Entrou <b>6</b></p><ul class="bl-l"><li><b>Guardanapo de tecido</b><span class="bl-o">nos níveis 2 e 3</span>
+<span class="bl-q">✓</span><span class="bl-pq">o Cristal de hoje põe toalha e sousplat, mas não tem guardanapo na lista</span></li><li><b>Jardim suspenso sobre a mesa dos noivos</b><span class="bl-o">no nível 3</span>
+<span class="bl-q">1</span><span class="bl-pq">o diferencial novo da mesa dos noivos, igual nos três</span></li><li><b>Taça de cristal para os noivos</b><span class="bl-o">no nível 3</span>
+<span class="bl-q">de 2 para 6</span><span class="bl-pq">uma por cadeira, agora que a mesa tem 6 cadeiras</span></li><li><b>Vaso de vidro na mesa de doces</b><span class="bl-o">no nível 3</span>
+<span class="bl-q">de 2 para 4</span><span class="bl-pq">acompanha as 2 mesas de vidro</span></li><li><b>Projeto 3D do evento</b><span class="bl-o">no nível 3</span>
+<span class="bl-q">✓</span><span class="bl-pq">igual aos outros dois estilos</span></li><li><b>O estilo inteiro no nível 2</b><span class="bl-o">nível novo</span>
+<span class="bl-q">—</span><span class="bl-pq">o Cristal não tinha nível de entrada; o 2 mantém o vidro e as velas de LED no salão</span></li></ul></div>
+  </div>
+</div>
+
+<details class="hoje"><summary>Os pacotes de hoje, item por item <span class="mute">(o que foi comparado)</span></summary>
+<div class="hj-g"><div class="hj"><h5>Mini Wedding<span>14</span></h5><ul><li>1 espelho decorativo imperial</li><li>10 pedestais ou candelabros de mesa</li><li>10 pontos de luz cênica</li><li>2 cadeiras imperiais dos noivos</li><li>1 arco de cerimônia</li><li>1 aparador de cerimônia</li><li>2 tapetes decorativos</li><li>2 mesas demolição para doces</li><li>1 mesa demolição dos noivos</li><li>6 vasos decorativos</li><li>1 tapete de trilho para cerimônia</li><li>sousplat</li><li>toalhas das mesas</li><li>guardanapo de tecido branco</li></ul></div><div class="hj"><h5>Classic Wedding<span>13</span></h5><ul><li>1 aparador branco</li><li>1 arco de cerimônia</li><li>cadeiras de madeira</li><li>2 cadeiras medalhão</li><li>10 floreiras baixas de mesa</li><li>guardanapos de tecido</li><li>10 pontos de luz cênica</li><li>1 mesa espelhada de doces</li><li>1 mesa espelhada dos noivos</li><li>sousplat clássico branco</li><li>taças especiais dos noivos</li><li>1 trilho para cerimônia</li><li>6 vasos de ambiente</li></ul></div><div class="hj"><h5>Beauty Wedding<span>21</span></h5><ul><li>1 tapete de espelho de 10 m</li><li>30 pontos de luz cênica</li><li>1 Love luminoso</li><li>20 velas decorativas</li><li>1 arco de cerimônia</li><li>1 aparador de cerimônia</li><li>10 pedestais com cuba</li><li>10 floreiras de mesa</li><li>1 mesa espelhada dos noivos</li><li>6 cadeiras medalhão</li><li>taças especiais dos noivos</li><li>8 vasos decorativos</li><li>1 cortina de LED</li><li>2 mesas espelhadas de doces</li><li>10 suportes de doces</li><li>2 vasos Firenze</li><li>2 vasos Abóbora</li><li>2 tapetes decorativos</li><li>20 velas Sparkle de 30 cm</li><li>sousplat</li><li>guardanapos e toalhas</li></ul></div><div class="hj"><h5>Boho<span>28</span></h5><ul><li>1 tapete de espelho de 10 m</li><li>1 Love luminoso</li><li>1 arco meia-lua</li><li>1 aparador de cerimônia</li><li>10 pedestais altos</li><li>10 pedestais baixos</li><li>1 mesa especial dos noivos</li><li>6 cadeiras medalhão de tela</li><li>6 taças especiais dos noivos</li><li>2 mesas rústicas de doces</li><li>4 mesas treliça de doces</li><li>12 suportes de doces sextavados</li><li>4 bandejas retangulares</li><li>1 vaso Folhas</li><li>2 vasos Gomados</li><li>1 vaso Atenas</li><li>2 pendentes com lâmpadas</li><li>2 tapetes de sisal</li><li>20 velas Sparkle</li><li>1 cortina de LED</li><li>sousplat</li><li>pratos de jantar e de sobremesa</li><li>mesas redondas dos convidados</li><li>guardanapos de tecido</li><li>toalhas das mesas</li><li>jogo de talheres</li><li>cadeiras de madeira</li><li>taças Hannover</li></ul></div><div class="hj"><h5>Cristal<span>26</span></h5><ul><li>1 arco espiral</li><li>1 tapete espelhado</li><li>1 aparador branco</li><li>cadeiras de madeira</li><li>10 cilindros de vidro de chão</li><li>10 vasos decorativos baixos</li><li>20 velas decorativas</li><li>20 kits de cilindro com vela flutuante</li><li>sousplat branco até 200 lugares</li><li>toalhas de mesa</li><li>1 mesa espelhada dos noivos</li><li>1 kit de cilindros baixos com vela</li><li>8 cilindros de vidro na frente da mesa</li><li>6 cadeiras medalhão</li><li>2 taças especiais dos noivos</li><li>2 mesas de vidro de doces</li><li>10 suportes de doce de vidro</li><li>30 cilindros de vidro na mesa de doces</li><li>2 vasos para arranjos</li><li>1 Jardim de LED</li><li>2 tapetes decorativos</li><li>1 estante de velas</li><li>2 sofás bege</li><li>1 tapete decorativo</li><li>1 Love luminoso</li><li>20 velas Sparkle</li></ul></div></div>
+</details>
 </section>
 <p class="rod">Fotos do banco de mídias do Indaiá e dos materiais publicados dos pacotes. As peças marcadas no relatório de calibragem como foto a conferir seguem com a imagem do material do pacote, que mostra o conjunto e não a peça isolada. Quantidades para até 60 convidados.</p>
 </div>

@@ -55,6 +55,8 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
 .cd.apaga .cd-i img{filter:grayscale(1) contrast(.94) brightness(.95);cursor:default}
 .cd.apaga .cd-i img:hover{transform:none}
 .cd.apaga .cd-n{color:var(--mute);font-weight:500}
+/* Dentro do nível filtrado: moldura dourada, o mesmo tom da linha sob o nome do estilo. */
+.cd.marca{border-color:var(--ouro);box-shadow:0 0 0 1px var(--ouro),var(--sombra)}
 .cd.apaga .sl.on{background:transparent;color:var(--mute);border-color:var(--linha)}
 .cd-i{aspect-ratio:4/3;background:var(--head);display:grid;place-items:center;overflow:hidden}
 .cd-i img{width:100%;height:100%;max-width:100%;object-fit:cover;display:block;cursor:zoom-in}
@@ -507,6 +509,7 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
         sec.querySelectorAll('.cd').forEach(function (cd) {
           var tem = n === '0' || !!cd.querySelector('.sl.on[data-n="' + n + '"]')
           cd.classList.toggle('apaga', !tem)
+          cd.classList.toggle('marca', tem && n !== '0')
         })
       })
     })

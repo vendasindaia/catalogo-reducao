@@ -48,8 +48,14 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
 .gp{margin-top:26px}
 .gp h3{font:600 12px/1 "Segoe UI",system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--ouro);margin:0 0 12px;padding-bottom:7px;border-bottom:1px solid var(--linha)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(188px,1fr));gap:14px}
-.cd{margin:0;background:var(--card);border:1px solid var(--linha);border-radius:12px;overflow:hidden;box-shadow:var(--sombra);transition:opacity .18s,transform .18s}
-.cd.apaga{opacity:.22}
+.cd{margin:0;background:var(--card);border:1px solid var(--linha);border-radius:12px;overflow:hidden;box-shadow:var(--sombra);transition:opacity .2s,background .2s,border-color .2s}
+/* Fora do nível filtrado: a foto apaga de verdade, para não restar dúvida do que não vem. */
+.cd.apaga{opacity:.46;background:var(--head);border-color:transparent;box-shadow:none}
+.cd.apaga .cd-i{background:#05060a}
+.cd.apaga .cd-i img{filter:grayscale(1) brightness(.26) contrast(.9);cursor:default}
+.cd.apaga .cd-i img:hover{transform:none}
+.cd.apaga .cd-n{color:var(--mute);font-weight:500}
+.cd.apaga .sl.on{background:transparent;color:var(--mute);border-color:var(--linha)}
 .cd-i{aspect-ratio:4/3;background:var(--head);display:grid;place-items:center;overflow:hidden}
 .cd-i img{width:100%;height:100%;max-width:100%;object-fit:cover;display:block;cursor:zoom-in}
 .cd-i img:hover{transform:scale(1.03);transition:transform .3s}

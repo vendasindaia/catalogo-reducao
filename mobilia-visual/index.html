@@ -150,6 +150,15 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
 .tb.pz td{text-align:right;padding-right:14px}
 .tb.pz td.ruim{color:#b4553f;font-weight:600}
 .pz-p{margin:13px 0 0;font-size:13.5px;line-height:1.55;max-width:78ch}
+.bl-e.sugest{margin-top:26px;background:var(--card);border:1px solid var(--linha);border-radius:12px;padding:16px 18px;box-shadow:var(--sombra)}
+.sg-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.sg-o{min-width:0}
+.sg-t{margin:0 0 3px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--ouro)}
+.sg-d{margin:0 0 10px;font-size:12.5px;color:var(--mute);line-height:1.45}
+.tb.sg td{text-align:center;padding:8px 6px;font-weight:600}
+.tb.sg .sg-m{display:block;font-size:11.5px;font-weight:500;color:var(--ouro);margin-top:2px}
+.tb.sg .vz{color:var(--mute);opacity:.5;font-weight:400}
+.tb.sg tbody th{white-space:nowrap}
 .hoje{margin-top:34px;background:var(--card);border:1px solid var(--linha);border-radius:12px;box-shadow:var(--sombra)}
 .hoje summary{cursor:pointer;padding:13px 16px;font-size:13.5px;font-weight:600}
 .hoje summary .mute{color:var(--mute);font-weight:400}
@@ -186,10 +195,10 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
   </div>
   <button class="tema" id="tema">Tema</button>
 </div>
-<nav class="idx"><a href="#beauty">Beauty</a><a href="#boho">Boho</a><a href="#cristal">Cristal</a><a href="#balanco">O que mudou</a></nav>
+<nav class="idx"><a href="#beauty">Clássico</a><a href="#boho">Boho</a><a href="#cristal">Cristal</a><a href="#balanco">O que mudou</a></nav>
 <section class="est" id="beauty" data-est="beauty">
 <header class="est-h">
-  <h2>Beauty<small>espelho e dourado</small></h2>
+  <h2>Clássico<small>espelho e dourado</small></h2>
   <div class="prs"><div class="pr"><b>Nível 1</b>
     <span class="pr-v">R$ 7.000</span><i>valor de venda</i>
     <span class="pr-m">R$ 4.700</span><i>VMC <span class="pr-d">−33%</span></i></div><div class="pr"><b>Nível 2</b>
@@ -473,7 +482,7 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
 </section>
 <section class="bal" id="balanco">
 <header class="est-h"><h2>O que mudou contra os pacotes de hoje<small>27 peças saíram · 19 entraram</small></h2></header>
-<p class="lead" style="margin:14px 0 0">Comparação peça por peça com o que está no cadastro hoje. Cada nível novo herda um pacote de hoje: o <b>1</b> vem do Mini e do Classic, o <b>2</b> vem do Beauty e do Boho, e o <b>3</b> do Cristal vem do Cristal de hoje. Os níveis 3 do Beauty e do Boho são composição nova, então ali não há o que sair.</p>
+<p class="lead" style="margin:14px 0 0">Comparação peça por peça com o que está no cadastro hoje. Cada nível novo herda um pacote de hoje: o <b>1</b> vem do Mini e do Classic, o <b>2</b> vem do Beauty Wedding e do Boho, e o <b>3</b> do Cristal vem do Cristal de hoje. Os níveis 3 do Clássico e do Boho são composição nova, então ali não há o que sair.</p>
 
 <div class="bl-e preco" id="preco">
   <h4>O preço: o que o banco mostra<small>1109 vendas medidas em 15/10</small></h4>
@@ -492,7 +501,24 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
     <td class="">4 de 8 <span class="mute">50%</span></td></tr>
   </tbody></table></div>
   <p class="pz-p"><b>A âncora é o Cristal.</b> São 8 vendas, nenhuma abaixo de R$ 20.000 e nenhuma cheia: quatro a R$ 20.000 e quatro a R$ 25.000. O VMC cadastrado hoje é R$ 24.999, e metade dos contratos fura esse piso. Por isso o nível 3 entra com <b>VMC de R$ 20.000</b>: é o chão que a casa já pratica, e dá 33% de desconto máximo.</p>
-  <p class="pz-p">Essa mesma régua de 33% desce para os outros dois níveis: <b>R$ 4.700</b> no nível 1 e <b>R$ 9.300</b> no nível 2. Hoje o VMC do Mini e do Classic é R$ 6.000 e o do Beauty é R$ 10.000, mais apertados — e mesmo assim 507 vendas furaram. <span class="mute">Números para calibrar: o valor de venda está fixo em R$ 7.000 / R$ 14.000 / R$ 30.000.</span></p>
+  <p class="pz-p">Essa mesma régua de 33% desce para os outros dois níveis: <b>R$ 4.700</b> no nível 1 e <b>R$ 9.300</b> no nível 2. Hoje o VMC do Mini e do Classic é R$ 6.000 e o do Beauty Wedding é R$ 10.000, mais apertados — e mesmo assim 507 vendas furaram. <span class="mute">Números para calibrar: o valor de venda está fixo em R$ 7.000 / R$ 14.000 / R$ 30.000.</span></p>
+</div>
+
+<div class="bl-e sugest" id="sugestao">
+  <h4>Sugestão de preço, para avaliar<small>valor de venda em cima, VMC embaixo · 33% de folga</small></h4>
+  <div class="sg-g"><div class="sg-o">
+  <p class="sg-t">A · mesmo preço por nível</p>
+  <p class="sg-d">o cliente escolhe o estilo pelo gosto, não pelo preço; a venda compara nível com nível</p>
+  <table class="tb sg"><thead><tr><th>Nível</th><th>Clássico</th><th>Boho</th><th>Cristal</th></tr></thead><tbody>
+  <tr><th>Nível 1</th><td>R$ 7.000<span class="sg-m">R$ 4.700</span></td><td>R$ 7.000<span class="sg-m">R$ 4.700</span></td><td class="vz">—</td></tr><tr><th>Nível 2</th><td>R$ 14.000<span class="sg-m">R$ 9.300</span></td><td>R$ 14.000<span class="sg-m">R$ 9.300</span></td><td>R$ 14.000<span class="sg-m">R$ 9.300</span></td></tr><tr><th>Nível 3</th><td>R$ 30.000<span class="sg-m">R$ 20.000</span></td><td>R$ 30.000<span class="sg-m">R$ 20.000</span></td><td>R$ 30.000<span class="sg-m">R$ 20.000</span></td></tr>
+  </tbody></table></div><div class="sg-o">
+  <p class="sg-t">B · escalonado por estilo</p>
+  <p class="sg-d">o preço acompanha o que cada estilo custa para montar: o Boho tem mais peças que o Clássico e o Cristal é todo em vidro</p>
+  <table class="tb sg"><thead><tr><th>Nível</th><th>Clássico</th><th>Boho</th><th>Cristal</th></tr></thead><tbody>
+  <tr><th>Nível 1</th><td>R$ 7.000<span class="sg-m">R$ 4.700</span></td><td>R$ 7.500<span class="sg-m">R$ 5.000</span></td><td class="vz">—</td></tr><tr><th>Nível 2</th><td>R$ 14.000<span class="sg-m">R$ 9.300</span></td><td>R$ 15.000<span class="sg-m">R$ 10.000</span></td><td>R$ 18.000<span class="sg-m">R$ 12.000</span></td></tr><tr><th>Nível 3</th><td>R$ 26.000<span class="sg-m">R$ 17.300</span></td><td>R$ 28.000<span class="sg-m">R$ 18.700</span></td><td>R$ 30.000<span class="sg-m">R$ 20.000</span></td></tr>
+  </tbody></table></div></div>
+  <p class="pz-p"><b>A diferença entre as duas.</b> Na A, o nível é que manda no preço e o estilo é escolha de gosto — é a régua mais simples de vender e a que está nos cards acima. Na B, o preço reconhece o que o banco já mostra: o Boho de hoje custa R$ 16.000 contra R$ 14.000 do Beauty Wedding porque tem 29 peças contra 21, e o Cristal é todo em vidro. O custo da B é o nível 3 do Clássico cair para R$ 26.000, o que derruba a receita de quem hoje fecharia a R$ 30.000.</p>
+  <p class="pz-p"><b>O VMC é 33% abaixo do valor de venda nos dois casos</b>, a mesma folga que o Cristal já pratica. Vale lembrar que com a folga apertada de hoje 507 das 859 vendas furaram o mínimo — a régua de 33% é o que já acontece na prática, não uma concessão nova.</p>
 </div>
 
 <div class="fora" id="fora">
@@ -508,7 +534,7 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
   <p class="fo-pq">não tinha lugar fixo na montagem e sai de todos os níveis.</p>
 </li><li class="fo-i">
   <p class="fo-n">Ponto de luz cênica colorida</p>
-  <p class="fo-q">10 no Mini e no Classic, 30 no Beauty<span class="fo-o"> · iluminação do salão</span></p>
+  <p class="fo-q">10 no Mini e no Classic, 30 no Beauty Wedding<span class="fo-o"> · iluminação do salão</span></p>
   <p class="fo-pq">a luz colorida passou para o audiovisual: não é mais item de mobília.</p>
 </li><li class="fo-i">
   <p class="fo-n">Mesa treliça para doces</p>
@@ -542,7 +568,7 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
   </div>
   <div class="fo-s">
     <p class="fo-st">Mudou de lugar, mas não sumiu</p>
-    <ul class="bl-l"><li><b>Vaso de decoração de ambiente</b><span class="bl-q">eram 6 no Mini e no Classic, 8 no Beauty e 6 no Boho</span><span class="bl-pq">saem de soltos pelo salão, mas voltam 6 no nível 3 do Beauty, no trilho da cerimônia</span></li><li><b>Vela decorativa</b><span class="bl-q">20 no Beauty e 20 no Cristal</span><span class="bl-pq">vira Vela de LED decorativa e fica só no nível 3 do Beauty</span></li><li><b>Pedestal alto para arranjos</b><span class="bl-q">10 no Boho</span><span class="bl-pq">sai do nível 2; no 3 o casal escolhe alto ou baixo, 1 a cada 10 convidados</span></li></ul>
+    <ul class="bl-l"><li><b>Vaso de decoração de ambiente</b><span class="bl-q">eram 6 no Mini e no Classic, 8 no Beauty Wedding e 6 no Boho</span><span class="bl-pq">saem de soltos pelo salão, mas voltam 6 no nível 3 do Clássico, no trilho da cerimônia</span></li><li><b>Vela decorativa</b><span class="bl-q">20 no Beauty Wedding e 20 no Cristal</span><span class="bl-pq">vira Vela de LED decorativa e fica só no nível 3 do Clássico</span></li><li><b>Pedestal alto para arranjos</b><span class="bl-q">10 no Boho</span><span class="bl-pq">sai do nível 2; no 3 o casal escolhe alto ou baixo, 1 a cada 10 convidados</span></li></ul>
   </div>
 </div>
 
@@ -551,22 +577,22 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
   <div class="inv-g"><div class="inv-c">
     <img src="img/arco-espiral.jpg" alt="Arco espiral — referência de compra" loading="lazy" data-nome="Arco espiral — referência de compra" data-fonte="estrutura a comprar: monta em todos os ambientes">
     <div><p class="inv-n">Arco espiral</p>
-      <p class="inv-d">estrutura a comprar: monta em todos os ambientes. A estrutura de hoje não monta em todo ambiente, e o arco espiral está no nível 3 do Beauty e do Boho (como alternativa ao arco padrão) e nos dois níveis do Cristal. Sem a compra, o nível 3 não fecha como está desenhado.</p></div>
+      <p class="inv-d">estrutura a comprar: monta em todos os ambientes. A estrutura de hoje não monta em todo ambiente, e o arco espiral está no nível 3 do Clássico e do Boho (como alternativa ao arco padrão) e nos dois níveis do Cristal. Sem a compra, o nível 3 não fecha como está desenhado.</p></div>
   </div></div>
 </div>
 
 <div class="bl-e">
-  <h4>Beauty<small>vem de Classic Wedding (R$ 7.000) no nível 1 e Beauty Wedding (R$ 14.000) no nível 2</small></h4>
+  <h4>Clássico<small>vem de Classic Wedding (R$ 7.000) no nível 1 e Beauty Wedding (R$ 14.000) no nível 2</small></h4>
   <div class="bl-g">
     <div class="bl-c saiu"><p class="bl-t">Saiu <b>6</b></p><ul class="bl-l"><li><b>Arco da cerimônia</b><span class="bl-o">do nível 1</span>
 <span class="bl-q">1 no Classic</span><span class="bl-pq">o arco passa a ser a primeira subida de nível: entra no 2</span></li><li><b>Vaso por mesa dos convidados</b><span class="bl-o">do nível 1</span>
 <span class="bl-q">10 floreiras baixas no Classic</span><span class="bl-pq">o nível 1 fica sem vaso na mesa; vem do 2 em diante</span></li><li><b>Pedestais com cuba para arranjos</b><span class="bl-o">do nível 2</span>
-<span class="bl-q">10 no Beauty, além das 10 floreiras</span><span class="bl-pq">eram dois conjuntos para a mesma mesa; ficou um só, 1 vaso a cada 10 convidados</span></li><li><b>Vaso Firenze na mesa de doces</b><span class="bl-o">do nível 2</span>
-<span class="bl-q">2 no Beauty</span><span class="bl-pq">passa a ser o diferencial do nível 3, junto com o Abóbora</span></li><li><b>Velas decorativas</b><span class="bl-o">do nível 2</span>
-<span class="bl-q">20 no Beauty</span><span class="bl-pq">vão só no nível 3, com as Velas Sparkle</span></li><li><b>Velas Sparkle</b><span class="bl-o">do nível 2</span>
-<span class="bl-q">20 no Beauty</span><span class="bl-pq">vão só no nível 3</span></li></ul></div>
+<span class="bl-q">10 no Beauty Wedding, além das 10 floreiras</span><span class="bl-pq">eram dois conjuntos para a mesma mesa; ficou um só, 1 vaso a cada 10 convidados</span></li><li><b>Vaso Firenze na mesa de doces</b><span class="bl-o">do nível 2</span>
+<span class="bl-q">2 no Beauty Wedding</span><span class="bl-pq">passa a ser o diferencial do nível 3, junto com o Abóbora</span></li><li><b>Velas decorativas</b><span class="bl-o">do nível 2</span>
+<span class="bl-q">20 no Beauty Wedding</span><span class="bl-pq">vão só no nível 3, com as Velas Sparkle</span></li><li><b>Velas Sparkle</b><span class="bl-o">do nível 2</span>
+<span class="bl-q">20 no Beauty Wedding</span><span class="bl-pq">vão só no nível 3</span></li></ul></div>
     <div class="bl-c entrou"><p class="bl-t">Entrou <b>6</b></p><ul class="bl-l"><li><b>Vaso de ambiente no trilho da cerimônia</b><span class="bl-o">no nível 3</span>
-<span class="bl-q">6</span><span class="bl-pq">o Cristal já fazia com os vasos de vidro; no Beauty são os 6 vasos de ambiente, agora com lugar definido</span></li><li><b>Jardim suspenso sobre a mesa dos noivos</b><span class="bl-o">no nível 3</span>
+<span class="bl-q">6</span><span class="bl-pq">o Cristal já fazia com os vasos de vidro; no Clássico são os 6 vasos de ambiente, agora com lugar definido</span></li><li><b>Jardim suspenso sobre a mesa dos noivos</b><span class="bl-o">no nível 3</span>
 <span class="bl-q">1</span><span class="bl-pq">o diferencial da mesa dos noivos; não existe em nenhum pacote de hoje</span></li><li><b>Moldura de LED atrás da mesa de doces</b><span class="bl-o">no nível 3</span>
 <span class="bl-q">1</span><span class="bl-pq">o antigo Jardim de LED, que só o Cristal tinha, e agora sem floral</span></li><li><b>Estante de velas de LED</b><span class="bl-o">no nível 3</span>
 <span class="bl-q">1</span><span class="bl-pq">vinha só no Cristal; agora fecha o nível 3 dos três</span></li><li><b>Projeto 3D do evento</b><span class="bl-o">no nível 3</span>
@@ -577,7 +603,7 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
   <h4>Boho<small>vem de Mini Wedding (R$ 7.000) no nível 1 e Boho (R$ 16.000) no nível 2</small></h4>
   <div class="bl-g">
     <div class="bl-c saiu"><p class="bl-t">Saiu <b>13</b></p><ul class="bl-l"><li><b>Arco da cerimônia</b><span class="bl-o">do nível 1</span>
-<span class="bl-q">1 no Mini</span><span class="bl-pq">mesma régua do Beauty: o arco entra no nível 2</span></li><li><b>Espelho decorativo imperial</b><span class="bl-o">do nível 1</span>
+<span class="bl-q">1 no Mini</span><span class="bl-pq">mesma régua do Clássico: o arco entra no nível 2</span></li><li><b>Espelho decorativo imperial</b><span class="bl-o">do nível 1</span>
 <span class="bl-q">1 no Mini</span><span class="bl-pq">peça solta, sem lugar fixo na montagem</span></li><li><b>Candelabros de mesa</b><span class="bl-o">do nível 1</span>
 <span class="bl-q">10 no Mini, alternativos ao pedestal</span><span class="bl-pq">ficou só o pedestal, e a partir do nível 2</span></li><li><b>Tapete de sisal</b><span class="bl-o">do nível 1</span>
 <span class="bl-q">2 no Mini</span><span class="bl-pq">o nível 1 fica com 1 mesa de doces, sem tapete</span></li><li><b>Segunda mesa de doces</b><span class="bl-o">do nível 1</span>

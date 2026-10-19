@@ -37,8 +37,11 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
 .prs{display:flex;gap:9px;flex-wrap:wrap}
 .pr{background:var(--card);border:1px solid var(--linha);border-radius:10px;padding:8px 13px;min-width:116px;box-shadow:var(--sombra)}
 .pr b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--mute);font-weight:600}
-.pr span{display:block;font:600 17px/1.3 "Segoe UI",system-ui,sans-serif;font-variant-numeric:tabular-nums}
-.pr i{display:block;font-size:11.5px;font-style:normal;color:var(--mute)}
+.pr span{display:block;font-variant-numeric:tabular-nums}
+.pr-v{font:600 17px/1.25 "Segoe UI",system-ui,sans-serif}
+.pr-m{font:600 14px/1.25 "Segoe UI",system-ui,sans-serif;color:var(--ouro);margin-top:5px;padding-top:5px;border-top:1px dashed var(--linha)}
+.pr i{display:block;font-size:11px;font-style:normal;color:var(--mute)}
+.pr-d{color:var(--ouro);font-weight:600}
 .filtro{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:16px 0 4px}
 .fl{font-size:12.5px;color:var(--mute)}
 .nb{background:var(--card);border:1px solid var(--linha);color:var(--fg);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer}
@@ -125,6 +128,13 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
 .fo-q{margin:3px 0 0;font-size:12px;color:var(--mute);font-variant-numeric:tabular-nums}
 .fo-o{opacity:.8}
 .fo-pq{margin:6px 0 0;font-size:12.5px;line-height:1.45;color:var(--mute)}
+.oc{margin-top:18px;border-top:1px dashed var(--linha);padding-top:14px}
+.oc-t{margin:0;font:600 15px/1.25 Georgia,serif;display:flex;align-items:center;gap:9px;flex-wrap:wrap;color:var(--fg)}
+.oc-t small{font:600 11px/1 "Segoe UI",system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--mute)}
+.oc-i{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--head);color:var(--mute);font-size:12px;font-weight:700;flex:none}
+.oc-sub{margin:7px 0 0;font-size:12.5px;color:var(--mute);max-width:70ch}
+.oc-g{margin-top:11px}
+.oc-g .fo-i{border-left-color:var(--mute);opacity:.92}
 .fo-s{margin-top:16px;border-top:1px dashed var(--linha);padding-top:13px}
 .fo-st{margin:0 0 9px;font-size:11.5px;text-transform:uppercase;letter-spacing:.09em;font-weight:700;color:var(--mute)}
 .bl-e.invbox{margin-top:30px;background:var(--ouro-s);border:1px solid color-mix(in srgb,var(--ouro) 40%,transparent);border-radius:12px;padding:16px 18px}
@@ -135,6 +145,11 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
 .inv-c>div{flex:1;min-width:230px}
 .inv-n{margin:0 0 5px;font:600 16px/1.2 Georgia,serif}
 .inv-d{margin:0;font-size:13.5px;line-height:1.5}
+.bl-e.preco{margin-top:30px;background:var(--card);border:1px solid var(--linha);border-radius:12px;padding:16px 18px;box-shadow:var(--sombra)}
+.tb.pz thead th:first-child{width:24%}
+.tb.pz td{text-align:right;padding-right:14px}
+.tb.pz td.ruim{color:#b4553f;font-weight:600}
+.pz-p{margin:13px 0 0;font-size:13.5px;line-height:1.55;max-width:78ch}
 .hoje{margin-top:34px;background:var(--card);border:1px solid var(--linha);border-radius:12px;box-shadow:var(--sombra)}
 .hoje summary{cursor:pointer;padding:13px 16px;font-size:13.5px;font-weight:600}
 .hoje summary .mute{color:var(--mute);font-weight:400}
@@ -175,7 +190,13 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
 <section class="est" id="beauty" data-est="beauty">
 <header class="est-h">
   <h2>Beauty<small>espelho e dourado</small></h2>
-  <div class="prs"><div class="pr"><b>Nível 1</b><span>R$ 7.000</span><i>o padrão do contrato</i></div><div class="pr"><b>Nível 2</b><span>R$ 14.000</span><i>o do meio</i></div><div class="pr"><b>Nível 3</b><span>R$ 30.000</span><i>o completo</i></div></div>
+  <div class="prs"><div class="pr"><b>Nível 1</b>
+    <span class="pr-v">R$ 7.000</span><i>valor de venda</i>
+    <span class="pr-m">R$ 4.700</span><i>VMC <span class="pr-d">−33%</span></i></div><div class="pr"><b>Nível 2</b>
+    <span class="pr-v">R$ 14.000</span><i>valor de venda</i>
+    <span class="pr-m">R$ 9.300</span><i>VMC <span class="pr-d">−34%</span></i></div><div class="pr"><b>Nível 3</b>
+    <span class="pr-v">R$ 30.000</span><i>valor de venda</i>
+    <span class="pr-m">R$ 20.000</span><i>VMC <span class="pr-d">−33%</span></i></div></div>
 </header>
 <div class="filtro"><span class="fl">Ver só o que vem no</span><button class="nb" data-nivel="1" aria-pressed="false">Nível 1</button><button class="nb" data-nivel="2" aria-pressed="false">Nível 2</button><button class="nb" data-nivel="3" aria-pressed="false">Nível 3</button><button class="nb todos" data-nivel="0" aria-pressed="true">Tudo</button><span class="cont">26 peças</span></div>
 <div class="gp"><h3>Cerimônia</h3><div class="grid"><figure class="cd">
@@ -262,7 +283,13 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
 </section><section class="est" id="boho" data-est="boho">
 <header class="est-h">
   <h2>Boho<small>madeira e luz quente</small></h2>
-  <div class="prs"><div class="pr"><b>Nível 1</b><span>R$ 7.000</span><i>o padrão do contrato</i></div><div class="pr"><b>Nível 2</b><span>R$ 14.000</span><i>o do meio</i></div><div class="pr"><b>Nível 3</b><span>R$ 30.000</span><i>o completo</i></div></div>
+  <div class="prs"><div class="pr"><b>Nível 1</b>
+    <span class="pr-v">R$ 7.000</span><i>valor de venda</i>
+    <span class="pr-m">R$ 4.700</span><i>VMC <span class="pr-d">−33%</span></i></div><div class="pr"><b>Nível 2</b>
+    <span class="pr-v">R$ 14.000</span><i>valor de venda</i>
+    <span class="pr-m">R$ 9.300</span><i>VMC <span class="pr-d">−34%</span></i></div><div class="pr"><b>Nível 3</b>
+    <span class="pr-v">R$ 30.000</span><i>valor de venda</i>
+    <span class="pr-m">R$ 20.000</span><i>VMC <span class="pr-d">−33%</span></i></div></div>
 </header>
 <div class="filtro"><span class="fl">Ver só o que vem no</span><button class="nb" data-nivel="1" aria-pressed="false">Nível 1</button><button class="nb" data-nivel="2" aria-pressed="false">Nível 2</button><button class="nb" data-nivel="3" aria-pressed="false">Nível 3</button><button class="nb todos" data-nivel="0" aria-pressed="true">Tudo</button><span class="cont">27 peças</span></div>
 <div class="gp"><h3>Cerimônia</h3><div class="grid"><figure class="cd">
@@ -352,7 +379,11 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
 </section><section class="est" id="cristal" data-est="cristal">
 <header class="est-h">
   <h2>Cristal<small>vidro, espelho e branco</small></h2>
-  <div class="prs"><div class="pr"><b>Nível 2</b><span>R$ 14.000</span><i>o do meio</i></div><div class="pr"><b>Nível 3</b><span>R$ 30.000</span><i>o completo</i></div></div>
+  <div class="prs"><div class="pr"><b>Nível 2</b>
+    <span class="pr-v">R$ 14.000</span><i>valor de venda</i>
+    <span class="pr-m">R$ 9.300</span><i>VMC <span class="pr-d">−34%</span></i></div><div class="pr"><b>Nível 3</b>
+    <span class="pr-v">R$ 30.000</span><i>valor de venda</i>
+    <span class="pr-m">R$ 20.000</span><i>VMC <span class="pr-d">−33%</span></i></div></div>
 </header>
 <div class="filtro"><span class="fl">Ver só o que vem no</span><button class="nb" data-nivel="2" aria-pressed="false">Nível 2</button><button class="nb" data-nivel="3" aria-pressed="false">Nível 3</button><button class="nb todos" data-nivel="0" aria-pressed="true">Tudo</button><span class="cont">27 peças</span></div>
 <div class="gp"><h3>Cerimônia</h3><div class="grid"><figure class="cd inv">
@@ -441,11 +472,31 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
 <thead><tr><th>O que vem</th><th>Nível 2</th><th>Nível 3</th></tr></thead><tbody><tr class="gr"><td colspan="3">Cerimônia</td></tr><tr><th>Arco espiral</th><td>1</td><td>1</td></tr><tr><th>Aparador do celebrante</th><td>branco</td><td>branco</td></tr><tr><th>Trilho da cerimônia</th><td>de tecido</td><td>de espelho</td></tr><tr><th>Cilindro de vidro com vela no trilho</th><td><span class="nao">—</span></td><td>✓ <span class="def">qtd. a definir</span></td></tr><tr><th>Vaso de vidro no trilho</th><td><span class="nao">—</span></td><td><span class="mud">10</span></td></tr><tr class="gr"><td colspan="3">Mesa dos noivos</td></tr><tr><th>Mesa espelhada</th><td>1</td><td>1</td></tr><tr><th>Cilindro com vela de LED</th><td><span class="def">a definir</span></td><td>8</td></tr><tr><th>Cadeira medalhão</th><td>2</td><td>6</td></tr><tr><th>Taça de cristal</th><td>2</td><td><span class="mud">6</span></td></tr><tr><th>Jardim suspenso sobre a mesa</th><td><span class="nao">—</span></td><td><span class="mud">1</span> <span class="def">sem preço no cadastro</span></td></tr><tr class="gr"><td colspan="3">Mesa de doces</td></tr><tr><th>Mesa de vidro</th><td>1</td><td>2</td></tr><tr><th>Tapete</th><td>1</td><td>2</td></tr><tr><th>Cilindro com vela de LED</th><td><span class="mud">4</span></td><td>30</td></tr><tr><th>Vaso de vidro</th><td>2</td><td><span class="mud">4</span></td></tr><tr><th>Suporte de vidro</th><td><span class="mud">10</span></td><td>10</td></tr><tr><th>Moldura de LED</th><td><span class="nao">—</span></td><td>1</td></tr><tr class="gr"><td colspan="3">Mesas dos convidados</td></tr><tr><th>Toalha</th><td>✓</td><td>✓</td></tr><tr><th>Prato branco <span class="mute">até 200 lugares</span></th><td>✓</td><td>✓</td></tr><tr><th>Guardanapo de tecido</th><td><span class="mud">✓</span></td><td><span class="mud">✓</span></td></tr><tr><th>Kit de cilindros com flor por mesa</th><td>1</td><td>1</td></tr><tr><th>Kit de cilindros só com vela por mesa</th><td><span class="nao">—</span></td><td><span class="mud">1</span></td></tr><tr><th>Cadeira de madeira</th><td><span class="mud">até 60 conv.</span></td><td><span class="mud">até 60 conv.</span></td></tr><tr class="gr"><td colspan="3">Salão</td></tr><tr><th>Vidro e velas de LED no salão</th><td><span class="mud">✓</span></td><td>✓</td></tr><tr><th>Letreiro LOVE aceso</th><td><span class="mud">1</span></td><td>1</td></tr><tr><th>Velas Sparkle</th><td><span class="nao">—</span></td><td><span class="mud">20</span></td></tr><tr><th>Estante de velas de LED</th><td><span class="nao">—</span></td><td><span class="mud">1</span></td></tr><tr class="gr"><td colspan="3">Projeto</td></tr><tr><th>Projeto 3D do evento</th><td><span class="nao">—</span></td><td><span class="mud">✓</span></td></tr></tbody></table></div>
 </section>
 <section class="bal" id="balanco">
-<header class="est-h"><h2>O que mudou contra os pacotes de hoje<small>31 peças saíram · 19 entraram</small></h2></header>
+<header class="est-h"><h2>O que mudou contra os pacotes de hoje<small>27 peças saíram · 19 entraram</small></h2></header>
 <p class="lead" style="margin:14px 0 0">Comparação peça por peça com o que está no cadastro hoje. Cada nível novo herda um pacote de hoje: o <b>1</b> vem do Mini e do Classic, o <b>2</b> vem do Beauty e do Boho, e o <b>3</b> do Cristal vem do Cristal de hoje. Os níveis 3 do Beauty e do Boho são composição nova, então ali não há o que sair.</p>
 
+<div class="bl-e preco" id="preco">
+  <h4>O preço: o que o banco mostra<small>1109 vendas medidas em 15/10</small></h4>
+  <div class="tbw" style="margin-top:0">
+  <table class="tb pz"><thead><tr><th>Pacote de hoje</th><th>Tabela</th><th>VMC</th><th>Menor venda</th><th>Média</th><th>Abaixo do VMC</th></tr></thead><tbody>
+  <tr><th>Mini Wedding</th><td>R$ 7.000</td><td>R$ 6.000</td>
+    <td>R$ 1.000</td><td>R$ 5.899</td>
+    <td class="ruim">300 de 561 <span class="mute">53%</span></td></tr><tr><th>Classic Wedding</th><td>R$ 7.000</td><td>R$ 6.000</td>
+    <td>R$ 1.000</td><td>R$ 6.096</td>
+    <td class="">23 de 68 <span class="mute">34%</span></td></tr><tr><th>Beauty Wedding</th><td>R$ 14.000</td><td>R$ 10.000</td>
+    <td>R$ 1.790</td><td>R$ 9.995</td>
+    <td class="ruim">207 de 298 <span class="mute">69%</span></td></tr><tr><th>Boho</th><td>R$ 16.000</td><td>R$ 12.000</td>
+    <td>R$ 400</td><td>R$ 9.733</td>
+    <td class="ruim">135 de 174 <span class="mute">78%</span></td></tr><tr><th>Cristal</th><td>R$ 30.000</td><td>R$ 24.999</td>
+    <td>R$ 20.000</td><td>R$ 22.500</td>
+    <td class="">4 de 8 <span class="mute">50%</span></td></tr>
+  </tbody></table></div>
+  <p class="pz-p"><b>A âncora é o Cristal.</b> São 8 vendas, nenhuma abaixo de R$ 20.000 e nenhuma cheia: quatro a R$ 20.000 e quatro a R$ 25.000. O VMC cadastrado hoje é R$ 24.999, e metade dos contratos fura esse piso. Por isso o nível 3 entra com <b>VMC de R$ 20.000</b>: é o chão que a casa já pratica, e dá 33% de desconto máximo.</p>
+  <p class="pz-p">Essa mesma régua de 33% desce para os outros dois níveis: <b>R$ 4.700</b> no nível 1 e <b>R$ 9.300</b> no nível 2. Hoje o VMC do Mini e do Classic é R$ 6.000 e o do Beauty é R$ 10.000, mais apertados — e mesmo assim 507 vendas furaram. <span class="mute">Números para calibrar: o valor de venda está fixo em R$ 7.000 / R$ 14.000 / R$ 30.000.</span></p>
+</div>
+
 <div class="fora" id="fora">
-  <h3 class="fo-t"><span class="fo-x">✕</span> Não está em pacote nenhum<small>9 peças · não prometer na venda</small></h3>
+  <h3 class="fo-t"><span class="fo-x">✕</span> Não está em pacote nenhum<small>5 peças · não prometer na venda</small></h3>
   <p class="fo-sub">Estas peças estavam em algum pacote de hoje e não entram em <b>nenhum nível de nenhum estilo</b> depois da calibragem.</p>
   <ul class="fo-g"><li class="fo-i">
   <p class="fo-n">Candelabro de mesa</p>
@@ -464,26 +515,31 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
   <p class="fo-q">4 no Boho<span class="fo-o"> · mesa de doces</span></p>
   <p class="fo-pq">a mesa de doces fica com as 2 rústicas e os 10 suportes.</p>
 </li><li class="fo-i">
-  <p class="fo-n">Bandeja retangular para doces</p>
-  <p class="fo-q">4 no Boho<span class="fo-o"> · mesa de doces</span></p>
-  <p class="fo-pq">os suportes sextavados já fazem o serviço.</p>
-</li><li class="fo-i">
-  <p class="fo-n">Vaso Folhas</p>
-  <p class="fo-q">1 no Boho<span class="fo-o"> · mesa de doces</span></p>
-  <p class="fo-pq">peça única, fora do par Gomado / Atenas que ficou.</p>
-</li><li class="fo-i">
-  <p class="fo-n">Louça do convidado</p>
-  <p class="fo-q">pratos de jantar e de sobremesa, jogo de talheres e taças Hannover, no Boho<span class="fo-o"> · mesa dos convidados</span></p>
-  <p class="fo-pq">louça é do buffet, não da mobília. O que fica na mesa é toalha, sousplat e guardanapo (prato branco só no Cristal).</p>
-</li><li class="fo-i">
-  <p class="fo-n">Mesa redonda dos convidados</p>
-  <p class="fo-q">no Boho<span class="fo-o"> · salão</span></p>
-  <p class="fo-pq">a mesa é do espaço, não do pacote.</p>
-</li><li class="fo-i">
   <p class="fo-n">Sofá e lounge</p>
   <p class="fo-q">2 sofás bege e 1 tapete no Cristal<span class="fo-o"> · cantinho de foto</span></p>
   <p class="fo-pq">o lounge saiu dos três estilos em 15/10.</p>
 </li></ul>
+  <div class="oc">
+    <p class="oc-t"><span class="oc-i">≡</span> Continua vindo, só saiu da lista<small>4 peças · pode falar que vem</small></p>
+    <p class="oc-sub">Estas não foram retiradas: seguem na montagem do evento. O que mudou é que a lista do pacote não mostra mais cada uma.</p>
+    <ul class="fo-g oc-g"><li class="fo-i">
+  <p class="fo-n">Bandeja retangular para doces</p>
+  <p class="fo-q">4 no Boho<span class="fo-o"> · mesa de doces</span></p>
+  <p class="fo-pq">continua indo na montagem; sai da lista porque os suportes já descrevem a mesa.</p>
+</li><li class="fo-i">
+  <p class="fo-n">Vaso Folhas</p>
+  <p class="fo-q">1 no Boho<span class="fo-o"> · mesa de doces</span></p>
+  <p class="fo-pq">segue no acervo e na montagem; a lista mostra o par Gomado / Atenas.</p>
+</li><li class="fo-i">
+  <p class="fo-n">Louça do convidado</p>
+  <p class="fo-q">pratos de jantar e de sobremesa, jogo de talheres e taças Hannover, no Boho<span class="fo-o"> · mesa dos convidados</span></p>
+  <p class="fo-pq">a mesa posta continua completa; a louça é do buffet, por isso não entra na lista da mobília.</p>
+</li><li class="fo-i">
+  <p class="fo-n">Mesa redonda dos convidados</p>
+  <p class="fo-q">no Boho<span class="fo-o"> · salão</span></p>
+  <p class="fo-pq">a mesa continua posta no salão; ela é do espaço, por isso não entra na lista do pacote.</p>
+</li></ul>
+  </div>
   <div class="fo-s">
     <p class="fo-st">Mudou de lugar, mas não sumiu</p>
     <ul class="bl-l"><li><b>Vaso de decoração de ambiente</b><span class="bl-q">eram 6 no Mini e no Classic, 8 no Beauty e 6 no Boho</span><span class="bl-pq">saem de soltos pelo salão, mas voltam 6 no nível 3 do Beauty, no trilho da cerimônia</span></li><li><b>Vela decorativa</b><span class="bl-q">20 no Beauty e 20 no Cristal</span><span class="bl-pq">vira Vela de LED decorativa e fica só no nível 3 do Beauty</span></li><li><b>Pedestal alto para arranjos</b><span class="bl-q">10 no Boho</span><span class="bl-pq">sai do nível 2; no 3 o casal escolhe alto ou baixo, 1 a cada 10 convidados</span></li></ul>

@@ -529,6 +529,8 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
           var tem = n === '0' || !!cd.querySelector('.sl.on[data-n="' + n + '"]')
           cd.classList.toggle('apaga', !tem)
           cd.classList.toggle('marca', tem && n !== '0')
+          // o que vem no nível sobe para o começo do ambiente; o resto desce
+          cd.style.order = n === '0' ? '' : tem ? '0' : '1'
         })
       })
     })

@@ -57,6 +57,11 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
 .cd.apaga .cd-n{color:var(--mute);font-weight:500}
 /* Dentro do nível filtrado: moldura dourada, o mesmo tom da linha sob o nome do estilo. */
 .cd.marca{border-color:var(--ouro);box-shadow:0 0 0 1px var(--ouro),var(--sombra)}
+/* Peça que o Indaiá ainda não tem: a proposta é comprar. */
+.cd.inv .cd-i{position:relative}
+.inv-t{position:absolute;top:8px;left:8px;background:var(--ouro);color:#fff;font-size:10px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.09em;padding:3px 8px;border-radius:5px;box-shadow:0 1px 6px rgba(0,0,0,.3)}
+.inv-p{font-size:11.5px;color:var(--ouro);line-height:1.35;border-top:1px dashed var(--linha);padding-top:6px}
 .cd.apaga .sl.on{background:transparent;color:var(--mute);border-color:var(--linha)}
 .cd-i{aspect-ratio:4/3;background:var(--head);display:grid;place-items:center;overflow:hidden}
 .cd-i img{width:100%;height:100%;max-width:100%;object-fit:cover;display:block;cursor:zoom-in}
@@ -108,6 +113,14 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
 .bl-o{display:inline-block;margin-left:6px;font-size:11px;color:var(--ouro);background:var(--ouro-s);border-radius:4px;padding:1px 6px;vertical-align:1px;white-space:nowrap}
 .bl-q{display:block;font-size:12px;color:var(--mute);font-variant-numeric:tabular-nums}
 .bl-pq{display:block;font-size:12.5px;color:var(--mute);margin-top:2px}
+.bl-e.invbox{margin-top:30px;background:var(--ouro-s);border:1px solid color-mix(in srgb,var(--ouro) 40%,transparent);border-radius:12px;padding:16px 18px}
+.bl-e.invbox h4{color:var(--ouro);border-bottom-color:color-mix(in srgb,var(--ouro) 30%,transparent)}
+.inv-g{display:flex;flex-direction:column;gap:14px}
+.inv-c{display:flex;gap:15px;align-items:flex-start;flex-wrap:wrap}
+.inv-c img{width:190px;max-width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;cursor:zoom-in;flex:none}
+.inv-c>div{flex:1;min-width:230px}
+.inv-n{margin:0 0 5px;font:600 16px/1.2 Georgia,serif}
+.inv-d{margin:0;font-size:13.5px;line-height:1.5}
 .hoje{margin-top:34px;background:var(--card);border:1px solid var(--linha);border-radius:12px;box-shadow:var(--sombra)}
 .hoje summary{cursor:pointer;padding:13px 16px;font-size:13.5px;font-weight:600}
 .hoje summary .mute{color:var(--mute);font-weight:400}
@@ -154,9 +167,9 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
 <div class="gp"><h3>Cerimônia</h3><div class="grid"><figure class="cd">
 <div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/produtos/fotos/8790330f-6957-4bdb-ae5f-9c48abcc5a70/1784739100674-opt.webp" alt="Arco padrão" loading="lazy" data-nome="Arco padrão" data-fonte="Arco Padrão - Floral"></div>
 <figcaption><span class="cd-n">Arco padrão</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl off" title="não vem no nível 3">3</span></span></figcaption>
-</figure><figure class="cd">
-<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/produtos/fotos/5738745a-8bb8-4067-bb5d-257708066df7/1784739071162-opt.webp" alt="Arco padrão ou espiral" loading="lazy" data-nome="Arco padrão ou espiral" data-fonte="Arco em Espiral - Cor Branca"></div>
-<figcaption><span class="cd-n">Arco padrão ou espiral</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>padrão ou espiral</i></span></span></figcaption>
+</figure><figure class="cd inv">
+<div class="cd-i"><img src="img/arco-espiral.jpg" alt="Arco padrão ou espiral" loading="lazy" data-nome="Arco padrão ou espiral" data-fonte="Arco espiral — referência de compra · estrutura a comprar: monta em todos os ambientes"><span class="inv-t">a comprar</span></div>
+<figcaption><span class="cd-n">Arco padrão ou espiral</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>padrão ou espiral</i></span></span><span class="inv-p">estrutura a comprar: monta em todos os ambientes</span></figcaption>
 </figure><figure class="cd">
 <div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1CR_b1R6K4Z3MwRNsA6Ii3nt9souecBJW-thumb.jpg" alt="Aparador do celebrante" loading="lazy" data-nome="Aparador do celebrante" data-fonte="2024 PACOTE BEAUTY APARADOR DE CERIMONIA · foto do evento montado, não da peça sozinha"></div>
 <figcaption><span class="cd-n">Aparador do celebrante</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
@@ -241,9 +254,9 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
 <div class="gp"><h3>Cerimônia</h3><div class="grid"><figure class="cd">
 <div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1OBpIoLBp67TatMOiPsiWYzBOpj3n7FOo-thumb.jpg" alt="Arco meia-lua" loading="lazy" data-nome="Arco meia-lua" data-fonte="2024 PACOTE BOHO DECORAÇÃO ARCO · foto do evento montado, não da peça sozinha"></div>
 <figcaption><span class="cd-n">Arco meia-lua</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl off" title="não vem no nível 3">3</span></span></figcaption>
-</figure><figure class="cd">
-<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/produtos/fotos/5738745a-8bb8-4067-bb5d-257708066df7/1784739071162-opt.webp" alt="Arco meia-lua ou espiral" loading="lazy" data-nome="Arco meia-lua ou espiral" data-fonte="Arco em Espiral - Cor Branca"></div>
-<figcaption><span class="cd-n">Arco meia-lua ou espiral</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>meia-lua ou espiral</i></span></span></figcaption>
+</figure><figure class="cd inv">
+<div class="cd-i"><img src="img/arco-espiral.jpg" alt="Arco meia-lua ou espiral" loading="lazy" data-nome="Arco meia-lua ou espiral" data-fonte="Arco espiral — referência de compra · estrutura a comprar: monta em todos os ambientes"><span class="inv-t">a comprar</span></div>
+<figcaption><span class="cd-n">Arco meia-lua ou espiral</span><span class="cd-s"><span class="sl off" title="não vem no nível 1">1</span><span class="sl off" title="não vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3<i>meia-lua ou espiral</i></span></span><span class="inv-p">estrutura a comprar: monta em todos os ambientes</span></figcaption>
 </figure><figure class="cd">
 <div class="cd-i"><img src="https://boho-itens.eventosindaia.com.br/fotos/aparador-cerimonia.jpg" alt="Aparador do celebrante" loading="lazy" data-nome="Aparador do celebrante" data-fonte="Aparador de madeira no altar, com o tapete de espelho refletindo o corredor · foto do altar inteiro, não só do aparador"></div>
 <figcaption><span class="cd-n">Aparador do celebrante</span><span class="cd-s"><span class="sl on" data-n="1" title="vem no nível 1">1</span><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
@@ -325,9 +338,9 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
   <div class="prs"><div class="pr"><b>Nível 2</b><span>R$ 14.000</span><i>o do meio</i></div><div class="pr"><b>Nível 3</b><span>R$ 30.000</span><i>o completo</i></div></div>
 </header>
 <div class="filtro"><span class="fl">Ver só o que vem no</span><button class="nb" data-nivel="2" aria-pressed="false">Nível 2</button><button class="nb" data-nivel="3" aria-pressed="false">Nível 3</button><button class="nb todos" data-nivel="0" aria-pressed="true">Tudo</button><span class="cont">27 peças</span></div>
-<div class="gp"><h3>Cerimônia</h3><div class="grid"><figure class="cd">
-<div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/produtos/fotos/5738745a-8bb8-4067-bb5d-257708066df7/1784739071162-opt.webp" alt="Arco espiral" loading="lazy" data-nome="Arco espiral" data-fonte="Arco em Espiral - Cor Branca"></div>
-<figcaption><span class="cd-n">Arco espiral</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
+<div class="gp"><h3>Cerimônia</h3><div class="grid"><figure class="cd inv">
+<div class="cd-i"><img src="img/arco-espiral.jpg" alt="Arco espiral" loading="lazy" data-nome="Arco espiral" data-fonte="Arco espiral — referência de compra · estrutura a comprar: monta em todos os ambientes"><span class="inv-t">a comprar</span></div>
+<figcaption><span class="cd-n">Arco espiral</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span><span class="inv-p">estrutura a comprar: monta em todos os ambientes</span></figcaption>
 </figure><figure class="cd">
 <div class="cd-i"><img src="https://wnhdvlavbtljjyzevocz.supabase.co/storage/v1/object/public/midias/b377d97e-ed85-4fd9-953f-79c1c6935411/drive/1CR_b1R6K4Z3MwRNsA6Ii3nt9souecBJW-thumb.jpg" alt="Aparador do celebrante" loading="lazy" data-nome="Aparador do celebrante" data-fonte="2024 PACOTE BEAUTY APARADOR DE CERIMONIA · foto do evento montado, não da peça sozinha"></div>
 <figcaption><span class="cd-n">Aparador do celebrante</span><span class="cd-s"><span class="sl on" data-n="2" title="vem no nível 2">2</span><span class="sl on" data-n="3" title="vem no nível 3">3</span></span></figcaption>
@@ -420,6 +433,15 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
 <span class="bl-q">10 no Mini e no Classic, 30 no Beauty</span><span class="bl-pq">a luz colorida passou para o audiovisual e sai do pacote de mobília</span></li><li><b>Vasos de decoração de ambiente</b>
 <span class="bl-q">6 no Mini e no Classic, 8 no Beauty, 6 no Boho</span><span class="bl-pq">saem de onde estavam, soltos pelo salão; no nível 3 do Beauty voltam 6, com lugar certo, no trilho da cerimônia</span></li><li><b>Lounge: sofás e tapete</b>
 <span class="bl-q">2 sofás bege e 1 tapete no Cristal</span><span class="bl-pq">tirado dos três estilos em 15/10</span></li></ul>
+</div>
+
+<div class="bl-e invbox">
+  <h4>Investimento a aprovar<small>peça que a casa ainda não tem</small></h4>
+  <div class="inv-g"><div class="inv-c">
+    <img src="img/arco-espiral.jpg" alt="Arco espiral — referência de compra" loading="lazy" data-nome="Arco espiral — referência de compra" data-fonte="estrutura a comprar: monta em todos os ambientes">
+    <div><p class="inv-n">Arco espiral</p>
+      <p class="inv-d">estrutura a comprar: monta em todos os ambientes. A estrutura de hoje não monta em todo ambiente, e o arco espiral está no nível 3 do Beauty e do Boho (como alternativa ao arco padrão) e nos dois níveis do Cristal. Sem a compra, o nível 3 não fecha como está desenhado.</p></div>
+  </div></div>
 </div>
 
 <div class="bl-e">
@@ -521,7 +543,7 @@ h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spac
   }
   function fechar() { lb.classList.remove('on'); lb.setAttribute('aria-hidden', 'true'); img.src = '' }
   document.addEventListener('click', function (e) {
-    var im = e.target.closest('.cd-i img')
+    var im = e.target.closest('.cd-i img, .inv-c img')
     if (im) { abrir(im); return }
     if (e.target.closest('#lb')) fechar()
   })

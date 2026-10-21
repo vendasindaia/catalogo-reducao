@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Floral do casamento · proposta</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#faf8f5; --card:#fff; --fg:#20201e; --mute:#7d7a72; --linha:#e7e2d9;
+  --ouro:#a98141; --ouro-s:#f3ead9; --head:#efe9df; --fo:#a8402c; --fo-bg:#fbf1ee;
+  --sombra:0 1px 2px rgba(32,32,30,.06),0 8px 22px rgba(32,32,30,.05); color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#17171a; --card:#1f1f23; --fg:#f0ede7; --mute:#9a958c; --linha:#33333a;
+  --ouro:#d8ad64; --ouro-s:#33291a; --head:#26262b; --fo:#e58a6e; --fo-bg:#2a1a16;
+  --sombra:0 1px 2px rgba(0,0,0,.4),0 10px 26px rgba(0,0,0,.33); color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#17171a; --card:#1f1f23; --fg:#f0ede7; --mute:#9a958c; --linha:#33333a;
+  --ouro:#d8ad64; --ouro-s:#33291a; --head:#26262b; --fo:#e58a6e; --fo-bg:#2a1a16;
+  --sombra:0 1px 2px rgba(0,0,0,.4),0 10px 26px rgba(0,0,0,.33); color-scheme:dark;
+}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 "Segoe UI",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+.pg{max-width:1120px;margin:0 auto;padding-block:30px 60px;padding-left:18px;padding-right:18px}
+h1{font:600 30px/1.18 Georgia,"Times New Roman",serif;margin:0 0 6px;letter-spacing:-.2px;text-wrap:balance}
+h2{font:600 22px/1.2 Georgia,serif;margin:0;padding-bottom:11px;border-bottom:2px solid var(--ouro)}
+.sec{margin-top:48px}
+.lead{color:var(--mute);margin:0 0 4px;max-width:70ch}
+.topo{border-bottom:1px solid var(--linha);padding-bottom:20px;display:flex;gap:18px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+.tema{background:var(--card);color:var(--mute);border:1px solid var(--linha);border-radius:999px;padding:7px 14px;font-size:12.5px;cursor:pointer;white-space:nowrap}
+.tema:hover{color:var(--fg);border-color:var(--ouro)}
+.idx{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 0}
+.idx a{text-decoration:none;color:var(--fg);background:var(--card);border:1px solid var(--linha);border-radius:999px;padding:7px 15px;font-size:13.5px;box-shadow:var(--sombra)}
+.idx a:hover{border-color:var(--ouro);color:var(--ouro)}
+.tbw{overflow-x:auto;margin-top:16px}
+.tb{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--linha);border-radius:10px;overflow:hidden;font-size:13.5px;min-width:520px}
+.tb thead th{background:var(--head);text-align:left;padding:9px 12px;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute);border-bottom:1px solid var(--linha)}
+.tb thead th:not(:first-child){text-align:center}
+.tb tbody th{text-align:left;font-weight:500;padding:8px 12px;border-bottom:1px solid var(--linha)}
+.tb tbody td{text-align:center;padding:8px 10px;border-bottom:1px solid var(--linha);font-variant-numeric:tabular-nums}
+.tb tr.gr td{background:var(--ouro-s);color:var(--ouro);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.09em;padding:6px 12px;text-align:left}
+.tb .nao{color:var(--mute);opacity:.5}
+.tb .mute{color:var(--mute)}
+.tb .pz{font-weight:700;color:var(--ouro)}
+.tb .zero{color:var(--fo);font-weight:600}
+.es{margin-top:20px}
+.es h3{font:600 15px/1 "Segoe UI",system-ui,sans-serif;margin:0 0 10px;text-transform:uppercase;letter-spacing:.08em;color:var(--ouro)}
+.es-g{display:flex;gap:10px;flex-wrap:wrap}
+.pr{background:var(--card);border:1px solid var(--linha);border-radius:10px;padding:10px 14px;min-width:150px;box-shadow:var(--sombra);flex:1}
+.pr b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--mute);font-weight:600}
+.pr span{display:block;font-variant-numeric:tabular-nums}
+.pr-v{font:600 18px/1.25 "Segoe UI",system-ui,sans-serif}
+.pr-m{font:600 14px/1.25 "Segoe UI",system-ui,sans-serif;color:var(--ouro);margin-top:5px;padding-top:5px;border-top:1px dashed var(--linha)}
+.pr i{display:block;font-size:11px;font-style:normal;color:var(--mute)}
+.pr-d{color:var(--ouro);font-weight:600}
+.pr-c{font-size:11px;color:var(--mute);margin-top:6px}
+.cx{background:var(--card);border:1px solid var(--linha);border-radius:12px;padding:16px 18px;box-shadow:var(--sombra);margin-top:18px}
+.cx h3{margin:0 0 9px;font:600 16px/1.25 Georgia,serif}
+.cx p{margin:0 0 9px;font-size:13.5px;line-height:1.55;max-width:78ch}
+.cx p:last-child{margin-bottom:0}
+.rasc{border-color:color-mix(in srgb,var(--fo) 40%,transparent);background:var(--fo-bg)}
+.rasc h3{color:var(--fo);display:flex;align-items:center;gap:9px}
+.rasc-i{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--fo);color:#fff;font-size:13px;font-weight:700;flex:none}
+.esc{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px}
+.esc-c{background:var(--card);border:1px solid var(--linha);border-left:3px solid var(--ouro);border-radius:9px;padding:11px 13px}
+.esc-n{margin:0;font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--ouro)}
+.esc-f{margin:4px 0 0;font-size:14px;font-weight:600;line-height:1.35}
+.esc-p{margin:5px 0 0;font-size:12.5px;color:var(--mute);line-height:1.45}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.tag{background:var(--head);border-radius:999px;padding:4px 11px;font-size:12px;color:var(--mute);font-variant-numeric:tabular-nums}
+.tag b{color:var(--fg)}
+.fal{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.fal li{font-size:13.5px;line-height:1.5;padding-left:26px;position:relative}
+.fal li::before{content:counter(f);counter-increment:f;position:absolute;left:0;top:1px;width:19px;height:19px;border-radius:50%;background:var(--ouro-s);color:var(--ouro);font-size:11px;font-weight:700;display:grid;place-items:center}
+.fal{counter-reset:f}
+.rod{margin-top:46px;border-top:1px solid var(--linha);padding-top:16px;color:var(--mute);font-size:12.5px}
+.rod a{color:var(--ouro)}
+@media (max-width:620px){ .pg{padding-block:22px 44px} h1{font-size:24px} }
+</style></head>
+<body><div class="pg">
+<div class="topo">
+  <div>
+    <h1>Floral do casamento</h1>
+    <p class="lead">Proposta de três níveis de floral, amarrados aos três níveis de mobília: se um sobe, o outro sobe junto. Quantidades para 60 convidados, o limite dos pacotes.</p>
+  </div>
+  <button class="tema" id="tema">Tema</button>
+</div>
+<nav class="idx"><a href="#hoje">Como está hoje</a><a href="#comp">O que vem em cada nível</a><a href="#flores">A flor</a><a href="#preco">Preço</a><a href="#falta">O que falta decidir</a></nav>
+
+<section class="sec" id="hoje">
+<h2>Como está hoje</h2>
+<p class="lead" style="margin-top:12px">Medido no banco em 20/10. Dois problemas aparecem antes de qualquer proposta.</p>
+<div class="cx">
+  <h3>Nenhum pacote floral tem composição cadastrada</h3>
+  <p>Os cinco pacotes de floral do CRM têm preço e nome, e <b>nenhum item dentro</b>. O que descreve o floral é um material publicado — o Essencial — que fala de quatro ambientes: cerimônia, mesa de doces, mesa dos noivos e mesas dos convidados, com <b>5 arranjos baixos para até 5 mesas</b>, e avisa que mesa adicional é orçada à parte.</p>
+  <p>Resultado: o vendedor não tem lista para mostrar, e a Decoração não tem lista para montar.</p>
+</div>
+<div class="tbw"><table class="tb"><thead><tr><th>Pacote floral de hoje</th><th>Tabela</th><th>Vendas</th><th>Média praticada</th></tr></thead><tbody>
+<tr><th>Mini Wedding</th><td>R$ 8.000</td><td class="">6</td><td>R$ 6.883</td></tr><tr><th>Beauty Wedding- Permanente</th><td>R$ 12.000</td><td class="">3</td><td>R$ 8.000</td></tr><tr><th>Boho</th><td>R$ 15.000</td><td class="">6</td><td>R$ 10.583</td></tr><tr><th>Cristal</th><td>R$ 12.000</td><td class="zero">0</td><td><span class="nao">—</span></td></tr><tr><th>Pacote Essencial - Decoração Floral Permanente</th><td><span class="zero">R$ 0</span></td><td class="">26</td><td>R$ 5.591</td></tr><tr><th>Pacote Cristal ( Itens + Floral )</th><td>R$ 32.000</td><td class="zero">0</td><td><span class="nao">—</span></td></tr>
+</tbody></table></div>
+<div class="cx">
+  <h3>O floral empacotado quase não vende</h3>
+  <p>Os pacotes florais somam <b>41 vendas</b>, contra cerca de <b>1.180</b> dos pacotes de mobília. O que roda é o avulso: “Decoração Floral”, um item sem preço de tabela, saiu 75 vezes com média de R$ 4.488.</p>
+  <div class="tbw"><table class="tb"><thead><tr><th>Item floral avulso</th><th>Tabela</th><th>Vendas</th><th>Média praticada</th></tr></thead><tbody>
+  <tr><th>Arranjos Baixos - Mesa Convidados</th><td>R$ 150</td><td>92</td><td>R$ 1.135</td></tr><tr><th>Decoração Floral</th><td><span class="zero">R$ 0</span></td><td>75</td><td>R$ 4.488</td></tr><tr><th>Arranjo Suspenso</th><td>R$ 1.300</td><td>72</td><td>R$ 943</td></tr><tr><th>Corrimão Floral</th><td>R$ 1.500</td><td>17</td><td>R$ 1.207</td></tr><tr><th>Arranjos Alto - Mesa Convidados</th><td>R$ 350</td><td>14</td><td>R$ 2.292</td></tr><tr><th>Arranjo Grande - Mesa de Doces</th><td>R$ 500</td><td>10</td><td>R$ 681</td></tr><tr><th>Arranjo Pequeno - Mesa de Doces</th><td>R$ 200</td><td>9</td><td>R$ 457</td></tr><tr><th>Painel Floral Instagramavel</th><td>R$ 1.500</td><td>6</td><td>R$ 1.150</td></tr><tr><th>Buquê da Noiva</th><td>R$ 1.200</td><td>3</td><td>R$ 1.217</td></tr>
+  </tbody></table></div>
+</div>
+</section>
+
+<section class="sec" id="comp">
+<h2>O que vem em cada nível</h2>
+<p class="lead" style="margin-top:12px">Na ordem do evento. Cada peça de mobília que pede flor ganha flor no mesmo nível: o nível 1 não tem arco, então não tem arco florido.</p>
+<div class="tbw"><table class="tb"><thead><tr><th>O que vem</th><th>Floral 1</th><th>Floral 2</th><th>Floral 3</th></tr></thead><tbody>
+<tr class="gr"><td colspan="4">A noiva</td></tr><tr><th>Buquê da noiva <span class="mute">natural, flor da estação</span></th><td>✓</td><td>✓</td><td>✓</td></tr><tr><th>Buquê de jogar</th><td><span class="nao">—</span></td><td>✓</td><td>✓</td></tr><tr><th>Flor de lapela <span class="mute">noivos, pais e padrinhos</span></th><td><span class="nao">—</span></td><td>✓</td><td>✓</td></tr><tr class="gr"><td colspan="4">Cerimônia</td></tr><tr><th>Arco</th><td>— <span class="mute">não tem arco no nível 1</span></td><td>florido em dois pontos</td><td>florido por inteiro</td></tr><tr><th>Aparador do celebrante</th><td><span class="nao">—</span></td><td>1 arranjo</td><td>1 arranjo</td></tr><tr><th>Trilho da cerimônia</th><td><span class="nao">—</span></td><td>2 pontos de flor</td><td>6 vasos de chão floridos</td></tr><tr class="gr"><td colspan="4">Mesa dos noivos</td></tr><tr><th>Arranjo da mesa</th><td>1 baixo</td><td>1 frontal</td><td>1 frontal</td></tr><tr><th>Jardim suspenso sobre a mesa</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td>florido</td></tr><tr><th>Detalhe no guardanapo dos noivos</th><td><span class="nao">—</span></td><td>✓</td><td>✓</td></tr><tr class="gr"><td colspan="4">Mesa de doces</td></tr><tr><th>Arranjo grande</th><td>1</td><td>2</td><td>2</td></tr><tr><th>Arranjo pequeno</th><td><span class="nao">—</span></td><td>2</td><td>4</td></tr><tr><th>Flor nos suportes de doces</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td>✓</td></tr><tr class="gr"><td colspan="4">Mesas dos convidados</td></tr><tr><th>Arranjo por mesa <span class="mute">1 a cada 10 convidados</span></th><td><span class="nao">—</span></td><td>6 baixos</td><td>6, alto ou baixo</td></tr><tr class="gr"><td colspan="4">Salão</td></tr><tr><th>Estante de velas de LED</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td>florida</td></tr><tr><th>Cenário de foto</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td>painel floral ou Better Together</td></tr>
+</tbody></table></div>
+<div class="cx">
+  <h3>A subida de nível</h3>
+  <p>Do <b>1 para o 2</b>, a flor sai da mesa e toma o ambiente: entra o arco, o trilho e a flor na frente de cada convidado. É a subida mais fácil de mostrar na reunião, porque muda a foto da cerimônia.</p>
+  <p>Do <b>2 para o 3</b>, o que muda é menos a quantidade e mais a categoria da flor, mais o jardim suspenso, a estante florida e o cenário de foto.</p>
+</div>
+</section>
+
+<section class="sec" id="flores">
+<h2>A flor</h2>
+<div class="cx rasc">
+  <h3><span class="rasc-i">!</span> Esta parte é rascunho</h3>
+  <p>Os <b>nomes</b> das flores saíram de uma contagem no banco de mídias: são as que o Indaiá de fato fotografa. Já a <b>ordem</b> — dizer que gipsofila é nível 1 e orquídea é nível 3 — é sugestão, baseada na hierarquia usual do mercado floral. Isso não existe em nenhum cadastro do Indaiá: nenhum produto diz qual flor leva e não há preço por tipo de flor.</p>
+  <p>Antes de virar decisão, precisa do custo de compra de cada flor permanente e da palavra de quem monta.</p>
+  <div class="tags"><span class="tag">rosa <b>25</b></span><span class="tag">folhagem <b>22</b></span><span class="tag">cerejeira <b>12</b></span><span class="tag">orquídea <b>7</b></span><span class="tag">gipsofila <b>5</b></span><span class="tag">pampas <b>4</b></span><span class="tag">copos-de-leite <b>3</b></span><span class="tag">hortênsia <b>1</b></span></div>
+  <p style="margin-top:10px"><span class="mute">Quantas fotos do acervo mencionam cada flor. Tulipa, peônia, lisianto, girassol e antúrio não aparecem nenhuma vez.</span></p>
+</div>
+<div class="esc"><div class="esc-c"><p class="esc-n">Nível 1 · Base</p><p class="esc-f">folhagem permanente e gipsofila, com rosa branca de botão pequeno</p><p class="esc-p">o volume vem da folhagem; a flor pontua</p></div><div class="esc-c"><p class="esc-n">Nível 2 · Intermediária</p><p class="esc-f">rosa premium, hortênsia e pampas no Boho</p><p class="esc-p">flor e folhagem meio a meio</p></div><div class="esc-c"><p class="esc-n">Nível 3 · Nobre</p><p class="esc-f">orquídea, copo-de-leite e cerejeira nos pontos de foto</p><p class="esc-p">a folhagem vira complemento, não volume</p></div></div>
+<div class="cx">
+  <h3>A paleta muda com o estilo</h3>
+  <div class="tbw" style="margin-top:10px"><table class="tb"><thead><tr><th>Estilo</th><th>Paleta</th><th>Flor</th></tr></thead><tbody>
+  <tr><th>Clássico</th><td>branco e verde</td><td style="text-align:left">rosa branca e hortênsia; orquídea no nível 3</td></tr><tr><th>Boho</th><td>terroso</td><td style="text-align:left">pampas, palha e rosa ferrugem; cerejeira no nível 3</td></tr><tr><th>Cristal</th><td>branco puro</td><td style="text-align:left">copo-de-leite e orquídea, que combinam com o vidro</td></tr>
+  </tbody></table></div>
+</div>
+</section>
+
+<section class="sec" id="preco">
+<h2>Preço</h2>
+<p class="lead" style="margin-top:12px">Mesma régua da mobília: escalonado por estilo, VMC sempre 33% abaixo do valor de venda.</p>
+<div class="es">
+  <h3>Clássico</h3>
+  <div class="es-g"><div class="pr">
+    <b>Nível 1</b>
+    <span class="pr-v">R$ 5.000</span><i>floral</i>
+    <span class="pr-m">R$ 3.300</span><i>VMC <span class="pr-d">−33%</span></i>
+    <span class="pr-c">71% da mobília</span>
+  </div><div class="pr">
+    <b>Nível 2</b>
+    <span class="pr-v">R$ 9.000</span><i>floral</i>
+    <span class="pr-m">R$ 6.000</span><i>VMC <span class="pr-d">−33%</span></i>
+    <span class="pr-c">64% da mobília</span>
+  </div><div class="pr">
+    <b>Nível 3</b>
+    <span class="pr-v">R$ 15.000</span><i>floral</i>
+    <span class="pr-m">R$ 10.000</span><i>VMC <span class="pr-d">−33%</span></i>
+    <span class="pr-c">60% da mobília</span>
+  </div></div>
+</div><div class="es">
+  <h3>Boho</h3>
+  <div class="es-g"><div class="pr">
+    <b>Nível 1</b>
+    <span class="pr-v">R$ 5.500</span><i>floral</i>
+    <span class="pr-m">R$ 3.700</span><i>VMC <span class="pr-d">−33%</span></i>
+    <span class="pr-c">73% da mobília</span>
+  </div><div class="pr">
+    <b>Nível 2</b>
+    <span class="pr-v">R$ 10.000</span><i>floral</i>
+    <span class="pr-m">R$ 6.700</span><i>VMC <span class="pr-d">−33%</span></i>
+    <span class="pr-c">67% da mobília</span>
+  </div><div class="pr">
+    <b>Nível 3</b>
+    <span class="pr-v">R$ 16.000</span><i>floral</i>
+    <span class="pr-m">R$ 10.700</span><i>VMC <span class="pr-d">−33%</span></i>
+    <span class="pr-c">59% da mobília</span>
+  </div></div>
+</div><div class="es">
+  <h3>Cristal</h3>
+  <div class="es-g"><div class="pr">
+    <b>Nível 2</b>
+    <span class="pr-v">R$ 12.000</span><i>floral</i>
+    <span class="pr-m">R$ 8.000</span><i>VMC <span class="pr-d">−33%</span></i>
+    <span class="pr-c">67% da mobília</span>
+  </div><div class="pr">
+    <b>Nível 3</b>
+    <span class="pr-v">R$ 18.000</span><i>floral</i>
+    <span class="pr-m">R$ 12.000</span><i>VMC <span class="pr-d">−33%</span></i>
+    <span class="pr-c">60% da mobília</span>
+  </div></div>
+</div>
+<div class="cx">
+  <h3>De onde vem esse número</h3>
+  <p>O floral fica entre <b>60% e 71%</b> do valor da mobília do mesmo nível, faixa que a casa já pratica: o Boho floral de hoje é R$ 15.000 para R$ 16.000 de mobília, e o Mini é R$ 8.000 para R$ 7.000.</p>
+  <p>O nível 1 a R$ 5.000 bate com o que já se vende: o Essencial praticado dá média de R$ 5.591 e o avulso, R$ 4.488.</p>
+  <p>Dois ajustes que a tabela corrige: o <b>Cristal floral está hoje a R$ 12.000</b>, mais barato que o Boho, sendo o pacote mais caro da casa — e nunca vendeu. E o <b>Essencial está cadastrado a R$ 0</b>, então cada vendedor põe o preço que quiser.</p>
+</div>
+<div class="cx">
+  <h3>Se vender junto</h3>
+  <p>Hoje existe um “Pacote Cristal (Itens + Floral)” a R$ 32.000 que nunca vendeu — e que embute 24% de desconto sobre a soma. Com a tabela nova, 10% já é um desconto que se defende.</p>
+  <div class="tbw"><table class="tb"><thead><tr><th>Estilo · nível</th><th>Mobília</th><th>Floral</th><th>Somado</th><th>Junto, −10%</th></tr></thead><tbody>
+  <tr><th>Clássico · 1</th><td>R$ 7.000</td><td>R$ 5.000</td><td class="mute">R$ 12.000</td><td class="pz">R$ 10.800</td></tr><tr><th>Clássico · 2</th><td>R$ 14.000</td><td>R$ 9.000</td><td class="mute">R$ 23.000</td><td class="pz">R$ 20.700</td></tr><tr><th>Clássico · 3</th><td>R$ 25.000</td><td>R$ 15.000</td><td class="mute">R$ 40.000</td><td class="pz">R$ 36.000</td></tr><tr><th>Boho · 1</th><td>R$ 7.500</td><td>R$ 5.500</td><td class="mute">R$ 13.000</td><td class="pz">R$ 11.700</td></tr><tr><th>Boho · 2</th><td>R$ 15.000</td><td>R$ 10.000</td><td class="mute">R$ 25.000</td><td class="pz">R$ 22.500</td></tr><tr><th>Boho · 3</th><td>R$ 27.000</td><td>R$ 16.000</td><td class="mute">R$ 43.000</td><td class="pz">R$ 38.700</td></tr><tr><th>Cristal · 2</th><td>R$ 18.000</td><td>R$ 12.000</td><td class="mute">R$ 30.000</td><td class="pz">R$ 27.000</td></tr><tr><th>Cristal · 3</th><td>R$ 30.000</td><td>R$ 18.000</td><td class="mute">R$ 48.000</td><td class="pz">R$ 43.200</td></tr>
+  </tbody></table></div>
+</div>
+</section>
+
+<section class="sec" id="falta">
+<h2>O que falta decidir</h2>
+<ol class="fal"><li>O <b>custo de compra</b> de cada flor permanente no acervo. Sem isso a escada de flor é só ordem de mercado, não margem medida.</li><li>A palavra de quem monta sobre <b>o que é flor de entrada e flor nobre</b> na prática, e o que existe em quantidade no estoque.</li><li>A <b>lista fechada</b> do que entra como flor nobre no nível 3 sem custo extra. Sem lista, a promessa vira pedido de orquídea importada fora de época.</li><li>Se o floral entra <b>junto no contrato</b> ou continua como venda separada do Pós.</li></ol>
+</section>
+
+<p class="rod">Leitura do banco de produção em 20/10/2026, só consulta. Composição e preços são proposta, não cadastro. A mobília que serve de base está em <a href="https://vendasindaia.github.io/catalogo-reducao/mobilia-visual/">mobília do casamento</a>.</p>
+</div>
+<script>
+(function () {
+  var r = document.documentElement
+  document.getElementById('tema').addEventListener('click', function () {
+    var escuro = getComputedStyle(r).getPropertyValue('--bg').trim().indexOf('#1') === 0
+    r.setAttribute('data-theme', escuro ? 'light' : 'dark')
+  })
+})()
+</script>
+</body></html>

@@ -73,6 +73,16 @@ h2{font:600 22px/1.2 Georgia,serif;margin:0;padding-bottom:11px;border-bottom:2p
 .fal li{font-size:13.5px;line-height:1.5;padding-left:26px;position:relative}
 .fal li::before{content:counter(f);counter-increment:f;position:absolute;left:0;top:1px;width:19px;height:19px;border-radius:50%;background:var(--ouro-s);color:var(--ouro);font-size:11px;font-weight:700;display:grid;place-items:center}
 .fal{counter-reset:f}
+.fl-g{margin-top:26px}
+.fl-t{margin:0 0 12px;font:600 15px/1 "Segoe UI",system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--ouro);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-bottom:8px;border-bottom:1px solid var(--linha)}
+.fl-t small{font:400 12px/1.4 "Segoe UI",system-ui,sans-serif;text-transform:none;letter-spacing:0;color:var(--mute)}
+.fl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:10px}
+.fl-c{margin:0;background:var(--card);border:1px solid var(--linha);border-radius:10px;overflow:hidden;box-shadow:var(--sombra)}
+.fl-c img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:var(--head)}
+.fl-c figcaption{padding:7px 9px 9px;font-size:12px;line-height:1.3}
+.fl-c b{display:block;font-size:12.5px}
+.fl-c span{color:var(--mute);font-size:11.5px}
+.fl-pq{margin:10px 0 0;font-size:12.5px;color:var(--mute);line-height:1.5;max-width:80ch}
 .rod{margin-top:46px;border-top:1px solid var(--linha);padding-top:16px;color:var(--mute);font-size:12.5px}
 .rod a{color:var(--ouro)}
 @media (max-width:620px){ .pg{padding-block:22px 44px} h1{font-size:24px} }
@@ -85,7 +95,7 @@ h2{font:600 22px/1.2 Georgia,serif;margin:0;padding-bottom:11px;border-bottom:2p
   </div>
   <button class="tema" id="tema">Tema</button>
 </div>
-<nav class="idx"><a href="#hoje">Como está hoje</a><a href="#comp">O que vem em cada nível</a><a href="#flores">A flor</a><a href="#preco">Preço</a><a href="#falta">O que falta decidir</a></nav>
+<nav class="idx"><a href="#hoje">Como está hoje</a><a href="#comp">O que vem em cada nível</a><a href="#flores">As flores do acervo</a><a href="#preco">Preço</a><a href="#falta">O que falta decidir</a></nav>
 
 <section class="sec" id="hoje">
 <h2>Como está hoje</h2>
@@ -122,19 +132,280 @@ h2{font:600 22px/1.2 Georgia,serif;margin:0;padding-bottom:11px;border-bottom:2p
 
 <section class="sec" id="flores">
 <h2>A flor</h2>
-<div class="cx rasc">
-  <h3><span class="rasc-i">!</span> Esta parte é rascunho</h3>
-  <p>Os <b>nomes</b> das flores saíram de uma contagem no banco de mídias: são as que o Indaiá de fato fotografa. Já a <b>ordem</b> — dizer que gipsofila é nível 1 e orquídea é nível 3 — é sugestão, baseada na hierarquia usual do mercado floral. Isso não existe em nenhum cadastro do Indaiá: nenhum produto diz qual flor leva e não há preço por tipo de flor.</p>
-  <p>Antes de virar decisão, precisa do custo de compra de cada flor permanente e da palavra de quem monta.</p>
-  <div class="tags"><span class="tag">rosa <b>25</b></span><span class="tag">folhagem <b>22</b></span><span class="tag">cerejeira <b>12</b></span><span class="tag">orquídea <b>7</b></span><span class="tag">gipsofila <b>5</b></span><span class="tag">pampas <b>4</b></span><span class="tag">copos-de-leite <b>3</b></span><span class="tag">hortênsia <b>1</b></span></div>
-  <p style="margin-top:10px"><span class="mute">Quantas fotos do acervo mencionam cada flor. Tulipa, peônia, lisianto, girassol e antúrio não aparecem nenhuma vez.</span></p>
-</div>
-<div class="esc"><div class="esc-c"><p class="esc-n">Nível 1 · Base</p><p class="esc-f">folhagem permanente e gipsofila, com rosa branca de botão pequeno</p><p class="esc-p">o volume vem da folhagem; a flor pontua</p></div><div class="esc-c"><p class="esc-n">Nível 2 · Intermediária</p><p class="esc-f">rosa premium, hortênsia e pampas no Boho</p><p class="esc-p">flor e folhagem meio a meio</p></div><div class="esc-c"><p class="esc-n">Nível 3 · Nobre</p><p class="esc-f">orquídea, copo-de-leite e cerejeira nos pontos de foto</p><p class="esc-p">a folhagem vira complemento, não volume</p></div></div>
+<p class="lead" style="margin-top:12px">As 74 entradas da pasta de flores do Drive, varrida em 22/10 — 37 espécies. Cada uma foi identificada olhando a foto, porque o nome do arquivo é opaco. A separação em premium, intermediária e base segue o preço no mercado de <b>flor natural</b>, que é como o cliente enxerga valor.</p>
+
 <div class="cx">
-  <h3>A paleta muda com o estilo</h3>
-  <div class="tbw" style="margin-top:10px"><table class="tb"><thead><tr><th>Estilo</th><th>Paleta</th><th>Flor</th></tr></thead><tbody>
-  <tr><th>Clássico</th><td>branco e verde</td><td style="text-align:left">rosa branca e hortênsia; orquídea no nível 3</td></tr><tr><th>Boho</th><td>terroso</td><td style="text-align:left">pampas, palha e rosa ferrugem; cerejeira no nível 3</td></tr><tr><th>Cristal</th><td>branco puro</td><td style="text-align:left">copo-de-leite e orquídea, que combinam com o vidro</td></tr>
+  <h3>Como ler a separação</h3>
+  <div class="tbw" style="margin-top:10px"><table class="tb"><thead><tr><th>Categoria</th><th>Quantas</th><th>Por que</th></tr></thead><tbody>
+  <tr><th>Premium</th><td>25</td><td style="text-align:left">cara no mercado de flor natural, por ser importada, sazonal ou de cultivo longo</td></tr><tr><th>Intermediária</th><td>18</td><td style="text-align:left">preço médio, disponível o ano inteiro</td></tr><tr><th>Base</th><td>18</td><td style="text-align:left">barata e de volume; é o que preenche o arranjo</td></tr><tr><th>Folhagem</th><td>13</td><td style="text-align:left">não conta como espécie de flor: é a base de qualquer arranjo, em todos os níveis</td></tr>
   </tbody></table></div>
+  <p style="margin-top:11px"><b>Atenção:</b> o acervo é todo de flor permanente, que não tem sazonalidade nem custo de importação. A régua de preço natural serve para o cliente entender a diferença, não para descrever o custo do Indaiá — esse ainda falta.</p>
+</div>
+
+<div class="fl-g">
+  <h3 class="fl-t">Premium<small>25 · cara no mercado de flor natural, por ser importada, sazonal ou de cultivo longo</small></h3>
+  <div class="fl-grid"><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=123PudO_lhhx80ia-HcA1DSjRoEsiwzV0&sz=w400" alt="Orquídea Phalaenopsis branca" loading="lazy">
+    <figcaption><b>Orquídea Phalaenopsis</b><span>branca</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=19iI1o4XEBgBN9Hg54iBFcdJCOrjZbd3G&sz=w400" alt="Orquídea Phalaenopsis pink" loading="lazy">
+    <figcaption><b>Orquídea Phalaenopsis</b><span>pink</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1METBWTf7yUr5biEWEpgu68egaKym3FDI&sz=w400" alt="Orquídea Phalaenopsis amarela pintada" loading="lazy">
+    <figcaption><b>Orquídea Phalaenopsis</b><span>amarela pintada</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=15JqfSN2Mfv4rMhM1HK3CM9U5DmDkYx0i&sz=w400" alt="Orquídea Phalaenopsis lilás" loading="lazy">
+    <figcaption><b>Orquídea Phalaenopsis</b><span>lilás</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1BdqOMRTehdV0x3B98RhNNsmsNmec4181&sz=w400" alt="Orquídea Phalaenopsis azul" loading="lazy">
+    <figcaption><b>Orquídea Phalaenopsis</b><span>azul</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1DbUoKRDHOHURDk04DQcapQ1T079Pcfqt&sz=w400" alt="Orquídea Phalaenopsis rosa" loading="lazy">
+    <figcaption><b>Orquídea Phalaenopsis</b><span>rosa</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1QmzhfHNrEVYdFwv86MiRgKPqzgHxfXtB&sz=w400" alt="Orquídea Cymbidium laranja" loading="lazy">
+    <figcaption><b>Orquídea Cymbidium</b><span>laranja</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1aP2UaNnF2ihdX8OZTTu7aZEKlWUuKXkH&sz=w400" alt="Orquídea Cymbidium pink" loading="lazy">
+    <figcaption><b>Orquídea Cymbidium</b><span>pink</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1tWjEi9eAu0XvogFuQtQVZlKA0d7WLBoS&sz=w400" alt="Orquídea Oncidium amarela" loading="lazy">
+    <figcaption><b>Orquídea Oncidium</b><span>amarela</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1TPDxddZhuS8G7IUxCDPnI09cyzU15tiq&sz=w400" alt="Copo-de-leite branco" loading="lazy">
+    <figcaption><b>Copo-de-leite</b><span>branco</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1IErarF68xlilfFbUib_DVrpvMth2l_Gy&sz=w400" alt="Copo-de-leite laranja" loading="lazy">
+    <figcaption><b>Copo-de-leite</b><span>laranja</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1H5dKRlbwvKfiIYoOskqGiUL-HNJuS1Hi&sz=w400" alt="Peônia rosa" loading="lazy">
+    <figcaption><b>Peônia</b><span>rosa</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1RBPMHEsxb4Dr95MXS2iKk3ultNm2Cbd7&sz=w400" alt="Peônia creme" loading="lazy">
+    <figcaption><b>Peônia</b><span>creme</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1s8ZSKqtTKqH51XhOM1bsLEgx2OT7nyLf&sz=w400" alt="Rosa inglesa rosa" loading="lazy">
+    <figcaption><b>Rosa inglesa</b><span>rosa</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=14kEOJucR46F-ngrzqKN1CmONQbamX4vg&sz=w400" alt="Rosa inglesa nude" loading="lazy">
+    <figcaption><b>Rosa inglesa</b><span>nude</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1_dIv-c4u_OOoqWQGxvQgAxV07y3x9mZz&sz=w400" alt="Rosa inglesa vinho seco" loading="lazy">
+    <figcaption><b>Rosa inglesa</b><span>vinho seco</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1vxXxY6PmsoameSQXwc0dd48Q7BQ-iwE4&sz=w400" alt="Hortênsia branca" loading="lazy">
+    <figcaption><b>Hortênsia</b><span>branca</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1ARixP8XnOmGMJLuS7uFi-hitWqVTjOHm&sz=w400" alt="Hortênsia pink" loading="lazy">
+    <figcaption><b>Hortênsia</b><span>pink</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1ahegwNi9uJ8HpblX4FudhMvppk6Fyej0&sz=w400" alt="Hortênsia azul" loading="lazy">
+    <figcaption><b>Hortênsia</b><span>azul</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1Hr-XF_Fe31bzfrQxo-C2Thljns9NLtVg&sz=w400" alt="Hortênsia roxa" loading="lazy">
+    <figcaption><b>Hortênsia</b><span>roxa</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=15Hmy6ixd3kRsYAN_qFK64WE1w7Cxw_M3&sz=w400" alt="Hortênsia verde-sálvia" loading="lazy">
+    <figcaption><b>Hortênsia</b><span>verde-sálvia</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1NK_Gvy5l-h34u3NBnGJEpJUoOc2zAt9y&sz=w400" alt="Lírio rosa" loading="lazy">
+    <figcaption><b>Lírio</b><span>rosa</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1CH0uxI8UlGhHDTyYt6_9QULNYEJ852ND&sz=w400" alt="Lírio amarelo" loading="lazy">
+    <figcaption><b>Lírio</b><span>amarelo</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1wm3iWxNrWqCJvXSn8T_vzVWgzr7q2Ycs&sz=w400" alt="Lírio laranja" loading="lazy">
+    <figcaption><b>Lírio</b><span>laranja</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1B5ycTuPvJV2cskB-TOEjTTPAxXUm3siE&sz=w400" alt="Protea laranja" loading="lazy">
+    <figcaption><b>Protea</b><span>laranja</span></figcaption>
+  </figure></div>
+  <p class="fl-pq"><b>Orquídea Phalaenopsis</b> · cultivo de 2 anos até florir; a orquídea branca é a flor de casamento mais cara do mercado</p><p class="fl-pq"><b>Orquídea Cymbidium</b> · haste longa, importada; vendida por haste e não por maço</p><p class="fl-pq"><b>Orquídea Oncidium</b> · a chuva-de-ouro é cara pelo volume de flor miúda por haste</p><p class="fl-pq"><b>Copo-de-leite</b> · haste nobre, símbolo de casamento clássico; preço alto o ano inteiro</p><p class="fl-pq"><b>Peônia</b> · a mais cara das flores de casamento: no Brasil só tem de setembro a dezembro, e fora disso é importada</p><p class="fl-pq"><b>Rosa inglesa</b> · rosa de jardim (tipo David Austin): muitas pétalas, haste curta, preço de 3 a 5 vezes a rosa comum</p><p class="fl-pq"><b>Hortênsia</b> · cabeça grande e sazonal; uma haste rende o que cinco rosas rendem, e o preço acompanha</p><p class="fl-pq"><b>Lírio</b> · flor grande e perfumada, de preço alto por haste</p><p class="fl-pq"><b>Protea</b> · exótica importada da África do Sul; a mais rara da lista</p>
+</div><div class="fl-g">
+  <h3 class="fl-t">Intermediária<small>18 · preço médio, disponível o ano inteiro</small></h3>
+  <div class="fl-grid"><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1iRwuhZjW7xeHkv5nmnwQst9Qsx2NG84c&sz=w400" alt="Rosa vermelha" loading="lazy">
+    <figcaption><b>Rosa</b><span>vermelha</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1xctJTS8XDg6Lt15eysg0jssRh2In4qi4&sz=w400" alt="Rosa branca" loading="lazy">
+    <figcaption><b>Rosa</b><span>branca</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1Qv15vtCM0aKaJPLx_1heJVzRBDgcDtbc&sz=w400" alt="Rosa amarela" loading="lazy">
+    <figcaption><b>Rosa</b><span>amarela</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1QADzpNxIw5G_6nlcvS4IjnY9ut1I2m-k&sz=w400" alt="Rosa pink" loading="lazy">
+    <figcaption><b>Rosa</b><span>pink</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1b3FM9EWhGTUs5EV0u09p-q0GHADQQSbM&sz=w400" alt="Rosa laranja" loading="lazy">
+    <figcaption><b>Rosa</b><span>laranja</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=15QYg1AUIQTejJubqE_0eLByc1rOQIU0c&sz=w400" alt="Rosa lilás" loading="lazy">
+    <figcaption><b>Rosa</b><span>lilás</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1KqHNg4VocGgvDtDkeNHf6oSBVVHznfiO&sz=w400" alt="Rosa champagne" loading="lazy">
+    <figcaption><b>Rosa</b><span>champagne</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1BVk9ZCQtGheZ_r2uHGHH3eQK3eKagPaD&sz=w400" alt="Rosa azul-turquesa" loading="lazy">
+    <figcaption><b>Rosa</b><span>azul-turquesa</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1X7oYhW_yEtNkJZ740udajxwiT3SxAngn&sz=w400" alt="Rosa azul-serenity" loading="lazy">
+    <figcaption><b>Rosa</b><span>azul-serenity</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1QlFei76A12GgRgX-uFPIgc3QfoYwmWot&sz=w400" alt="Rosa rosa-claro" loading="lazy">
+    <figcaption><b>Rosa</b><span>rosa-claro</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=12ETglQl0mfAQQ36a7fmc9wSrJgLIoZ9B&sz=w400" alt="Cravo rosa" loading="lazy">
+    <figcaption><b>Cravo</b><span>rosa</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1S1lSoBdvfpono9CLty2HF_YmRBY0YB-p&sz=w400" alt="Astilbe rosa" loading="lazy">
+    <figcaption><b>Astilbe</b><span>rosa</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1uClnBd9I9P24sUqujTgf7Xz0v6U_DIRL&sz=w400" alt="Astilbe branca" loading="lazy">
+    <figcaption><b>Astilbe</b><span>branca</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1JW3baQF99V3krkhRzSVY0KxCKgqkuMSv&sz=w400" alt="Astilbe dourada" loading="lazy">
+    <figcaption><b>Astilbe</b><span>dourada</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=11I_PblVJYW8ohgMrGYhzu5h6y_keEI0e&sz=w400" alt="Boca-de-leão branca" loading="lazy">
+    <figcaption><b>Boca-de-leão</b><span>branca</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1oVftZK4K0ytgyFduPWEc_zp4DN2rjSOd&sz=w400" alt="Lavanda roxa" loading="lazy">
+    <figcaption><b>Lavanda</b><span>roxa</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1-Rh-ykRuTiZ5gY0IR7QSF9LudXV7IFUD&sz=w400" alt="Lavanda azul com folhagem" loading="lazy">
+    <figcaption><b>Lavanda</b><span>azul com folhagem</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1z4kQe-DpoKmnj971ioJiyZqmy2sLMTCy&sz=w400" alt="Margarida lilás" loading="lazy">
+    <figcaption><b>Margarida</b><span>lilás</span></figcaption>
+  </figure></div>
+  <p class="fl-pq"><b>Rosa</b> · a flor de corte mais vendida do mundo: preço médio e disponível o ano inteiro</p><p class="fl-pq"><b>Rosa</b> · rosa tingida: no natural custa mais que a comum, mas não é flor nobre</p><p class="fl-pq"><b>Cravo</b> · dura muito e custa pouco; voltou à moda em arranjo de volume</p><p class="fl-pq"><b>Astilbe</b> · flor de textura, usada para dar movimento; preço médio</p><p class="fl-pq"><b>Boca-de-leão</b> · haste alta, boa para arranjo de altura; preço médio</p><p class="fl-pq"><b>Lavanda</b> · vendida em maço e usada como textura; sazonal no natural</p><p class="fl-pq"><b>Margarida</b> · flor de campo: barata, mas fecha bem arranjo rústico</p>
+</div><div class="fl-g">
+  <h3 class="fl-t">Base<small>18 · barata e de volume; é o que preenche o arranjo</small></h3>
+  <div class="fl-grid"><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1_qLPueXCJ2VE6cLq-bXru_CXS--cfJul&sz=w400" alt="Crisântemo laranja" loading="lazy">
+    <figcaption><b>Crisântemo</b><span>laranja</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1hIjp-zw3fC7QlGPIW5-_EQmc3KDraeIM&sz=w400" alt="Crisântemo pink" loading="lazy">
+    <figcaption><b>Crisântemo</b><span>pink</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1dEIOvVKNKif8JFiPCq3SD13AmEvWMMMl&sz=w400" alt="Crisântemo rosa claro" loading="lazy">
+    <figcaption><b>Crisântemo</b><span>rosa claro</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1VLI4T5h4Ykj1V88oVjlLu3TU91flg27k&sz=w400" alt="Crisântemo vinho" loading="lazy">
+    <figcaption><b>Crisântemo</b><span>vinho</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1pZeoDb5gTGGhFAT4hYh0ffC1GMQJrEYJ&sz=w400" alt="Crisântemo botão branco" loading="lazy">
+    <figcaption><b>Crisântemo botão</b><span>branco</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1ggtPErLYjozcGAf3UE2n3R3wRahrFHym&sz=w400" alt="Crisântemo azul-petróleo" loading="lazy">
+    <figcaption><b>Crisântemo</b><span>azul-petróleo</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=11rPenZFCtUeXTwuLhuK9hlvsGs1SdN0A&sz=w400" alt="Crisântemo pêssego" loading="lazy">
+    <figcaption><b>Crisântemo</b><span>pêssego</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1qehhI0kUlj8aHtwnwZ0GobXjtSlmPjRd&sz=w400" alt="Cardo branco" loading="lazy">
+    <figcaption><b>Cardo</b><span>branco</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1SdWSRLGcpAXTcXad-QA4X1LZ07qduNId&sz=w400" alt="Cardo lilás" loading="lazy">
+    <figcaption><b>Cardo</b><span>lilás</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1sPXYvN-IJPu31fBYQ3art26p2WOaKlai&sz=w400" alt="Cardo verde" loading="lazy">
+    <figcaption><b>Cardo</b><span>verde</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1yPi7SbAtJg4rwyS4GkfTrTEPTrQQ08_t&sz=w400" alt="Gipsofila branca" loading="lazy">
+    <figcaption><b>Gipsofila</b><span>branca</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1gplFxgMRdT_kKVQ5NOyzAyKOiyHJMnOh&sz=w400" alt="Pampas bege" loading="lazy">
+    <figcaption><b>Pampas</b><span>bege</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=15Wn7S7acviFWeKKnwm4y-nd1d1ZwL2C8&sz=w400" alt="Pampas ferrugem" loading="lazy">
+    <figcaption><b>Pampas</b><span>ferrugem</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1mpi7XgdQCtfPBWJiw9srCMRaMhu7ldbF&sz=w400" alt="Capim vinho" loading="lazy">
+    <figcaption><b>Capim</b><span>vinho</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=10gnfWhOu2i07IIXHCzmrbq_b3-Avt8gm&sz=w400" alt="Capim seco bege" loading="lazy">
+    <figcaption><b>Capim seco</b><span>bege</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1R0PzqAL2mVUVZpiXWD90FLugNxDNlEGk&sz=w400" alt="Capim bunny tail palha" loading="lazy">
+    <figcaption><b>Capim bunny tail</b><span>palha</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1ogqfy94dV4DcrI0k0FUPhPi0CADMFh_L&sz=w400" alt="Galho de frutinhas pêssego" loading="lazy">
+    <figcaption><b>Galho de frutinhas</b><span>pêssego</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1w_Ls9678KIut7vnLQvwlBrBBJfHA_Sj5&sz=w400" alt="Galho de frutinhas verde" loading="lazy">
+    <figcaption><b>Galho de frutinhas</b><span>verde</span></figcaption>
+  </figure></div>
+  <p class="fl-pq"><b>Crisântemo</b> · a flor mais barata do mercado de corte, e a que mais rende volume</p><p class="fl-pq"><b>Cardo</b> · flor seca de textura; barata e de longa duração</p><p class="fl-pq"><b>Gipsofila</b> · o mosquitinho: a flor de preenchimento mais barata que existe</p><p class="fl-pq"><b>Pampas</b> · capim seco: custa pouco e enche muito, a base do estilo Boho</p><p class="fl-pq"><b>Galho de frutinhas</b> · galho de acabamento, usado para quebrar o bloco de flor</p>
+</div><div class="fl-g">
+  <h3 class="fl-t">Folhagem<small>13 · não conta como espécie de flor: é a base de qualquer arranjo, em todos os níveis</small></h3>
+  <div class="fl-grid"><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1Tanvq2U79G0z8eiQ2cdeO2GUutbB-Dpf&sz=w400" alt="Buxinho verde" loading="lazy">
+    <figcaption><b>Buxinho</b><span>verde</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=17V5lZITy1rqzvvGq5EA9PHyfc2hPQuFf&sz=w400" alt="Samambaia verde" loading="lazy">
+    <figcaption><b>Samambaia</b><span>verde</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1OyktDhpaArn_0oRj0yn5sxeYmY9OPWBJ&sz=w400" alt="Eucalipto baby verde" loading="lazy">
+    <figcaption><b>Eucalipto baby</b><span>verde</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1KR_RsiveC5HbGx2S1ntWTgEg4vSuRAFO&sz=w400" alt="Eucalipto dólar verde-acinzentado" loading="lazy">
+    <figcaption><b>Eucalipto dólar</b><span>verde-acinzentado</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1ATOCLv-6nC8owq1aLsXExlJX4YO9YEfh&sz=w400" alt="Eucalipto prata prata" loading="lazy">
+    <figcaption><b>Eucalipto prata</b><span>prata</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=18yngqN2S0JIa86AJvVbfmCR1LD0J50u4&sz=w400" alt="Palmeira verde" loading="lazy">
+    <figcaption><b>Palmeira</b><span>verde</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=16wPyu-UDeFXqBuV4sy11phMgCclrsPHM&sz=w400" alt="Folhagem pendente verde" loading="lazy">
+    <figcaption><b>Folhagem pendente</b><span>verde</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1zr1LR2GGDUcGxZTWmxP_wkno6eBx9slG&sz=w400" alt="Dólar pendente verde" loading="lazy">
+    <figcaption><b>Dólar pendente</b><span>verde</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1ds04qPdNcC9Irqh1kge3fQwSK4wJ1Qdj&sz=w400" alt="Costela-de-adão verde" loading="lazy">
+    <figcaption><b>Costela-de-adão</b><span>verde</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1lEnn2RLsCNw-M4mBHRERmgNxyNvZvV5p&sz=w400" alt="Philodendron verde-escuro" loading="lazy">
+    <figcaption><b>Philodendron</b><span>verde-escuro</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1EmS_PUwIdQXUfkx4E1ETQk1X9l20lAuB&sz=w400" alt="Folhagem variegada verde e branco" loading="lazy">
+    <figcaption><b>Folhagem variegada</b><span>verde e branco</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=1gG4-5wZgpdut4FFWGIYHZyJQRnYXzbUt&sz=w400" alt="Cipó de folhas verde-claro" loading="lazy">
+    <figcaption><b>Cipó de folhas</b><span>verde-claro</span></figcaption>
+  </figure><figure class="fl-c">
+    <img src="https://drive.google.com/thumbnail?id=19sUASXfTQWjHLpwnqzs0S2P881QR-z5x&sz=w400" alt="Folhagem outono ferrugem" loading="lazy">
+    <figcaption><b>Folhagem outono</b><span>ferrugem</span></figcaption>
+  </figure></div>
+  
+</div>
+
+<div class="cx">
+  <h3>Quem tem acesso a quê</h3>
+  <div class="tbw" style="margin-top:10px"><table class="tb"><thead><tr><th>Nível</th><th>Pode escolher</th><th>Fica de fora</th></tr></thead><tbody>
+  <tr><th>1 · Base e folhagem</th><td style="text-align:left">todas as flores de base, toda a folhagem</td><td style="text-align:left" class="mute">premium e intermediária entram só como upgrade</td></tr><tr><th>2 · Intermediária + 2 premium</th><td style="text-align:left">base, intermediária e <b>duas espécies premium</b> à escolha</td><td style="text-align:left" class="mute">as outras premium entram como upgrade</td></tr><tr><th>3 · Carta livre</th><td style="text-align:left"><b>qualquer flor do acervo</b>, premium inclusive, sem limite de espécie</td><td style="text-align:left" class="mute">nada fica de fora</td></tr>
+  </tbody></table></div>
+  <p style="margin-top:11px">É isso que vende o nível 3: <b>não é mais arranjo, é carta livre</b>. O cliente senta na reunião e escolhe o que quiser, sem ouvir “essa não entra no seu pacote”.</p>
+</div>
+
+<div class="cx">
+  <h3>O arranjo também tem nível</h3>
+  <p>“Dois arranjos na mesa de doces” não diz nada: tem arranjo grande e vazio e tem arranjo grande e cheio. Três palavras resolvem, e o vendedor decora em um minuto.</p>
+  <div class="tbw" style="margin-top:10px"><table class="tb"><thead><tr><th>No arranjo</th><th>Nível 1</th><th>Nível 2</th><th>Nível 3</th></tr></thead><tbody>
+  <tr><th>Preenchimento</th><td>leve</td><td>médio</td><td>cheio</td></tr><tr><th>Espécies por arranjo</th><td>1 flor + folhagem</td><td>2 flores + folhagem</td><td>3 ou mais, livre</td></tr><tr><th>Flor disponível</th><td>base</td><td>intermediária + 2 premium</td><td>qualquer uma</td></tr>
+  </tbody></table></div>
+  <p style="margin-top:11px"><span class="mute">O tamanho do arranjo continua o mesmo em todos os níveis: o que muda é quanto ele preenche e quantas espécies entram. Assim a Decoração monta com a mesma estrutura e o cliente vê a diferença na foto.</span></p>
+</div>
+
+<div class="cx">
+  <h3>Os upgrades</h3>
+  <p>É a porta de subida que hoje não existe: no nível 1 e 2 o cliente paga para alcançar a flor do nível de cima, sem trocar de pacote.</p>
+  <div class="tbw" style="margin-top:10px"><table class="tb"><thead><tr><th>Em</th><th>Upgrade</th><th>O que libera</th></tr></thead><tbody>
+  <tr><th>Nível 1</th><td style="text-align:left">Liberar a intermediária</td><td style="text-align:left" class="mute">o cliente escolhe uma espécie intermediária no lugar de uma base</td></tr><tr><th>Nível 1</th><td style="text-align:left">Liberar uma premium</td><td style="text-align:left" class="mute">uma espécie premium no arranjo principal — a mesa dos noivos ou a de doces</td></tr><tr><th>Nível 2</th><td style="text-align:left">Liberar a carta livre</td><td style="text-align:left" class="mute">acesso a todas as premium, como no nível 3, sem mudar o resto do pacote</td></tr><tr><th>1 e 2</th><td style="text-align:left">Mais preenchimento</td><td style="text-align:left" class="mute">sobe o arranjo um degrau: leve vira médio, médio vira cheio</td></tr>
+  </tbody></table></div>
+  <p style="margin-top:11px"><span class="mute">Falta pôr preço em cada um. Para isso é preciso o custo de compra da flor permanente, que não está em nenhum cadastro.</span></p>
 </div>
 </section>
 

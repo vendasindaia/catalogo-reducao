@@ -105,6 +105,13 @@ h2{font:600 22px/1.2 Georgia,serif;margin:0;padding-bottom:11px;border-bottom:2p
 .rc-c span{color:var(--mute);font-size:11px}
 .rc-pap{display:block;font-style:normal;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute);margin-top:3px}
 .rc-como{margin:13px 0 0;font-size:13.5px;line-height:1.55;max-width:80ch}
+.arc-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-top:13px}
+.arc-c{background:var(--bg);border:1px solid var(--linha);border-left:3px solid var(--mute);border-radius:9px;padding:12px 14px}
+.arc-c.prem{border-left-color:var(--ouro)}
+.arc-n{margin:0 0 6px;font:600 17px/1.2 Georgia,serif;display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.arc-n span{font:600 10.5px/1 "Segoe UI",system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--ouro);background:var(--ouro-s);border-radius:4px;padding:3px 7px}
+.arc-d{margin:0;font-size:13.5px;line-height:1.5}
+.arc-u{margin:7px 0 0;font-size:12.5px;line-height:1.45;color:var(--mute)}
 .rod{margin-top:46px;border-top:1px solid var(--linha);padding-top:16px;color:var(--mute);font-size:12.5px}
 .rod a{color:var(--ouro)}
 @media (max-width:620px){ .pg{padding-block:22px 44px} h1{font-size:24px} }
@@ -143,12 +150,29 @@ h2{font:600 22px/1.2 Georgia,serif;margin:0;padding-bottom:11px;border-bottom:2p
 <h2>O que vem em cada nível</h2>
 <p class="lead" style="margin-top:12px">Na ordem do evento. Cada peça de mobília que pede flor ganha flor no mesmo nível: o nível 1 não tem arco, então não tem arco florido.</p>
 <div class="tbw"><table class="tb"><thead><tr><th>O que vem</th><th>Floral 1</th><th>Floral 2</th><th>Floral 3</th></tr></thead><tbody>
-<tr class="gr"><td colspan="4">A noiva</td></tr><tr><th>Buquê da noiva <span class="mute">natural, flor da estação</span></th><td>✓</td><td>✓</td><td>✓</td></tr><tr><th>Buquê de jogar</th><td><span class="nao">—</span></td><td>✓</td><td>✓</td></tr><tr><th>Flor de lapela <span class="mute">noivos, pais e padrinhos</span></th><td><span class="nao">—</span></td><td>✓</td><td>✓</td></tr><tr class="gr"><td colspan="4">Cerimônia</td></tr><tr><th>Arco</th><td>— <span class="mute">não tem arco no nível 1</span></td><td>florido em dois pontos</td><td>florido por inteiro</td></tr><tr><th>Arranjo no aparador do celebrante</th><td>1</td><td>1</td><td>1</td></tr><tr><th>Flor na cadeira do corredor</th><td>8 <span class="mute">as da ponta de cada fileira</span></td><td>8</td><td>8</td></tr><tr><th>Flor nas laterais do trilho</th><td><span class="nao">—</span></td><td>✓ <span class="mute">corredor preenchido dos dois lados</span></td><td>✓</td></tr><tr><th>Arranjo de chão no trilho</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td>6 vasos floridos</td></tr><tr class="gr"><td colspan="4">Mesa dos noivos</td></tr><tr><th>Arranjo da mesa</th><td>1 baixo</td><td>1 frontal</td><td>1 frontal</td></tr><tr><th>Jardim suspenso sobre a mesa</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td>florido</td></tr><tr><th>Detalhe no guardanapo dos noivos</th><td><span class="nao">—</span></td><td>✓</td><td>✓</td></tr><tr class="gr"><td colspan="4">Mesa de doces</td></tr><tr><th>Arranjo grande</th><td>1</td><td>2</td><td>2</td></tr><tr><th>Arranjo pequeno</th><td><span class="nao">—</span></td><td>2</td><td>4</td></tr><tr><th>Flor nos suportes de doces</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td>✓</td></tr><tr class="gr"><td colspan="4">Mesas dos convidados</td></tr><tr><th>Arranjo por mesa <span class="mute">1 a cada 10 convidados</span></th><td><span class="nao">—</span></td><td>6 baixos</td><td>6, alto ou baixo</td></tr><tr class="gr"><td colspan="4">Salão</td></tr><tr><th>Estante de velas de LED</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td>florida</td></tr><tr><th>Cenário de foto</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td>painel floral ou Better Together</td></tr>
+<tr class="gr"><td colspan="4">A noiva</td></tr><tr><th>Buquê da noiva <span class="mute">natural, flor da estação</span></th><td>✓</td><td>✓</td><td>✓</td></tr><tr><th>Buquê de jogar</th><td><span class="nao">—</span></td><td>✓</td><td>✓</td></tr><tr><th>Flor de lapela <span class="mute">noivos, pais e padrinhos</span></th><td><span class="nao">—</span></td><td>✓</td><td>✓</td></tr><tr class="gr"><td colspan="4">Cerimônia</td></tr><tr><th>Arco</th><td>— <span class="mute">não tem arco no nível 1</span></td><td>florido por inteiro, <b>em guirlanda</b></td><td>florido por inteiro, <b>coberto</b></td></tr><tr><th>Arranjo no aparador do celebrante</th><td>1</td><td>1</td><td>1</td></tr><tr><th>Trilho</th><td>8 buquezinhos nas cadeiras <span class="mute">as da ponta de cada fileira</span></td><td>laterais preenchidas <span class="mute">corredor florido dos dois lados</span></td><td><b>personalizado</b> <span class="mute">fechado na reunião de decoração</span></td></tr><tr class="gr"><td colspan="4">Mesa dos noivos</td></tr><tr><th>Arranjo da mesa</th><td>1 baixo</td><td>1 frontal</td><td>1 frontal</td></tr><tr><th>Jardim suspenso sobre a mesa</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td>florido</td></tr><tr><th>Detalhe no guardanapo dos noivos</th><td><span class="nao">—</span></td><td>✓</td><td>✓</td></tr><tr class="gr"><td colspan="4">Mesa de doces</td></tr><tr><th>Arranjo grande</th><td>1</td><td>2</td><td>2</td></tr><tr><th>Arranjo pequeno</th><td><span class="nao">—</span></td><td>2</td><td>4</td></tr><tr><th>Flor nos suportes de doces</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td>✓</td></tr><tr class="gr"><td colspan="4">Mesas dos convidados</td></tr><tr><th>Arranjo por mesa <span class="mute">1 a cada 10 convidados</span></th><td><span class="nao">—</span></td><td>6 baixos</td><td>6, alto ou baixo</td></tr><tr class="gr"><td colspan="4">Salão</td></tr><tr><th>Estante de velas de LED</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td>florida</td></tr><tr><th>Cenário de foto</th><td><span class="nao">—</span></td><td><span class="nao">—</span></td><td>painel floral ou Better Together</td></tr>
 </tbody></table></div>
 <div class="cx">
+  <h3>O arco da cerimônia</h3>
+  <p>O arco é florido <b>por inteiro nos dois níveis</b>. O que muda é a densidade, e são duas palavras só — vale usar essas, do orçamento à ordem de serviço:</p>
+  <div class="arc-g">
+    <div class="arc-c">
+      <p class="arc-n">Guirlanda<span>Floral 2</span></p>
+      <p class="arc-d">A flor corre ao longo do arco inteiro, numa faixa estreita. A estrutura aparece entre as flores e o desenho do arco continua visível.</p>
+      <p class="arc-u">Leva menos flor e monta mais rápido. É o arco que a maioria dos casamentos usa.</p>
+    </div>
+    <div class="arc-c prem">
+      <p class="arc-n">Coberto<span>Floral 3</span></p>
+      <p class="arc-d">A flor fecha a estrutura, com volume. O arco some embaixo da flor e o que se vê é um bloco florido.</p>
+      <p class="arc-u">É o arco de foto, e o que justifica o salto do nível 3 na cerimônia.</p>
+    </div>
+  </div>
+  <p style="margin-top:12px"><span class="mute">São palavras que a cliente entende sem explicação — guirlanda ela conhece do Natal, coberto é literal — e que a Decoração já usa para medir material. É a mesma régua de leve e cheio dos arranjos, aplicada ao arco.</span></p>
+</div>
+<div class="cx">
   <h3>A subida de nível</h3>
-  <p>Do <b>1 para o 2</b>, a flor sai dos pontos e toma o corredor: o nível 1 tem o arranjo do celebrante e as florzinhas nas cadeiras da ponta, o 2 preenche as duas laterais do trilho e põe flor na frente de cada convidado. É a subida mais fácil de mostrar na reunião, porque muda a foto da entrada da noiva.</p>
-  <p>Do <b>2 para o 3</b>, o corredor ganha os arranjos de chão em cima do preenchimento lateral, e a flor muda de categoria. Entram também o jardim suspenso, a estante florida e o cenário de foto.</p>
+  <p>Do <b>1 para o 2</b>, a flor sai dos pontos e toma o corredor: o nível 1 tem o arranjo do celebrante e os buquezinhos nas cadeiras da ponta, o 2 preenche as duas laterais do trilho e põe flor na frente de cada convidado. É a subida mais fácil de mostrar na reunião, porque muda a foto da entrada da noiva.</p>
+  <p>Do <b>2 para o 3</b>, o arco passa de guirlanda a coberto, o trilho deixa de ter fórmula e vira <b>personalizado</b> — o casal desenha o corredor na reunião de decoração —, e a flor muda de categoria. Entram também o jardim suspenso, a estante florida e o cenário de foto.</p>
 </div>
 </section>
 

@@ -83,6 +83,28 @@ h2{font:600 22px/1.2 Georgia,serif;margin:0;padding-bottom:11px;border-bottom:2p
 .fl-c b{display:block;font-size:12.5px}
 .fl-c span{color:var(--mute);font-size:11.5px}
 .fl-pq{margin:10px 0 0;font-size:12.5px;color:var(--mute);line-height:1.5;max-width:80ch}
+.rc{margin-top:24px;background:var(--card);border:1px solid var(--linha);border-radius:12px;padding:16px 18px;box-shadow:var(--sombra)}
+.rc-h{display:flex;gap:14px;align-items:baseline;justify-content:space-between;flex-wrap:wrap}
+.rc-h h3{margin:0;font:600 18px/1.2 Georgia,serif;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.rc-h h3 small{font:400 13px/1.4 "Segoe UI",system-ui,sans-serif;color:var(--mute)}
+.rc-v{margin:0;font-size:12.5px;color:var(--mute);font-variant-numeric:tabular-nums}
+.rc-p{color:var(--ouro);font-weight:600}
+.rc-bar{display:flex;height:22px;border-radius:6px;overflow:hidden;margin:12px 0 14px;background:var(--head)}
+.rc-s{display:grid;place-items:center;font-size:10.5px;font-weight:700;color:#fff;letter-spacing:.03em;white-space:nowrap;overflow:hidden}
+.rc-folhagem{background:#4a7c52}
+.rc-textura{background:#9aa06a}
+.rc-foco{background:var(--ouro)}
+.rc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:9px}
+.rc-c{margin:0;background:var(--bg);border:1px solid var(--linha);border-radius:9px;overflow:hidden}
+.rc-c.prem{border-color:var(--ouro);box-shadow:0 0 0 1px var(--ouro)}
+.rc-i{position:relative}
+.rc-i img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:var(--head)}
+.rc-q{position:absolute;right:6px;bottom:6px;background:rgba(0,0,0,.72);color:#fff;font-size:12px;font-weight:700;border-radius:999px;min-width:24px;height:24px;display:grid;place-items:center;padding:0 6px}
+.rc-c figcaption{padding:6px 8px 8px;font-size:11.5px;line-height:1.3}
+.rc-c b{display:block;font-size:12px}
+.rc-c span{color:var(--mute);font-size:11px}
+.rc-pap{display:block;font-style:normal;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute);margin-top:3px}
+.rc-como{margin:13px 0 0;font-size:13.5px;line-height:1.55;max-width:80ch}
 .rod{margin-top:46px;border-top:1px solid var(--linha);padding-top:16px;color:var(--mute);font-size:12.5px}
 .rod a{color:var(--ouro)}
 @media (max-width:620px){ .pg{padding-block:22px 44px} h1{font-size:24px} }
@@ -95,7 +117,7 @@ h2{font:600 22px/1.2 Georgia,serif;margin:0;padding-bottom:11px;border-bottom:2p
   </div>
   <button class="tema" id="tema">Tema</button>
 </div>
-<nav class="idx"><a href="#hoje">Como está hoje</a><a href="#comp">O que vem em cada nível</a><a href="#flores">As flores do acervo</a><a href="#preco">Preço</a><a href="#falta">O que falta decidir</a></nav>
+<nav class="idx"><a href="#hoje">Como está hoje</a><a href="#comp">O que vem em cada nível</a><a href="#flores">As flores do acervo</a><a href="#arranjo">Como fica o arranjo</a><a href="#preco">Preço</a><a href="#falta">O que falta decidir</a></nav>
 
 <section class="sec" id="hoje">
 <h2>Como está hoje</h2>
@@ -385,7 +407,7 @@ h2{font:600 22px/1.2 Georgia,serif;margin:0;padding-bottom:11px;border-bottom:2p
 <div class="cx">
   <h3>Quem tem acesso a quê</h3>
   <div class="tbw" style="margin-top:10px"><table class="tb"><thead><tr><th>Nível</th><th>Pode escolher</th><th>Fica de fora</th></tr></thead><tbody>
-  <tr><th>1 · Base e folhagem</th><td style="text-align:left">todas as flores de base, toda a folhagem</td><td style="text-align:left" class="mute">premium e intermediária entram só como upgrade</td></tr><tr><th>2 · Intermediária + 2 premium</th><td style="text-align:left">base, intermediária e <b>duas espécies premium</b> à escolha</td><td style="text-align:left" class="mute">as outras premium entram como upgrade</td></tr><tr><th>3 · Carta livre</th><td style="text-align:left"><b>qualquer flor do acervo</b>, premium inclusive, sem limite de espécie</td><td style="text-align:left" class="mute">nada fica de fora</td></tr>
+  <tr><th>1 · Folhagem com rosa pontuada</th><td style="text-align:left">toda a folhagem, todas as de base e <b>3 rosas por arranjo, em uma cor só</b></td><td style="text-align:left" class="mute">as demais intermediárias e as premium entram só como upgrade</td></tr><tr><th>2 · Rosa livre + 2 premium</th><td style="text-align:left">base, folhagem, <b>rosa livre em cor e quantidade</b>, demais intermediárias e <b>duas espécies premium</b> à escolha</td><td style="text-align:left" class="mute">as outras premium entram como upgrade</td></tr><tr><th>3 · Carta livre</th><td style="text-align:left"><b>qualquer flor do acervo</b>, premium inclusive, sem limite de espécie</td><td style="text-align:left" class="mute">nada fica de fora</td></tr>
   </tbody></table></div>
   <p style="margin-top:11px">É isso que vende o nível 3: <b>não é mais arranjo, é carta livre</b>. O cliente senta na reunião e escolhe o que quiser, sem ouvir “essa não entra no seu pacote”.</p>
 </div>
@@ -394,7 +416,7 @@ h2{font:600 22px/1.2 Georgia,serif;margin:0;padding-bottom:11px;border-bottom:2p
   <h3>O arranjo também tem nível</h3>
   <p>“Dois arranjos na mesa de doces” não diz nada: tem arranjo grande e vazio e tem arranjo grande e cheio. Três palavras resolvem, e o vendedor decora em um minuto.</p>
   <div class="tbw" style="margin-top:10px"><table class="tb"><thead><tr><th>No arranjo</th><th>Nível 1</th><th>Nível 2</th><th>Nível 3</th></tr></thead><tbody>
-  <tr><th>Preenchimento</th><td>leve</td><td>médio</td><td>cheio</td></tr><tr><th>Espécies por arranjo</th><td>1 flor + folhagem</td><td>2 flores + folhagem</td><td>3 ou mais, livre</td></tr><tr><th>Flor disponível</th><td>base</td><td>intermediária + 2 premium</td><td>qualquer uma</td></tr>
+  <tr><th>Preenchimento</th><td>leve</td><td>médio</td><td>cheio</td></tr><tr><th>Espécies por arranjo</th><td>1 flor + folhagem</td><td>2 flores + folhagem</td><td>3 ou mais, livre</td></tr><tr><th>Flor disponível</th><td>base + 3 rosas</td><td>rosa livre + 2 premium</td><td>qualquer uma</td></tr><tr><th>Quanto é flor de foco</th><td>17% do arranjo</td><td>41%</td><td>55%, toda premium</td></tr>
   </tbody></table></div>
   <p style="margin-top:11px"><span class="mute">O tamanho do arranjo continua o mesmo em todos os níveis: o que muda é quanto ele preenche e quantas espécies entram. Assim a Decoração monta com a mesma estrutura e o cliente vê a diferença na foto.</span></p>
 </div>
@@ -403,9 +425,117 @@ h2{font:600 22px/1.2 Georgia,serif;margin:0;padding-bottom:11px;border-bottom:2p
   <h3>Os upgrades</h3>
   <p>É a porta de subida que hoje não existe: no nível 1 e 2 o cliente paga para alcançar a flor do nível de cima, sem trocar de pacote.</p>
   <div class="tbw" style="margin-top:10px"><table class="tb"><thead><tr><th>Em</th><th>Upgrade</th><th>O que libera</th></tr></thead><tbody>
-  <tr><th>Nível 1</th><td style="text-align:left">Liberar a intermediária</td><td style="text-align:left" class="mute">o cliente escolhe uma espécie intermediária no lugar de uma base</td></tr><tr><th>Nível 1</th><td style="text-align:left">Liberar uma premium</td><td style="text-align:left" class="mute">uma espécie premium no arranjo principal — a mesa dos noivos ou a de doces</td></tr><tr><th>Nível 2</th><td style="text-align:left">Liberar a carta livre</td><td style="text-align:left" class="mute">acesso a todas as premium, como no nível 3, sem mudar o resto do pacote</td></tr><tr><th>1 e 2</th><td style="text-align:left">Mais preenchimento</td><td style="text-align:left" class="mute">sobe o arranjo um degrau: leve vira médio, médio vira cheio</td></tr>
+  <tr><th>Nível 1</th><td style="text-align:left">Rosa livre</td><td style="text-align:left" class="mute">tira o limite de 3 rosas e de uma cor só — é a subida mais pedida</td></tr><tr><th>Nível 1</th><td style="text-align:left">Liberar uma premium</td><td style="text-align:left" class="mute">uma espécie premium no arranjo principal — a mesa dos noivos ou a de doces</td></tr><tr><th>Nível 2</th><td style="text-align:left">Liberar a carta livre</td><td style="text-align:left" class="mute">acesso a todas as premium, como no nível 3, sem mudar o resto do pacote</td></tr><tr><th>1 e 2</th><td style="text-align:left">Mais preenchimento</td><td style="text-align:left" class="mute">sobe o arranjo um degrau: leve vira médio, médio vira cheio</td></tr>
   </tbody></table></div>
   <p style="margin-top:11px"><span class="mute">Falta pôr preço em cada um. Para isso é preciso o custo de compra da flor permanente, que não está em nenhum cadastro.</span></p>
+</div>
+</section>
+
+<section class="sec" id="arranjo">
+<h2>Como fica o arranjo</h2>
+<p class="lead" style="margin-top:12px">Simulação do arranjo da <b>mesa dos convidados</b>, haste a haste, só com flor que existe no acervo. A barra mostra a proporção entre folhagem, textura e flor de foco.</p>
+<div class="rc">
+  <div class="rc-h">
+    <h3>Nível 1<small>Folhagem com rosa pontuada</small></h3>
+    <p class="rc-v">vaso baixo, 1 a cada 10 convidados · <b>18 hastes</b></p>
+  </div>
+  <div class="rc-bar">
+    <span class="rc-s rc-folhagem" style="width:56%" title="Folhagem 56%">Folhagem 56%</span><span class="rc-s rc-textura" style="width:28%" title="Textura 28%">Textura 28%</span><span class="rc-s rc-foco" style="width:17%" title="Flor de foco 17%">Flor de foco 17%</span>
+  </div>
+  <div class="rc-grid"><figure class="rc-c">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=1OyktDhpaArn_0oRj0yn5sxeYmY9OPWBJ&sz=w400" alt="Eucalipto baby" loading="lazy"><span class="rc-q">5</span></div>
+      <figcaption><b>Eucalipto baby</b><span>verde</span><i class="rc-pap">Folhagem</i></figcaption>
+    </figure><figure class="rc-c">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=1Tanvq2U79G0z8eiQ2cdeO2GUutbB-Dpf&sz=w400" alt="Buxinho" loading="lazy"><span class="rc-q">3</span></div>
+      <figcaption><b>Buxinho</b><span>verde</span><i class="rc-pap">Folhagem</i></figcaption>
+    </figure><figure class="rc-c">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=16wPyu-UDeFXqBuV4sy11phMgCclrsPHM&sz=w400" alt="Folhagem pendente" loading="lazy"><span class="rc-q">2</span></div>
+      <figcaption><b>Folhagem pendente</b><span>verde</span><i class="rc-pap">Folhagem</i></figcaption>
+    </figure><figure class="rc-c">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=1yPi7SbAtJg4rwyS4GkfTrTEPTrQQ08_t&sz=w400" alt="Gipsofila" loading="lazy"><span class="rc-q">3</span></div>
+      <figcaption><b>Gipsofila</b><span>branca</span><i class="rc-pap">Textura</i></figcaption>
+    </figure><figure class="rc-c">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=1sPXYvN-IJPu31fBYQ3art26p2WOaKlai&sz=w400" alt="Cardo" loading="lazy"><span class="rc-q">2</span></div>
+      <figcaption><b>Cardo</b><span>verde</span><i class="rc-pap">Textura</i></figcaption>
+    </figure><figure class="rc-c">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=1xctJTS8XDg6Lt15eysg0jssRh2In4qi4&sz=w400" alt="Rosa" loading="lazy"><span class="rc-q">3</span></div>
+      <figcaption><b>Rosa</b><span>branca</span><i class="rc-pap">Flor de foco</i></figcaption>
+    </figure></div>
+  <p class="rc-como">Verde por fora, três rosas abertas no meio. O arranjo tem volume e tem foco, e nenhuma flor cara dentro.</p>
+</div><div class="rc">
+  <div class="rc-h">
+    <h3>Nível 2<small>Rosa livre e a primeira premium</small></h3>
+    <p class="rc-v">vaso baixo, 1 a cada 10 convidados · <b>22 hastes</b> · <span class="rc-p">2 premium</span></p>
+  </div>
+  <div class="rc-bar">
+    <span class="rc-s rc-folhagem" style="width:36%" title="Folhagem 36%">Folhagem 36%</span><span class="rc-s rc-textura" style="width:23%" title="Textura 23%">Textura 23%</span><span class="rc-s rc-foco" style="width:41%" title="Flor de foco 41%">Flor de foco 41%</span>
+  </div>
+  <div class="rc-grid"><figure class="rc-c">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=1KR_RsiveC5HbGx2S1ntWTgEg4vSuRAFO&sz=w400" alt="Eucalipto dólar" loading="lazy"><span class="rc-q">4</span></div>
+      <figcaption><b>Eucalipto dólar</b><span>verde-acinzentado</span><i class="rc-pap">Folhagem</i></figcaption>
+    </figure><figure class="rc-c">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=1Tanvq2U79G0z8eiQ2cdeO2GUutbB-Dpf&sz=w400" alt="Buxinho" loading="lazy"><span class="rc-q">2</span></div>
+      <figcaption><b>Buxinho</b><span>verde</span><i class="rc-pap">Folhagem</i></figcaption>
+    </figure><figure class="rc-c">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=16wPyu-UDeFXqBuV4sy11phMgCclrsPHM&sz=w400" alt="Folhagem pendente" loading="lazy"><span class="rc-q">2</span></div>
+      <figcaption><b>Folhagem pendente</b><span>verde</span><i class="rc-pap">Folhagem</i></figcaption>
+    </figure><figure class="rc-c">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=1yPi7SbAtJg4rwyS4GkfTrTEPTrQQ08_t&sz=w400" alt="Gipsofila" loading="lazy"><span class="rc-q">2</span></div>
+      <figcaption><b>Gipsofila</b><span>branca</span><i class="rc-pap">Textura</i></figcaption>
+    </figure><figure class="rc-c">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=1uClnBd9I9P24sUqujTgf7Xz0v6U_DIRL&sz=w400" alt="Astilbe" loading="lazy"><span class="rc-q">3</span></div>
+      <figcaption><b>Astilbe</b><span>branca</span><i class="rc-pap">Textura</i></figcaption>
+    </figure><figure class="rc-c">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=1xctJTS8XDg6Lt15eysg0jssRh2In4qi4&sz=w400" alt="Rosa" loading="lazy"><span class="rc-q">4</span></div>
+      <figcaption><b>Rosa</b><span>branca</span><i class="rc-pap">Flor de foco</i></figcaption>
+    </figure><figure class="rc-c">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=1KqHNg4VocGgvDtDkeNHf6oSBVVHznfiO&sz=w400" alt="Rosa" loading="lazy"><span class="rc-q">3</span></div>
+      <figcaption><b>Rosa</b><span>champagne</span><i class="rc-pap">Flor de foco</i></figcaption>
+    </figure><figure class="rc-c prem">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=1vxXxY6PmsoameSQXwc0dd48Q7BQ-iwE4&sz=w400" alt="Hortênsia" loading="lazy"><span class="rc-q">2</span></div>
+      <figcaption><b>Hortênsia</b><span>branca</span><i class="rc-pap">Flor de foco</i></figcaption>
+    </figure></div>
+  <p class="rc-como">A rosa deixa de ser pontuação e vira massa, em duas cores. A hortênsia entra como a premium escolhida e dá a cabeça grande que o nível 1 não tem.</p>
+</div><div class="rc">
+  <div class="rc-h">
+    <h3>Nível 3<small>Carta livre</small></h3>
+    <p class="rc-v">vaso alto ou baixo, à escolha · <b>20 hastes</b> · <span class="rc-p">11 premium</span></p>
+  </div>
+  <div class="rc-bar">
+    <span class="rc-s rc-folhagem" style="width:35%" title="Folhagem 35%">Folhagem 35%</span><span class="rc-s rc-textura" style="width:10%" title="Textura 10%"></span><span class="rc-s rc-foco" style="width:55%" title="Flor de foco 55%">Flor de foco 55%</span>
+  </div>
+  <div class="rc-grid"><figure class="rc-c">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=1KR_RsiveC5HbGx2S1ntWTgEg4vSuRAFO&sz=w400" alt="Eucalipto dólar" loading="lazy"><span class="rc-q">3</span></div>
+      <figcaption><b>Eucalipto dólar</b><span>verde-acinzentado</span><i class="rc-pap">Folhagem</i></figcaption>
+    </figure><figure class="rc-c">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=1ATOCLv-6nC8owq1aLsXExlJX4YO9YEfh&sz=w400" alt="Eucalipto prata" loading="lazy"><span class="rc-q">2</span></div>
+      <figcaption><b>Eucalipto prata</b><span>prata</span><i class="rc-pap">Folhagem</i></figcaption>
+    </figure><figure class="rc-c">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=16wPyu-UDeFXqBuV4sy11phMgCclrsPHM&sz=w400" alt="Folhagem pendente" loading="lazy"><span class="rc-q">2</span></div>
+      <figcaption><b>Folhagem pendente</b><span>verde</span><i class="rc-pap">Folhagem</i></figcaption>
+    </figure><figure class="rc-c">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=1uClnBd9I9P24sUqujTgf7Xz0v6U_DIRL&sz=w400" alt="Astilbe" loading="lazy"><span class="rc-q">2</span></div>
+      <figcaption><b>Astilbe</b><span>branca</span><i class="rc-pap">Textura</i></figcaption>
+    </figure><figure class="rc-c prem">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=14kEOJucR46F-ngrzqKN1CmONQbamX4vg&sz=w400" alt="Rosa inglesa" loading="lazy"><span class="rc-q">4</span></div>
+      <figcaption><b>Rosa inglesa</b><span>nude</span><i class="rc-pap">Flor de foco</i></figcaption>
+    </figure><figure class="rc-c prem">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=1vxXxY6PmsoameSQXwc0dd48Q7BQ-iwE4&sz=w400" alt="Hortênsia" loading="lazy"><span class="rc-q">2</span></div>
+      <figcaption><b>Hortênsia</b><span>branca</span><i class="rc-pap">Flor de foco</i></figcaption>
+    </figure><figure class="rc-c prem">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=123PudO_lhhx80ia-HcA1DSjRoEsiwzV0&sz=w400" alt="Orquídea Phalaenopsis" loading="lazy"><span class="rc-q">2</span></div>
+      <figcaption><b>Orquídea Phalaenopsis</b><span>branca</span><i class="rc-pap">Flor de foco</i></figcaption>
+    </figure><figure class="rc-c prem">
+      <div class="rc-i"><img src="https://drive.google.com/thumbnail?id=1TPDxddZhuS8G7IUxCDPnI09cyzU15tiq&sz=w400" alt="Copo-de-leite" loading="lazy"><span class="rc-q">3</span></div>
+      <figcaption><b>Copo-de-leite</b><span>branco</span><i class="rc-pap">Flor de foco</i></figcaption>
+    </figure></div>
+  <p class="rc-como">A folhagem vira moldura, não massa. Quatro espécies premium no mesmo arranjo: é o que o cliente não consegue nos outros dois níveis por nenhum preço.</p>
+</div>
+<div class="cx">
+  <h3>O que a simulação mostra</h3>
+  <p>A flor de foco sai de <b>17%</b> do arranjo no nível 1 para <b>41%</b> no 2 e <b>55%</b> no 3 — e no 3 ela é toda premium. O número de hastes quase não muda (18, 22 e 20): o que muda é o que está dentro.</p>
+  <p>Repare que o nível 1 não fica pobre. Ele fica <b>verde</b>, que é um estilo, não uma falta — e é o estilo que mais aparece em casamento hoje. O que o cliente compra no 2 é cor; no 3, espécie nobre.</p>
+  <p><span class="mute">As quantidades são proposta minha, a partir da regra 60/30/10 de composição floral. Quem monta precisa conferir: pode haver limite de haste por vaso ou de estoque que não aparece na pasta de fotos.</span></p>
 </div>
 </section>
 
